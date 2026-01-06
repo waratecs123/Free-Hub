@@ -5,6 +5,7 @@
 # Free-Hub - Free Applications Catalog
 
 ### [>> Website <<](https://free-hub.pages.dev/)
+### [>> Website (Alternative Link) <<](https://waratecs123.github.io/Free-Hub/)
 
 Free-Hub is a comprehensive web application that serves as a curated catalog of over 280+ completely free software applications across various categories. The platform is designed to help users discover valuable free software for productivity, creativity, development, security, and daily computing tasks.
 
