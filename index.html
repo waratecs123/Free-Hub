@@ -1,0 +1,3068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free-Hub | Apps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span>Free-Hub</span>
+                </div>
+                <div class="header-buttons">
+                    <a href="https://t.me/mobius_org" target="_blank" class="telegram-btn">
+                        <i class="fab fa-telegram"></i> Telegram Channel
+                    </a>
+                    <a href="https://www.donationalerts.com/r/mobius_org" target="_blank" class="donate-btn">
+                        <i class="fas fa-heart"></i> Support Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Free Applications</h1>
+            <p class="page-description">Discover useful free software for productivity, creativity, and daily tasks. All applications are completely free. Browse our extensive collection of over 280+ free apps across all categories. Find exactly what you need with our powerful search and filtering system.</p>
+
+            <!-- Search -->
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search applications by name, description, or features...">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Applications</button>
+                    <button class="filter-btn" data-category="productivity">Productivity</button>
+                    <button class="filter-btn" data-category="media">Media</button>
+                    <button class="filter-btn" data-category="security">Security</button>
+                    <button class="filter-btn" data-category="development">Development</button>
+                    <button class="filter-btn" data-category="utility">Utilities</button>
+                    <button class="filter-btn" data-category="audio">Audio</button>
+                    <button class="filter-btn" data-category="browsers">Browsers</button>
+                    <button class="filter-btn" data-category="cloud">Cloud Storage</button>
+                    <button class="filter-btn" data-category="backup">Backup</button>
+                    <button class="filter-btn" data-category="compression">Compression</button>
+                    <button class="filter-btn" data-category="customization">Customization</button>
+                    <button class="filter-btn" data-category="databases">Databases</button>
+                    <button class="filter-btn" data-category="file-management">File Management</button>
+                    <button class="filter-btn" data-category="graphics">Graphics</button>
+                    <button class="filter-btn" data-category="networking">Networking</button>
+                    <button class="filter-btn" data-category="office">Office Suites</button>
+                    <button class="filter-btn" data-category="password-managers">Password Managers</button>
+                    <button class="filter-btn" data-category="remote-access">Remote Access</button>
+                    <button class="filter-btn" data-category="screenshot">Screenshot</button>
+                    <button class="filter-btn" data-category="screen-capture">Screen Capture</button>
+                    <button class="filter-btn" data-category="system">System Utilities</button>
+                    <button class="filter-btn" data-category="terminal">Terminal</button>
+                    <button class="filter-btn" data-category="text-editors">Text Editors</button>
+                    <button class="filter-btn" data-category="video">Video Utilities</button>
+                    <button class="filter-btn" data-category="virtualization">Virtualization</button>
+                    <button class="filter-btn" data-category="window-management">Window Management</button>
+                    <button class="filter-btn" data-category="communication">Communication</button>
+                    <button class="filter-btn" data-category="cli-tools">CLI Tools</button>
+                    <button class="filter-btn" data-category="vpn-proxy">VPN & Proxy</button>
+                    <button class="filter-btn" data-category="web-apps">Web Apps</button>
+                    <button class="filter-btn" data-category="games-web">Web Games</button>
+                    <button class="filter-btn" data-category="file-converters">File Converters</button>
+                    <button class="filter-btn" data-category="file-sharing">File Sharing</button>
+                    <button class="filter-btn" data-category="drawing">Drawing</button>
+                    <button class="filter-btn" data-category="document-editors">Document Editors</button>
+                    <button class="filter-btn" data-category="finance">Finance</button>
+                    <!-- Missing categories from apps data -->
+                    <button class="filter-btn" data-category="note-taking">Note Taking</button>
+                    <button class="filter-btn" data-category="automation">Automation</button>
+                    <button class="filter-btn" data-category="music-production">Music Production</button>
+                    <button class="filter-btn" data-category="3d-modeling">3D Modeling</button>
+                    <button class="filter-btn" data-category="email-clients">Email Clients</button>
+                    <button class="filter-btn" data-category="project-management">Project Management</button>
+                    <button class="filter-btn" data-category="time-tracking">Time Tracking</button>
+                    <button class="filter-btn" data-category="video-conferencing">Video Conferencing</button>
+                    <button class="filter-btn" data-category="ebook-readers">E-book Readers</button>
+                    <button class="filter-btn" data-category="ftp-clients">FTP Clients</button>
+                    <button class="filter-btn" data-category="ssh-clients">SSH Clients</button>
+                    <button class="filter-btn" data-category="ide">IDE</button>
+                    <button class="filter-btn" data-category="cad">CAD</button>
+                    <button class="filter-btn" data-category="torrent-clients">Torrent Clients</button>
+                    <button class="filter-btn" data-category="partition-tools">Partition Tools</button>
+                    <button class="filter-btn" data-category="reference-management">Reference Management</button>
+                    <button class="filter-btn" data-category="photo-management">Photo Management</button>
+                    <button class="filter-btn" data-category="photo-editing">Photo Editing</button>
+                    <button class="filter-btn" data-category="animation">Animation</button>
+                    <button class="filter-btn" data-category="electronics">Electronics</button>
+                    <button class="filter-btn" data-category="iot">IoT</button>
+                    <button class="filter-btn" data-category="mind-mapping">Mind Mapping</button>
+                    <button class="filter-btn" data-category="diagramming">Diagramming</button>
+                    <button class="filter-btn" data-category="whiteboard">Whiteboard</button>
+                    <button class="filter-btn" data-category="collaboration">Collaboration</button>
+                    <button class="filter-btn" data-category="cryptocurrency">Cryptocurrency</button>
+                    <button class="filter-btn" data-category="music-notation">Music Notation</button>
+                    <button class="filter-btn" data-category="tracker">Tracker</button>
+                    <button class="filter-btn" data-category="daw">DAW</button>
+                    <button class="filter-btn" data-category="karaoke">Karaoke</button>
+                    <button class="filter-btn" data-category="hex-editors">Hex Editors</button>
+                    <button class="filter-btn" data-category="log-viewers">Log Viewers</button>
+                    <button class="filter-btn" data-category="pomodoro">Pomodoro</button>
+                    <button class="filter-btn" data-category="habit-tracking">Habit Tracking</button>
+                    <button class="filter-btn" data-category="ocr">OCR</button>
+                    <button class="filter-btn" data-category="sound-editing">Sound Editing</button>
+                    <button class="filter-btn" data-category="penetration-testing">Penetration Testing</button>
+                    <button class="filter-btn" data-category="intrusion-detection">Intrusion Detection</button>
+                    <button class="filter-btn" data-category="vulnerability-scanners">Vulnerability Scanners</button>
+                    <button class="filter-btn" data-category="file-recovery">File Recovery</button>
+                    <button class="filter-btn" data-category="system-information">System Information</button>
+                    <button class="filter-btn" data-category="boot-tools">Boot Tools</button>
+                </div>
+            </div>
+
+            <!-- Apps List -->
+            <div id="apps-list" class="items-list">
+                <!-- Apps will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    This project was born out of a simple belief: the most powerful digital tools should be available to everyone, regardless of budget. It's not just a catalog—it's a living, breathing archive of digital generosity. I act as a critic, archaeologist, and collector, spending countless hours deep in the web, on forums, and in repositories to find, test, and document truly worthwhile free applications.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Apps Data - COMPLETE LIST OF ALL APPLICATIONS (1-280+)
+        const apps = [
+            {
+                id: 1,
+                name: "VLC Media Player",
+                category: "media",
+                rating: 4.9,
+                description: "Versatile media player that can play almost any video or audio format including DVDs, Audio CDs, VCDs, and various streaming protocols. Supports custom filters, subtitles synchronization, video effects, and advanced audio processing.",
+                link: "https://www.videolan.org/vlc/",
+                platform: "Windows/Mac/Linux",
+                features: ["All Formats", "Free", "Open Source", "Lightweight", "Streaming", "Subtitles", "DVD Support"]
+            },
+            {
+                id: 2,
+                name: "LibreOffice",
+                category: "office",
+                rating: 4.7,
+                description: "Complete office suite compatible with Microsoft Office documents. Includes Writer for word processing, Calc for spreadsheets, Impress for presentations, Draw for vector graphics, Base for databases, and Math for formula editing. Regular updates and strong community support.",
+                link: "https://www.libreoffice.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Word Processor", "Spreadsheets", "Presentations", "Free", "Open Source", "Compatible", "Multiple Languages"]
+            },
+            {
+                id: 3,
+                name: "GIMP",
+                category: "graphics",
+                rating: 4.5,
+                description: "Powerful image manipulation program similar to Photoshop with professional-grade features. Includes photo retouching, image composition, digital painting, and extensive plugin support. Supports layers, masks, filters, and various file formats.",
+                link: "https://www.gimp.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Photo Editing", "Digital Art", "Open Source", "Free", "Layers", "Plugins", "Professional Tools"]
+            },
+            {
+                id: 4,
+                name: "Visual Studio Code",
+                category: "development",
+                rating: 4.8,
+                description: "Lightweight but powerful source code editor from Microsoft with IntelliSense, debugging, Git integration, and thousands of extensions. Supports virtually all programming languages and frameworks with excellent performance and customization options.",
+                link: "https://code.visualstudio.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Code Editor", "Extensions", "Git Integration", "Free", "Debugging", "IntelliSense", "Multi-language"]
+            },
+            {
+                id: 5,
+                name: "7-Zip",
+                category: "compression",
+                rating: 4.6,
+                description: "File archiver with high compression ratio and support for many formats including 7z, ZIP, RAR, TAR, GZIP, and more. Features strong AES-256 encryption, integration with Windows shell, and command-line version for advanced users.",
+                link: "https://www.7-zip.org",
+                platform: "Windows",
+                features: ["File Compression", "High Ratio", "Multiple Formats", "Free", "Encryption", "Open Source", "Shell Integration"]
+            },
+            {
+                id: 6,
+                name: "OBS Studio",
+                category: "screen-capture",
+                rating: 4.7,
+                description: "Free and open source software for video recording and live streaming with professional features. Supports multiple sources, scenes, transitions, and real-time audio/video mixing. Popular with gamers, streamers, and content creators.",
+                link: "https://obsproject.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Screen Recording", "Live Streaming", "Open Source", "Free", "Multiple Sources", "Real-time", "Professional"]
+            },
+            {
+                id: 7,
+                name: "Bitwarden",
+                category: "password-managers",
+                rating: 4.8,
+                description: "Open source password manager that stores sensitive information securely with end-to-end encryption. Features cross-platform sync, password generator, secure sharing, and self-hosting option. Regularly audited for security.",
+                link: "https://bitwarden.com",
+                platform: "All Platforms",
+                features: ["Password Manager", "Secure", "Open Source", "Free", "Cross-platform", "Encryption", "Audited"]
+            },
+            {
+                id: 8,
+                name: "Audacity",
+                category: "audio",
+                rating: 4.4,
+                description: "Easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. Features include recording, editing, effects, noise reduction, and support for various audio formats.",
+                link: "https://www.audacityteam.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Audio Editing", "Recording", "Open Source", "Free", "Multi-track", "Effects", "Noise Reduction"]
+            },
+            {
+                id: 9,
+                name: "Bruno",
+                category: "development",
+                rating: 4.5,
+                description: "Tests APIs with Git version control integration and offline-first design. Features include team collaboration, environment variables, support for multiple authentication methods, and local data storage for privacy.",
+                link: "https://www.usebruno.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["API Testing", "Git Integration", "Open Source", "Free", "Offline-first", "Collaboration", "Local Storage"]
+            },
+            {
+                id: 10,
+                name: "Hoppscotch",
+                category: "development",
+                rating: 4.6,
+                description: "Tests APIs with real-time collaboration features in a lightweight, fast, and open-source alternative to Postman. Works directly in your browser with no installation required and supports all major HTTP methods.",
+                link: "https://hoppscotch.com/",
+                platform: "Web",
+                features: ["API Testing", "Collaboration", "Real-time", "Free", "Browser-based", "Open Source", "Lightweight"]
+            },
+            {
+                id: 11,
+                name: "Postman",
+                category: "development",
+                rating: 4.7,
+                description: "Tests APIs with automated test scripts and monitoring capabilities. Features include collections, environments, mock servers, documentation, team workspaces, and extensive testing capabilities with JavaScript.",
+                link: "https://www.getpostman.com/postman",
+                platform: "Windows/Mac/Linux",
+                features: ["API Testing", "Automation", "Monitoring", "Free", "Collections", "Mock Servers", "JavaScript Testing"]
+            },
+            {
+                id: 12,
+                name: "Flow Launcher",
+                category: "productivity",
+                rating: 4.5,
+                description: "Searches files and launches apps with plugin extensibility and fast keyboard navigation. Includes web search, calculator, unit converter, system commands, and highly customizable interface with themes.",
+                link: "https://flowlauncher.com/",
+                platform: "Windows",
+                features: ["App Launcher", "File Search", "Plugins", "Free", "Fast", "Customizable", "Themes"]
+            },
+            {
+                id: 13,
+                name: "ueli",
+                category: "productivity",
+                rating: 4.4,
+                description: "Powerful keystroke launcher for Windows with extensive customization options. Features include web search, calculator, color converter, custom commands, and system controls with minimal resource usage.",
+                link: "https://ueli.app/#/",
+                platform: "Windows",
+                features: ["App Launcher", "Keyboard Shortcuts", "Fast", "Free", "Web Search", "Calculator", "System Controls"]
+            },
+            {
+                id: 14,
+                name: "Foobar2000",
+                category: "audio",
+                rating: 4.7,
+                description: "Plays audio with extensive customization options and advanced audio processing. Supports all major audio formats, gapless playback, ReplayGain, advanced tagging, and component-based architecture.",
+                link: "https://www.foobar2000.org/",
+                platform: "Windows",
+                features: ["Audio Player", "Customizable", "Lightweight", "Free", "Gapless Playback", "Advanced Tagging", "Components"]
+            },
+            {
+                id: 15,
+                name: "Mixxx",
+                category: "audio",
+                rating: 4.5,
+                description: "Mixes music for DJs with professional features including beat matching, sync, effects, EQ, crossfader, and support for various DJ controllers. Great for both beginners learning to mix and professional DJs.",
+                link: "https://mixxx.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["DJ Software", "Music Mixing", "Open Source", "Free", "Beat Matching", "Effects", "Controller Support"]
+            },
+            {
+                id: 16,
+                name: "Firefox",
+                category: "browsers",
+                rating: 4.6,
+                description: "Browser with strong privacy features and extensive customization options. Features include tracking protection, container tabs, extensive add-ons library, developer tools, and regular security updates.",
+                link: "https://firefox.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Privacy", "Customizable", "Free", "Tracking Protection", "Add-ons", "Security"]
+            },
+            {
+                id: 17,
+                name: "Brave",
+                category: "browsers",
+                rating: 4.5,
+                description: "Privacy focused browser with built-in adblock and tracking protection. Blocks ads and trackers by default, includes Tor windows for private browsing, and rewards users with Basic Attention Tokens.",
+                link: "https://brave.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Privacy", "Ad Blocking", "Free", "Tor Integration", "Chromium-based", "Rewards"]
+            },
+            {
+                id: 18,
+                name: "Tor Browser",
+                category: "browsers",
+                rating: 4.4,
+                description: "Privacy browser routing traffic over the Tor network to protect against surveillance and censorship. Features include NoScript, HTTPS Everywhere, fingerprinting resistance, and regular security updates.",
+                link: "https://www.torproject.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Privacy", "Anonymous", "Free", "Tor Network", "Anti-fingerprinting", "Censorship Resistance"]
+            },
+            {
+                id: 19,
+                name: "Mega",
+                category: "cloud",
+                rating: 4.5,
+                description: "Encrypts files before they leave your device with end-to-end encryption. Offers 20GB free storage, file versioning, secure chat, and strong focus on privacy and security with client-side encryption.",
+                link: "https://mega.nz/",
+                platform: "All Platforms",
+                features: ["Cloud Storage", "Encrypted", "Secure", "Free", "End-to-end", "20GB Free", "File Versioning"]
+            },
+            {
+                id: 20,
+                name: "Proton Drive",
+                category: "cloud",
+                rating: 4.6,
+                description: "End-to-end encrypted cloud storage from Proton with integration with Proton Mail and Calendar. Swiss-based with strong privacy laws, zero-access encryption, and offers 1GB free storage.",
+                link: "https://proton.me/drive",
+                platform: "All Platforms",
+                features: ["Cloud Storage", "Encrypted", "Private", "Free", "End-to-end", "Swiss-based", "Zero-access"]
+            },
+            {
+                id: 21,
+                name: "PeaZip",
+                category: "compression",
+                rating: 4.4,
+                description: "Archive manager with compression format support for over 200 archive and compression formats. Features strong encryption, file splitting, secure deletion, and archive conversion capabilities.",
+                link: "https://peazip.github.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["File Compression", "Multiple Formats", "Open Source", "Free", "Encryption", "Archive Conversion", "Secure Deletion"]
+            },
+            {
+                id: 22,
+                name: "Rainmeter",
+                category: "customization",
+                rating: 4.6,
+                description: "Displays customizable skins and widgets on desktop with extensive customization options. Thousands of skins available for system monitoring, music visualization, notes, and desktop enhancements.",
+                link: "https://www.rainmeter.net/",
+                platform: "Windows",
+                features: ["Desktop Customization", "Widgets", "Skins", "Free", "System Monitoring", "Music Visualization", "Customizable"]
+            },
+            {
+                id: 23,
+                name: "TranslucentTB",
+                category: "customization",
+                rating: 4.5,
+                description: "Makes Windows taskbar transparent or blurred with various customization options. Lightweight utility that runs in background with minimal resource usage and multiple transparency effects.",
+                link: "https://github.com/TranslucentTB/TranslucentTB",
+                platform: "Windows",
+                features: ["Taskbar Customization", "Transparent", "Lightweight", "Free", "Blur Effects", "Minimal Resource", "Background"]
+            },
+            {
+                id: 24,
+                name: "Beekeeper Studio",
+                category: "databases",
+                rating: 4.6,
+                description: "Modern SQL client for MySQL, Postgres, SQLite, SQL Server, Amazon Redshift, and more with beautiful interface. Features include query editor, table management, and cross-platform support.",
+                link: "https://www.beekeeperstudio.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Database Client", "SQL Editor", "Modern UI", "Free", "Multiple Databases", "Query Editor", "Cross-platform"]
+            },
+            {
+                id: 25,
+                name: "DB Browser for SQLite",
+                category: "databases",
+                rating: 4.5,
+                description: "Visual tool for creating and editing SQLite database files with intuitive interface. Features include SQL query execution, table editing, import/export, and database structure visualization.",
+                link: "https://sqlitebrowser.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["SQLite Editor", "Visual Interface", "Database Management", "Free", "SQL Execution", "Import/Export", "Visualization"]
+            },
+            {
+                id: 26,
+                name: "Everything",
+                category: "file-management",
+                rating: 4.8,
+                description: "Instant file search utility for Windows that indexes files and folders for lightning-fast searching. Minimal resource usage, real-time updating, and extensive search options with regular expressions.",
+                link: "https://www.voidtools.com/",
+                platform: "Windows",
+                features: ["File Search", "Fast", "Lightweight", "Free", "Real-time", "Regex Support", "Minimal Resource"]
+            },
+            {
+                id: 27,
+                name: "FreeFileSync",
+                category: "backup",
+                rating: 4.7,
+                description: "File and folder backup with multiple sync modes including two-way sync, mirror sync, and update sync. Features include real-time synchronization, versioning, and detailed comparison reports.",
+                link: "https://www.freefilesync.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["File Sync", "Backup", "Multiple Modes", "Free", "Real-time", "Versioning", "Comparison Reports"]
+            },
+            {
+                id: 28,
+                name: "Inkscape",
+                category: "graphics",
+                rating: 4.6,
+                description: "Professional vector graphics editor for creating illustrations, icons, logos, diagrams, and maps. Supports SVG format with advanced features like clones, markers, and path operations.",
+                link: "https://inkscape.org/en/",
+                platform: "Windows/Mac/Linux",
+                features: ["Vector Graphics", "Professional", "Open Source", "Free", "SVG Support", "Illustrations", "Logos"]
+            },
+            {
+                id: 29,
+                name: "Krita",
+                category: "graphics",
+                rating: 4.7,
+                description: "Professional digital painting program for concept artists, illustrators, and comic artists. Features brush stabilizers, wrap-around mode, pop-up palette, and extensive brush customization.",
+                link: "https://krita.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Digital Painting", "Professional", "Open Source", "Free", "Brush Stabilizers", "Concept Art", "Comic Art"]
+            },
+            {
+                id: 30,
+                name: "Blender",
+                category: "3d-modeling",
+                rating: 4.8,
+                description: "Professional 3D creation suite for modeling, animation, simulation, rendering, compositing, and motion tracking. Used for animated films, visual effects, art, 3D printed models, and video games.",
+                link: "https://www.blender.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["3D Modeling", "Animation", "Rendering", "Free", "Simulation", "Compositing", "Motion Tracking"]
+            },
+            {
+                id: 31,
+                name: "Wireshark",
+                category: "networking",
+                rating: 4.7,
+                description: "Network protocol analyzer for troubleshooting, analysis, software development, and education. Captures and interactively browses traffic running on a computer network in real-time.",
+                link: "https://www.wireshark.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Network Analysis", "Protocol Debugging", "Professional", "Free", "Packet Capture", "Real-time", "Troubleshooting"]
+            },
+            {
+                id: 32,
+                name: "OnlyOffice",
+                category: "office",
+                rating: 4.5,
+                description: "Enables document co-editing with version control and compatibility with Microsoft Office formats. Features real-time collaboration, document management, and integration with various platforms.",
+                link: "https://www.onlyoffice.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Office Suite", "Collaboration", "Document Editing", "Free", "Real-time", "Version Control", "MS Office Compatible"]
+            },
+            {
+                id: 33,
+                name: "Proton Pass",
+                category: "password-managers",
+                rating: 4.6,
+                description: "Zero-knowledge encrypted password manager with secure password sharing and breach monitoring. Integrates with Proton ecosystem and offers strong privacy protection with end-to-end encryption.",
+                link: "https://proton.me/pass",
+                platform: "All Platforms",
+                features: ["Password Manager", "Encrypted", "Zero-Knowledge", "Free", "Secure Sharing", "Breach Monitoring", "Proton Integration"]
+            },
+            {
+                id: 34,
+                name: "Joplin",
+                category: "note-taking",
+                rating: 4.5,
+                description: "Open-source note-taking app with Markdown support, encryption, and synchronization across devices. Features include notebook organization, tags, search, and web clipper for saving web pages.",
+                link: "https://joplinapp.org/",
+                platform: "All Platforms",
+                features: ["Note Taking", "Markdown", "Encryption", "Free", "Synchronization", "Web Clipper", "Notebook Organization"]
+            },
+            {
+                id: 35,
+                name: "AutoHotkey",
+                category: "automation",
+                rating: 4.7,
+                description: "Automation scripting language for Windows that allows creating macros and hotkeys for almost any task. Can automate GUI manipulation, file operations, and system administration tasks.",
+                link: "https://autohotkey.com/",
+                platform: "Windows",
+                features: ["Automation", "Scripting", "Customization", "Free", "Macros", "Hotkeys", "GUI Automation"]
+            },
+            {
+                id: 36,
+                name: "RustDesk",
+                category: "remote-access",
+                rating: 4.5,
+                description: "Open-source remote desktop software with simplicity and security as primary features. Supports file transfer, chat, multi-monitor, and self-hosting option for privacy-conscious users.",
+                link: "https://rustdesk.com/",
+                platform: "All Platforms",
+                features: ["Remote Desktop", "Open Source", "Secure", "Free", "File Transfer", "Chat", "Self-hosting"]
+            },
+            {
+                id: 37,
+                name: "AnyDesk",
+                category: "remote-access",
+                rating: 4.6,
+                description: "Free and lightweight remote access solution with low latency and high frame rates. Features include file transfer, remote printing, session recording, and unattended access.",
+                link: "https://anydesk.com/",
+                platform: "All Platforms",
+                features: ["Remote Desktop", "Lightweight", "Fast", "Free", "File Transfer", "Low Latency", "Unattended Access"]
+            },
+            {
+                id: 38,
+                name: "ShareX",
+                category: "screenshot",
+                rating: 4.8,
+                description: "Powerful, open-source screenshot and screen recording tool with extensive capture options. Features include screen recording, GIF creation, image editing, and automatic uploads to various services.",
+                link: "https://getsharex.com/",
+                platform: "Windows",
+                features: ["Screenshot", "Screen Recording", "Editing", "Free", "GIF Creation", "Automatic Uploads", "Open Source"]
+            },
+            {
+                id: 39,
+                name: "Greenshot",
+                category: "screenshot",
+                rating: 4.5,
+                description: "Screenshot capture and editing tool with quick annotation and highlighting features. Lightweight utility with printer support, image editor, and various output options including file and clipboard.",
+                link: "https://github.com/greenshot/greenshot",
+                platform: "Windows",
+                features: ["Screenshot", "Editing", "Lightweight", "Free", "Annotation", "Highlighting", "Printer Support"]
+            },
+            {
+                id: 40,
+                name: "VeraCrypt",
+                category: "security",
+                rating: 4.7,
+                description: "Disk encryption software for multiple platforms with enhanced security features. Creates encrypted virtual disks or encrypts entire partitions including system partitions with pre-boot authentication.",
+                link: "https://www.veracrypt.fr/en/Home.html",
+                platform: "Windows/Mac/Linux",
+                features: ["Disk Encryption", "Secure", "Open Source", "Free", "Full Disk", "Pre-boot", "Virtual Disks"]
+            },
+            {
+                id: 41,
+                name: "Cryptomator",
+                category: "security",
+                rating: 4.6,
+                description: "Client-side encryption for cloud files with transparent encryption that works with any cloud storage service. Creates encrypted vaults that appear as regular folders to your cloud sync client.",
+                link: "https://cryptomator.org/",
+                platform: "All Platforms",
+                features: ["Cloud Encryption", "Client-side", "Secure", "Free", "Transparent", "Vaults", "Cloud Agnostic"]
+            },
+            {
+                id: 42,
+                name: "PowerToys",
+                category: "system",
+                rating: 4.7,
+                description: "Microsoft's power user toolkit for Windows with utilities for customization and productivity. Includes FancyZones, PowerRename, Image Resizer, Keyboard Manager, and many other useful tools.",
+                link: "https://learn.microsoft.com/en-us/windows/powertoys/install",
+                platform: "Windows",
+                features: ["System Tools", "Productivity", "Customization", "Free", "FancyZones", "PowerRename", "Keyboard Manager"]
+            },
+            {
+                id: 43,
+                name: "qBittorrent",
+                category: "torrent-clients",
+                rating: 4.6,
+                description: "Free and reliable P2P Bittorrent client with no ads and open source code. Features include sequential downloading, RSS support, IP filtering, torrent creation, and detailed speed graphs.",
+                link: "https://qbittorrent.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Torrent Client", "P2P", "Lightweight", "Free", "No Ads", "RSS Support", "Sequential Download"]
+            },
+            {
+                id: 44,
+                name: "Rufus",
+                category: "boot-tools",
+                rating: 4.8,
+                description: "Bootable USB creation utility for Windows ISOs, Linux distributions, and other bootable media. Fast and reliable with support for UEFI, legacy BIOS, and various disk formatting options.",
+                link: "https://rufus.ie/",
+                platform: "Windows",
+                features: ["USB Creation", "Bootable", "Lightweight", "Free", "UEFI Support", "Fast", "Multiple Formats"]
+            },
+            {
+                id: 45,
+                name: "Windows Terminal",
+                category: "terminal",
+                rating: 4.7,
+                description: "Official Microsoft terminal with modern features, tabs, panes, and extensive customization. Supports Command Prompt, PowerShell, WSL, and SSH with GPU-accelerated text rendering.",
+                link: "https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701",
+                platform: "Windows",
+                features: ["Terminal", "Modern", "Tabs", "Free", "Panes", "Customization", "GPU Accelerated"]
+            },
+            {
+                id: 46,
+                name: "Alacritty",
+                category: "terminal",
+                rating: 4.6,
+                description: "Cross-platform, GPU-accelerated terminal emulator with minimal resource usage and high performance. Focuses on simplicity and speed with configuration through a YAML file.",
+                link: "https://github.com/jwilm/alacritty",
+                platform: "Windows/Mac/Linux",
+                features: ["Terminal", "GPU Accelerated", "Fast", "Free", "Cross-platform", "Minimal", "High Performance"]
+            },
+            {
+                id: 47,
+                name: "Notepad++",
+                category: "text-editors",
+                rating: 4.8,
+                description: "Feature-rich source code editor for Windows with syntax highlighting for many programming languages. Supports plugins, macro recording, session saving, and extensive search capabilities.",
+                link: "https://notepad-plus-plus.org/",
+                platform: "Windows",
+                features: ["Text Editor", "Code Editor", "Plugins", "Free", "Syntax Highlighting", "Macros", "Multiple Languages"]
+            },
+            {
+                id: 48,
+                name: "Sublime Text",
+                category: "text-editors",
+                rating: 4.7,
+                description: "Advanced text editor with extensive plugin ecosystem and powerful editing features. Includes Goto Anything, Command Palette, multiple selections, split editing, and instant project switching.",
+                link: "https://www.sublimetext.com/3",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Editor", "Advanced", "Plugins", "Free", "Multiple Selections", "Split Editing", "Command Palette"]
+            },
+            {
+                id: 49,
+                name: "HandBrake",
+                category: "video",
+                rating: 4.7,
+                description: "Converts videos between formats with compression options and extensive codec support. Includes presets for common devices, batch processing, live preview, and chapter markers support.",
+                link: "https://handbrake.fr/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Converter", "Compression", "Multiple Formats", "Free", "Batch Processing", "Presets", "Codec Support"]
+            },
+            {
+                id: 50,
+                name: "DaVinci Resolve",
+                category: "video",
+                rating: 4.8,
+                description: "Complete video production suite with professional features for editing, color correction, visual effects, and audio post-production. Used by Hollywood professionals with free version available.",
+                link: "https://www.blackmagicdesign.com/products/davinciresolve/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Editor", "Professional", "Color Grading", "Free", "Visual Effects", "Audio Post-production", "Hollywood Grade"]
+            },
+            {
+                id: 51,
+                name: "VirtualBox",
+                category: "virtualization",
+                rating: 4.6,
+                description: "Powerful virtualization software for creating virtual machines running various operating systems. Supports snapshots, shared folders, seamless mode, and extensive guest additions for better integration.",
+                link: "http://www.virtualbox.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Virtualization", "VM Creation", "Cross-platform", "Free", "Snapshots", "Shared Folders", "Guest Additions"]
+            },
+            {
+                id: 52,
+                name: "Docker Desktop",
+                category: "virtualization",
+                rating: 4.7,
+                description: "Containerization for Desktop, built on top of WSL2 with easy management of Docker containers. Includes Kubernetes integration, volume management, and extensive developer tools.",
+                link: "https://www.docker.com/products/docker-desktop/",
+                platform: "Windows/Mac/Linux",
+                features: ["Containerization", "Development", "DevOps", "Free", "Kubernetes", "Volume Management", "WSL2 Integration"]
+            },
+            {
+                id: 53,
+                name: "FancyZones",
+                category: "window-management",
+                rating: 4.6,
+                description: "PowerToys window manager for multi-monitor setups with custom zone layouts for window organization. Allows snapping windows to predefined zones and creating custom layouts for productivity.",
+                link: "https://github.com/microsoft/PowerToys",
+                platform: "Windows",
+                features: ["Window Manager", "Multi-monitor", "Customizable", "Free", "Zone Layouts", "Window Snapping", "Productivity"]
+            },
+            {
+                id: 54,
+                name: "Ardour",
+                category: "daw",
+                rating: 4.6,
+                description: "Free digital audio workstation for recording, editing, and mixing music with professional features. Supports unlimited audio/MIDI tracks, non-destructive editing, and extensive plugin support.",
+                link: "https://ardour.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["DAW", "Audio Editing", "Mixing", "Open Source", "Unlimited Tracks", "Non-destructive", "Plugin Support"]
+            },
+            {
+                id: 55,
+                name: "LMMS",
+                category: "music-production",
+                rating: 4.4,
+                description: "Open-source music production software with synthesizers, samples, and effects for creating electronic music. Includes piano roll, song editor, beat/bassline editor, and FX mixer.",
+                link: "https://lmms.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Production", "Synthesizers", "Samples", "Open Source", "Piano Roll", "Song Editor", "Electronic Music"]
+            },
+            {
+                id: 56,
+                name: "Ocenaudio",
+                category: "audio",
+                rating: 4.5,
+                description: "Cross-platform audio editor with real-time effects preview and easy-to-use interface. Features spectral analysis, multi-selection editing, and support for VST plugins.",
+                link: "https://www.ocenaudio.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Audio Editor", "Real-time Effects", "Multi-track", "Free", "Spectral Analysis", "VST Support", "Easy Interface"]
+            },
+            {
+                id: 57,
+                name: "BorgBackup",
+                category: "backup",
+                rating: 4.7,
+                description: "Deduplicating backup tool with compression and encryption for efficient storage. Creates space-efficient backups with data deduplication, compression, and authenticated encryption.",
+                link: "https://www.borgbackup.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Backup", "Deduplication", "Encryption", "Open Source", "Space Efficient", "Compression", "Authenticated"]
+            },
+            {
+                id: 58,
+                name: "UrBackup",
+                category: "backup",
+                rating: 4.5,
+                description: "Client/server backup system for files and disk images with web interface. Supports incremental file and image backups, continuous backup mode, and easy restoration.",
+                link: "https://www.urbackup.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Backup System", "Client/Server", "Disk Images", "Open Source", "Web Interface", "Incremental", "Continuous Backup"]
+            },
+            {
+                id: 59,
+                name: "Waterfox",
+                category: "browsers",
+                rating: 4.4,
+                description: "Open-source browser based on Firefox with enhanced privacy features and legacy extension support. Focuses on user privacy while maintaining compatibility with older Firefox extensions.",
+                link: "https://www.waterfox.net/",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Privacy", "Firefox-based", "Open Source", "Legacy Extensions", "User Privacy", "Compatibility"]
+            },
+            {
+                id: 60,
+                name: "Vivaldi",
+                category: "browsers",
+                rating: 4.6,
+                description: "Customizable browser with tab stacking, web panels, and extensive customization options. Built for power users with features like notes, calendar, and mail client integration.",
+                link: "https://vivaldi.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Customizable", "Tab Stacking", "Free", "Web Panels", "Notes", "Power User"]
+            },
+            {
+                id: 61,
+                name: "WinMerge",
+                category: "cli-tools",
+                rating: 4.7,
+                description: "Free tool for comparing and merging files and directories with visual diff display. Supports folder comparison, image comparison, and 3-way file comparison with merge.",
+                link: "https://winmerge.org/",
+                platform: "Windows",
+                features: ["File Comparison", "Merging", "Diff Tool", "Free", "Visual Diff", "Folder Comparison", "3-way Merge"]
+            },
+            {
+                id: 62,
+                name: "fd",
+                category: "cli-tools",
+                rating: 4.8,
+                description: "Simple, fast alternative to find command for searching files with colorful output and intuitive syntax. Written in Rust with parallel execution and extensive search options.",
+                link: "https://github.com/sharkdp/fd",
+                platform: "Windows/Mac/Linux",
+                features: ["File Search", "Fast", "Command Line", "Open Source", "Colorful Output", "Parallel Execution", "Rust"]
+            },
+            {
+                id: 63,
+                name: "ripgrep",
+                category: "cli-tools",
+                rating: 4.8,
+                description: "Fast command-line search tool for code and text that recursively searches directories. Respects gitignore rules, supports Unicode, and searches faster than other tools.",
+                link: "https://github.com/BurntSushi/ripgrep",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Search", "Fast", "Command Line", "Open Source", "Recursive", "Gitignore Support", "Unicode"]
+            },
+            {
+                id: 64,
+                name: "Signal Desktop",
+                category: "communication",
+                rating: 4.7,
+                description: "Secure messaging app with end-to-end encryption for calls and texts with privacy focus. Open source, independently audited, and doesn't collect user data or metadata.",
+                link: "https://signal.org/download/",
+                platform: "Windows/Mac/Linux",
+                features: ["Secure Messaging", "Encryption", "Calls", "Free", "End-to-end", "Open Source", "Privacy Focus"]
+            },
+            {
+                id: 65,
+                name: "Jitsi Meet",
+                category: "video-conferencing",
+                rating: 4.5,
+                description: "Open-source video conferencing tool for secure meetings with no account required. Features screen sharing, chat, recording, and end-to-end encryption for private meetings.",
+                link: "https://desktop.jitsi.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Conferencing", "Secure", "Open Source", "Free", "Screen Sharing", "No Account", "End-to-end"]
+            },
+            {
+                id: 66,
+                name: "Zstandard",
+                category: "compression",
+                rating: 4.7,
+                description: "Fast compression algorithm with command-line tools for archives with high compression ratios. Real-time compression, configurable compression levels, and dictionary compression support.",
+                link: "https://facebook.github.io/zstd/",
+                platform: "Windows/Mac/Linux",
+                features: ["Compression", "Fast Algorithm", "Command Line", "Open Source", "Real-time", "Configurable", "Dictionary"]
+            },
+            {
+                id: 67,
+                name: "AutoDarkMode",
+                category: "customization",
+                rating: 4.5,
+                description: "Automatically switches between light and dark themes based on time or sunrise/sunset. Customizable themes for Windows, apps, and browsers with manual override options.",
+                link: "https://github.com/AutoDarkMode/Windows-Auto-Night-Mode",
+                platform: "Windows",
+                features: ["Theme Switching", "Auto Dark Mode", "Customizable", "Free", "Time-based", "Sunrise/Sunset", "Manual Override"]
+            },
+            {
+                id: 68,
+                name: "ModernFlyouts",
+                category: "customization",
+                rating: 4.6,
+                description: "Customizable flyouts for volume, media, and airplane mode with modern design. Replaces Windows default flyouts with customizable, modern alternatives with additional features.",
+                link: "https://github.com/ModernFlyouts/ModernFlyouts",
+                platform: "Windows",
+                features: ["Flyouts", "Customizable", "Modern UI", "Open Source", "Volume Control", "Media Control", "Airplane Mode"]
+            },
+            {
+                id: 69,
+                name: "DBeaver",
+                category: "databases",
+                rating: 4.7,
+                description: "Universal database tool supporting SQL, NoSQL, and big data with extensive features. Includes ER diagrams, data transfer, schema comparison, and support for 80+ database types.",
+                link: "https://dbeaver.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Database Client", "Universal", "SQL/NoSQL", "Free", "ER Diagrams", "Data Transfer", "80+ Databases"]
+            },
+            {
+                id: 70,
+                name: "HeidiSQL",
+                category: "databases",
+                rating: 4.6,
+                description: "Lightweight client for MySQL, MariaDB, and SQL Server with easy-to-use interface. Features table browser, SQL editor, data import/export, and server monitoring capabilities.",
+                link: "https://www.heidisql.com/",
+                platform: "Windows",
+                features: ["Database Client", "Lightweight", "MySQL/SQL Server", "Free", "Table Browser", "SQL Editor", "Import/Export"]
+            },
+            {
+                id: 71,
+                name: "ngrok",
+                category: "development",
+                rating: 4.7,
+                description: "Secure tunneling to localhost for web development with free tier for testing. Creates secure public URLs to localhost for testing webhooks, APIs, and websites.",
+                link: "https://ngrok.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Tunneling", "Web Development", "Localhost", "Free Tier", "Secure", "Public URLs", "Webhook Testing"]
+            },
+            {
+                id: 72,
+                name: "Excalidraw",
+                category: "drawing",
+                rating: 4.6,
+                description: "Collaborative whiteboard for diagramming and sketching ideas with hand-drawn style. Exports to PNG/SVG, supports real-time collaboration, and works completely in browser.",
+                link: "https://excalidraw.com/",
+                platform: "Web",
+                features: ["Diagramming", "Collaborative", "Whiteboard", "Free", "Hand-drawn", "PNG/SVG Export", "Real-time"]
+            },
+            {
+                id: 73,
+                name: "QuickLook",
+                category: "file-management",
+                rating: 4.7,
+                description: "File previewer by pressing space in Explorer for quick file previews without opening. Supports images, videos, PDFs, Office documents, and various other file formats.",
+                link: "https://pooi.moe/QuickLook/",
+                platform: "Windows",
+                features: ["File Preview", "Quick Look", "Space Key", "Free", "Multiple Formats", "Images", "PDFs"]
+            },
+            {
+                id: 74,
+                name: "DevToys",
+                category: "development",
+                rating: 4.8,
+                description: "Swiss army knife for developers with utilities like JSON formatter, encoder/decoder, and more. Includes hash generators, text comparators, regex testers, and many other tools.",
+                link: "https://devtoys.app/",
+                platform: "Windows",
+                features: ["Developer Tools", "JSON Formatter", "Utilities", "Free", "Encoder/Decoder", "Hash Generator", "Regex Tester"]
+            },
+            {
+                id: 75,
+                name: "eM Client",
+                category: "email-clients",
+                rating: 4.5,
+                description: "Free email client with calendar and task management for personal use. Supports multiple accounts, PGP encryption, conversation view, and quick actions for productivity.",
+                link: "https://www.emclient.com/",
+                platform: "Windows/Mac",
+                features: ["Email Client", "Calendar", "Task Management", "Free", "Multiple Accounts", "PGP", "Conversation View"]
+            },
+            {
+                id: 76,
+                name: "Claws Mail",
+                category: "email-clients",
+                rating: 4.3,
+                description: "Lightweight, customizable email client with extensive features and plugin support. Fast, configurable interface with filtering, searching, and multiple account management.",
+                link: "https://www.claws-mail.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Lightweight", "Customizable", "Open Source", "Plugin Support", "Filtering", "Fast"]
+            },
+            {
+                id: 77,
+                name: "Double Commander",
+                category: "file-management",
+                rating: 4.5,
+                description: "Dual-pane file manager with extensive features inspired by Total Commander and Norton Commander. Tabbed interface, built-in file viewer/editor, and extensive plugin support.",
+                link: "https://doublecmd.sourceforge.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["File Manager", "Dual-pane", "Extensive Features", "Open Source", "Tabbed Interface", "Built-in Viewer", "Plugin Support"]
+            },
+            {
+                id: 78,
+                name: "muCommander",
+                category: "file-management",
+                rating: 4.4,
+                description: "Cross-platform file manager written in Java with dual-pane interface and cloud support. Supports FTP, SFTP, SMB, NFS, and various archive formats with plugin architecture.",
+                link: "https://www.mucommander.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["File Manager", "Cross-platform", "Java", "Open Source", "Dual-pane", "Cloud Support", "Archive Support"]
+            },
+            {
+                id: 79,
+                name: "MyPaint",
+                category: "graphics",
+                rating: 4.4,
+                description: "Simple painting program focused on brushes and tablets with minimal interface. Designed for digital painters with focus on brush engine and natural painting experience.",
+                link: "https://mypaint.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Painting", "Brushes", "Tablet Support", "Open Source", "Minimal Interface", "Brush Engine", "Digital Painting"]
+            },
+            {
+                id: 80,
+                name: "Pinta",
+                category: "graphics",
+                rating: 4.3,
+                description: "Lightweight image editor similar to Paint.NET with layers, adjustments, and effects. Easy-to-use interface with drawing tools, shapes, text, and various image adjustments.",
+                link: "https://www.pinta-project.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Image Editor", "Lightweight", "Paint.NET-like", "Open Source", "Layers", "Adjustments", "Drawing Tools"]
+            },
+            {
+                id: 81,
+                name: "Code::Blocks",
+                category: "ide",
+                rating: 4.4,
+                description: "Free C/C++ IDE with compiler integration, debugger, and plugin support. Supports multiple compilers including GCC, Clang, and Visual C++ with project management features.",
+                link: "https://www.codeblocks.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["C/C++ IDE", "Compiler Integration", "Debugger", "Free", "Multiple Compilers", "Plugin Support", "Project Management"]
+            },
+            {
+                id: 82,
+                name: "VSCodium",
+                category: "development",
+                rating: 4.7,
+                description: "Open-source binary of VS Code without Microsoft telemetry and branding. Same features as VS Code but with privacy-focused changes and open-source licensing.",
+                link: "https://vscodium.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Code Editor", "VS Code Fork", "No Telemetry", "Open Source", "Privacy Focus", "Same Features", "Open License"]
+            },
+            {
+                id: 83,
+                name: "Zenmap",
+                category: "networking",
+                rating: 4.5,
+                description: "GUI for Nmap network scanner with profile management and results visualization. Creates network maps, saves scan results, and provides easier access to Nmap features.",
+                link: "https://nmap.org/zenmap/",
+                platform: "Windows/Mac/Linux",
+                features: ["Network Scanner", "GUI", "Nmap Frontend", "Free", "Network Maps", "Results Visualization", "Profile Management"]
+            },
+            {
+                id: 84,
+                name: "Calligra",
+                category: "office",
+                rating: 4.3,
+                description: "Office suite with advanced drawing and database tools for creative work. Includes Words for documents, Sheets for spreadsheets, Stage for presentations, and specialized tools.",
+                link: "https://calligra.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Office Suite", "Drawing Tools", "Database", "Open Source", "Creative Work", "Multiple Tools", "KDE Based"]
+            },
+            {
+                id: 85,
+                name: "KeePassXC",
+                category: "password-managers",
+                rating: 4.7,
+                description: "Community fork of KeePass with enhanced features and cross-platform support. Includes browser integration, YubiKey support, and modern interface with regular updates.",
+                link: "https://keepassxc.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Password Manager", "KeePass Fork", "Enhanced Features", "Open Source", "Cross-platform", "Browser Integration", "YubiKey"]
+            },
+            {
+                id: 86,
+                name: "KeePass",
+                category: "password-managers",
+                rating: 4.6,
+                description: "Lightweight password manager with strong encryption and plugin architecture. Stores passwords in encrypted database with master password or key file protection.",
+                link: "https://keepass.info/",
+                platform: "Windows",
+                features: ["Password Manager", "Lightweight", "Encryption", "Free", "Plugin Architecture", "Master Password", "Key File"]
+            },
+            {
+                id: 87,
+                name: "frhed",
+                category: "hex-editors",
+                rating: 4.3,
+                description: "Free hex editor for binary files with search/replace and diff capabilities. Lightweight editor for examining and editing binary files with various data interpretation options.",
+                link: "https://frhed.sourceforge.net/",
+                platform: "Windows",
+                features: ["Hex Editor", "Binary Files", "Lightweight", "Free", "Search/Replace", "Diff", "Binary Editing"]
+            },
+            {
+                id: 88,
+                name: "LogExpert",
+                category: "log-viewers",
+                rating: 4.5,
+                description: "Advanced log file viewer with filtering, highlighting, and columnization. Tails log files in real-time, applies filters, and highlights important information for easier debugging.",
+                link: "https://github.com/zarunbal/LogExpert",
+                platform: "Windows",
+                features: ["Log Viewer", "Filtering", "Advanced Features", "Free", "Real-time", "Highlighting", "Columnization"]
+            },
+            {
+                id: 89,
+                name: "Focus Booster",
+                category: "pomodoro",
+                rating: 4.4,
+                description: "Pomodoro timer for time management based on Pomodoro Technique. Tracks work sessions, breaks, and generates productivity reports with simple, distraction-free interface.",
+                link: "https://www.focusboosterapp.com/",
+                platform: "Web/Desktop",
+                features: ["Pomodoro Timer", "Time Management", "Focus", "Free", "Work Sessions", "Productivity Reports", "Distraction-free"]
+            },
+            {
+                id: 90,
+                name: "Toggl Track",
+                category: "time-tracking",
+                rating: 4.6,
+                description: "Time tracking app with reports and team features in free tier. Tracks time across projects, generates reports, and integrates with various project management tools.",
+                link: "https://toggl.com/track/",
+                platform: "All Platforms",
+                features: ["Time Tracking", "Reports", "Productivity", "Free Tier", "Project Tracking", "Team Features", "Integrations"]
+            },
+            {
+                id: 91,
+                name: "Notion",
+                category: "productivity",
+                rating: 4.7,
+                description: "All-in-one workspace for notes and tasks with free plan for personal use. Combines notes, tasks, wikis, and databases in flexible blocks with collaboration features.",
+                link: "https://www.notion.so/",
+                platform: "All Platforms",
+                features: ["Workspace", "Notes", "Tasks", "Free Plan", "Databases", "Collaboration", "Flexible Blocks"]
+            },
+            {
+                id: 92,
+                name: "Psiphon",
+                category: "vpn-proxy",
+                rating: 4.4,
+                description: "Free censorship circumvention tool that uses VPN, SSH, and HTTP proxy technology. Automatically finds fastest connection and evades censorship in restricted regions.",
+                link: "https://psiphon.ca/",
+                platform: "Windows/Android/iOS",
+                features: ["Censorship Circumvention", "VPN", "Proxy", "Free", "SSH", "HTTP Proxy", "Automatic Connection"]
+            },
+            {
+                id: 93,
+                name: "OpenVPN",
+                category: "vpn-proxy",
+                rating: 4.7,
+                description: "Open-source VPN client with strong security and extensive configuration options. Implements VPN techniques to create secure point-to-point connections with encryption.",
+                link: "https://openvpn.net/",
+                platform: "Windows/Mac/Linux",
+                features: ["VPN Client", "Open Source", "Secure", "Free", "Strong Security", "Extensive Configuration", "Point-to-point"]
+            },
+            {
+                id: 94,
+                name: "NoMachine",
+                category: "remote-access",
+                rating: 4.5,
+                description: "Free remote desktop software for personal use with high performance and low latency. Uses NX technology for fast remote access with sound, printing, and USB support.",
+                link: "https://www.nomachine.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Remote Desktop", "Fast", "Personal Use", "Free", "NX Technology", "Sound Support", "USB Support"]
+            },
+            {
+                id: 95,
+                name: "Kap",
+                category: "screen-capture",
+                rating: 4.4,
+                description: "Open-source screen recorder for GIFs and videos with customizable capture area. Records screen to GIF or MP4 with options for frame rate, quality, and cursor display.",
+                link: "https://getkap.co/",
+                platform: "Mac",
+                features: ["Screen Recorder", "GIF Recording", "Open Source", "Free", "Customizable Area", "Frame Rate", "Cursor Display"]
+            },
+            {
+                id: 96,
+                name: "PicPick",
+                category: "screenshot",
+                rating: 4.6,
+                description: "Free screenshot tool with editor for personal use with multiple capture modes. Includes color picker, pixel ruler, protractor, and crosshair for design and development work.",
+                link: "https://picpick.app/",
+                platform: "Windows",
+                features: ["Screenshot Tool", "Editor", "Personal Use", "Free", "Color Picker", "Pixel Ruler", "Multiple Modes"]
+            },
+            {
+                id: 97,
+                name: "ClamAV",
+                category: "security",
+                rating: 4.5,
+                description: "Open-source antivirus engine for malware detection with command-line interface. Includes freshclam for updating virus definitions and clamscan for scanning files/directories.",
+                link: "https://www.clamav.net/",
+                platform: "Windows/Mac/Linux",
+                features: ["Antivirus", "Malware Detection", "Open Source", "Free", "Command-line", "Virus Definitions", "File Scanning"]
+            },
+            {
+                id: 98,
+                name: "OpenVAS",
+                category: "vulnerability-scanners",
+                rating: 4.6,
+                description: "Vulnerability scanner for networks with extensive test database and reporting. Scans for security vulnerabilities, generates reports, and provides remediation advice.",
+                link: "https://www.openvas.org/",
+                platform: "Linux/Unix",
+                features: ["Vulnerability Scanner", "Network Security", "Open Source", "Free", "Extensive Tests", "Reporting", "Remediation"]
+            },
+            {
+                id: 99,
+                name: "Metasploit",
+                category: "penetration-testing",
+                rating: 4.7,
+                description: "Penetration testing framework for developing and executing exploit code. Includes exploits, payloads, encoders, and auxiliary modules for security testing and research.",
+                link: "https://www.metasploit.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Penetration Testing", "Security", "Framework", "Free", "Exploits", "Payloads", "Security Testing"]
+            },
+            {
+                id: 100,
+                name: "Nikto",
+                category: "vulnerability-scanners",
+                rating: 4.4,
+                description: "Web server vulnerability scanner that tests for dangerous files and misconfigurations. Scans web servers for vulnerabilities, outdated software, and configuration issues.",
+                link: "https://cirt.net/Nikto2",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Scanner", "Vulnerability", "Security", "Open Source", "Web Server", "Dangerous Files", "Misconfigurations"]
+            },
+            {
+                id: 101,
+                name: "Snort",
+                category: "intrusion-detection",
+                rating: 4.7,
+                description: "Network intrusion detection system that monitors network traffic for attacks. Real-time traffic analysis, packet logging, and protocol analysis with rule-based detection.",
+                link: "https://www.snort.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["IDS", "Network Security", "Intrusion Detection", "Open Source", "Real-time", "Packet Logging", "Rule-based"]
+            },
+            {
+                id: 102,
+                name: "Bulk Rename Utility",
+                category: "file-management",
+                rating: 4.6,
+                description: "Advanced file renamer with regex support and multiple renaming operations. Renames files in bulk with various rules including regex, numbering, and case changes.",
+                link: "https://www.bulkrenameutility.co.uk/",
+                platform: "Windows",
+                features: ["File Renamer", "Regex Support", "Batch Renaming", "Free", "Multiple Operations", "Numbering", "Case Changes"]
+            },
+            {
+                id: 103,
+                name: "Speccy",
+                category: "system-information",
+                rating: 4.5,
+                description: "System information tool that shows detailed hardware specifications. Displays CPU, RAM, motherboard, graphics, storage, and network information with temperature monitoring.",
+                link: "https://www.ccleaner.com/speccy",
+                platform: "Windows",
+                features: ["System Info", "Hardware Monitoring", "Diagnostics", "Free", "Detailed Specs", "Temperature", "Hardware Info"]
+            },
+            {
+                id: 104,
+                name: "Recuva",
+                category: "file-recovery",
+                rating: 4.6,
+                description: "File recovery tool that recovers deleted files from hard drives and memory cards. Deep scan option, secure overwrite, and preview of recoverable files before recovery.",
+                link: "https://www.ccleaner.com/recuva",
+                platform: "Windows",
+                features: ["File Recovery", "Data Recovery", "Deleted Files", "Free", "Deep Scan", "Secure Overwrite", "Preview"]
+            },
+            {
+                id: 105,
+                name: "Tabby",
+                category: "terminal",
+                rating: 4.6,
+                description: "Modern terminal with tabs, panes, and plugin support for enhanced workflow. SSH client, serial port support, and theming with cross-platform availability.",
+                link: "https://tabby.sh/",
+                platform: "Windows/Mac/Linux",
+                features: ["Terminal", "Modern", "Tabs", "Plugins", "Free", "SSH Client", "Theming"]
+            },
+            {
+                id: 106,
+                name: "Micro",
+                category: "text-editors",
+                rating: 4.5,
+                description: "Modern terminal-based text editor with mouse support and easy installation. Includes syntax highlighting, multiple cursors, and plugin system similar to modern editors.",
+                link: "https://micro-editor.github.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Editor", "Terminal-based", "Modern", "Open Source", "Mouse Support", "Multiple Cursors", "Plugins"]
+            },
+            {
+                id: 107,
+                name: "Nano",
+                category: "text-editors",
+                rating: 4.3,
+                description: "Simple text editor for terminals with easy-to-use interface and basic features. Includes syntax highlighting, search/replace, and multiple buffer support for quick editing.",
+                link: "https://www.nano-editor.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Editor", "Terminal", "Simple", "Open Source", "Syntax Highlighting", "Search/Replace", "Multiple Buffers"]
+            },
+            {
+                id: 108,
+                name: "Git for Windows",
+                category: "development",
+                rating: 4.7,
+                description: "Git client with bash emulation and Windows integration for version control. Includes Git BASH, Git GUI, and Shell integration for managing Git repositories on Windows.",
+                link: "https://gitforwindows.org/",
+                platform: "Windows",
+                features: ["Git Client", "Bash Emulation", "Version Control", "Free", "Windows Integration", "Git BASH", "Git GUI"]
+            },
+            {
+                id: 109,
+                name: "OpenShot",
+                category: "video",
+                rating: 4.5,
+                description: "Free video editor with effects, animations, and easy-to-use interface for beginners. Includes timeline editing, video effects, title templates, and 3D animated titles.",
+                link: "https://www.openshot.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Editor", "Effects", "Animations", "Open Source", "Timeline Editing", "Title Templates", "3D Titles"]
+            },
+            {
+                id: 110,
+                name: "Avidemux",
+                category: "video",
+                rating: 4.4,
+                description: "Simple video editor for cutting, filtering, and encoding video files. Supports various video formats, basic editing operations, and encoding with different codecs.",
+                link: "https://avidemux.sourceforge.net/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Editor", "Cutting", "Encoding", "Simple", "Free", "Filtering", "Multiple Formats"]
+            },
+            {
+                id: 111,
+                name: "Hyper-V",
+                category: "virtualization",
+                rating: 4.6,
+                description: "Built-in Windows virtualization for creating and managing virtual machines. Includes quick create, checkpoint management, and integration services for guest OS.",
+                link: "https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/",
+                platform: "Windows",
+                features: ["Virtualization", "Built-in", "Windows Pro", "Free", "Quick Create", "Checkpoints", "Integration Services"]
+            },
+            {
+                id: 112,
+                name: "Brain.fm",
+                category: "productivity",
+                rating: 4.5,
+                description: "Focus music app that uses AI-generated music to improve concentration and productivity. Science-backed audio technology for focus, relaxation, meditation, and sleep.",
+                link: "https://www.brain.fm/",
+                platform: "Web/Mobile",
+                features: ["Focus Music", "Concentration", "Productivity", "Free Trial", "AI-generated", "Science-backed", "Relaxation"]
+            },
+            {
+                id: 113,
+                name: "FXSound",
+                category: "audio",
+                rating: 4.4,
+                description: "Boost sound quality, volume, and bass with a modern UI and real-time effects. Enhances audio from any source including games, music, and videos with customizable presets.",
+                link: "https://fxsound.com/",
+                platform: "Windows",
+                features: ["Audio Enhancement", "Bass Boost", "Volume", "Free", "Real-time", "Customizable Presets", "Sound Quality"]
+            },
+            {
+                id: 114,
+                name: "JACK Audio",
+                category: "audio",
+                rating: 4.3,
+                description: "Audio server for routing and mixing sound between programs with low latency. Professional audio connection kit for connecting applications and audio hardware.",
+                link: "https://jackaudio.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Audio Server", "Routing", "Mixing", "Open Source", "Low Latency", "Professional", "Audio Connection"]
+            },
+            {
+                id: 115,
+                name: "Ambie",
+                category: "audio",
+                rating: 4.5,
+                description: "Use white noise, nature sounds, and more to boost productivity and focus. Curated sounds for concentration, relaxation, and sleep with timer and favorites system.",
+                link: "https://github.com/jenius-apps/ambie",
+                platform: "Windows",
+                features: ["White Noise", "Nature Sounds", "Productivity", "Open Source", "Focus", "Relaxation", "Timer"]
+            },
+            {
+                id: 116,
+                name: "AIMP",
+                category: "audio",
+                rating: 4.6,
+                description: "Music player with a clean interface and powerful features for audio enthusiasts. Supports many formats, audio converter, tag editor, and extensive visualization options.",
+                link: "https://aimp.ru",
+                platform: "Windows",
+                features: ["Music Player", "Clean Interface", "Powerful", "Free", "Audio Converter", "Tag Editor", "Visualization"]
+            },
+            {
+                id: 117,
+                name: "MusicBee",
+                category: "audio",
+                rating: 4.7,
+                description: "Feature-rich music player and manager with extensive library organization. Automatic tagging, podcast support, sync to devices, and customizable interface with skins.",
+                link: "https://getmusicbee.com",
+                platform: "Windows",
+                features: ["Music Player", "Music Manager", "Feature-rich", "Free", "Library Organization", "Podcasts", "Device Sync"]
+            },
+            {
+                id: 118,
+                name: "Strawberry Music Player",
+                category: "audio",
+                rating: 4.5,
+                description: "Music player for organizing and playing audio collections with focus on sound quality. Supports multiple backends, musicbrainz tagging, and streaming services integration.",
+                link: "https://strawberrymusicplayer.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Player", "Organizer", "Cross-platform", "Open Source", "Sound Quality", "Musicbrainz", "Streaming"]
+            },
+            {
+                id: 119,
+                name: "Wavosaur",
+                category: "sound-editing",
+                rating: 4.3,
+                description: "Simple audio editor for recording, editing, and processing sound files. Batch processing, VST support, and spectrum analysis with no installation required (portable).",
+                link: "https://www.wavosaur.com",
+                platform: "Windows",
+                features: ["Audio Editor", "Recording", "Simple", "Free", "Batch Processing", "VST Support", "Portable"]
+            },
+            {
+                id: 120,
+                name: "Cakewalk",
+                category: "daw",
+                rating: 4.7,
+                description: "Full-featured DAW for music recording and editing with professional workflow. Includes ProChannel, Matrix View, and comprehensive mixing console for music production.",
+                link: "https://bandlab.com/products/cakewalk",
+                platform: "Windows",
+                features: ["DAW", "Music Recording", "Professional", "Free", "ProChannel", "Matrix View", "Mixing Console"]
+            },
+            {
+                id: 121,
+                name: "MuseScore",
+                category: "music-notation",
+                rating: 4.8,
+                description: "Software for creating, playing, and sharing sheet music with WYSIWYG editor. Supports unlimited staves, MIDI input, musicXML import/export, and large community library.",
+                link: "https://musescore.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Sheet Music", "Music Notation", "Composition", "Free", "WYSIWYG", "MusicXML", "Community Library"]
+            },
+            {
+                id: 122,
+                name: "Chrome",
+                category: "browsers",
+                rating: 4.8,
+                description: "Fast browser with integrated Google services and extensive extension library. Includes sync across devices, built-in translation, developer tools, and regular security updates.",
+                link: "https://google.com/chrome",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Fast", "Google Services", "Free", "Extension Library", "Sync", "Security Updates"]
+            },
+            {
+                id: 123,
+                name: "Chromium",
+                category: "browsers",
+                rating: 4.6,
+                description: "Open-source browser project behind Chrome with development-focused features. Allows building custom browsers, testing new features, and accessing bleeding-edge updates.",
+                link: "https://chromium.org/Home",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Open Source", "Chrome Base", "Free", "Development", "Custom Builds", "Bleeding-edge"]
+            },
+            {
+                id: 124,
+                name: "Microsoft Edge",
+                category: "browsers",
+                rating: 4.5,
+                description: "Chromium-based browser with Microsoft enhancements and productivity features. Includes Collections, vertical tabs, sleeping tabs, and integration with Microsoft services.",
+                link: "https://microsoft.com/edge",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Chromium-based", "Microsoft", "Free", "Collections", "Vertical Tabs", "Productivity"]
+            },
+            {
+                id: 125,
+                name: "Min",
+                category: "browsers",
+                rating: 4.3,
+                description: "Fast, minimal browser prioritizing privacy and efficiency with simplified interface. Built with Electron, includes ad blocking, reader mode, and privacy protection by default.",
+                link: "https://minbrowser.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Minimal", "Privacy", "Open Source", "Ad Blocking", "Reader Mode", "Electron"]
+            },
+            {
+                id: 126,
+                name: "Opera",
+                category: "browsers",
+                rating: 4.4,
+                description: "Browser with ad-blocking, VPN, and speed with unique sidebar features. Includes built-in messengers, battery saver, and flow feature for device synchronization.",
+                link: "https://opera.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Ad-blocking", "Built-in VPN", "Free", "Sidebar", "Battery Saver", "Flow"]
+            },
+            {
+                id: 127,
+                name: "Mullvad Browser",
+                category: "browsers",
+                rating: 4.7,
+                description: "Privacy browser with Tor and anti-fingerprinting developed with Mullvad VPN. Hardened Firefox with privacy enhancements and resistance to browser fingerprinting.",
+                link: "https://mullvad.net/en/download/browser",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Privacy", "Tor", "Anti-fingerprinting", "Hardened Firefox", "Mullvad", "Privacy Enhancements"]
+            },
+            {
+                id: 128,
+                name: "WhatsApp",
+                category: "communication",
+                rating: 4.8,
+                description: "Messaging app with text, voice, video, and sharing with end-to-end encryption. Includes group chats, voice messages, document sharing, and cross-platform availability.",
+                link: "https://whatsapp.com",
+                platform: "Windows/Mac",
+                features: ["Messaging", "Voice/Video Calls", "File Sharing", "Free", "End-to-end", "Group Chats", "Cross-platform"]
+            },
+            {
+                id: 129,
+                name: "Slack",
+                category: "collaboration",
+                rating: 4.7,
+                description: "Collaboration hub for teams with messaging, file sharing, and app integrations. Includes channels, direct messages, voice/video calls, and extensive third-party integrations.",
+                link: "https://slack.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Team Collaboration", "Messaging", "Integrations", "Free Tier", "Channels", "File Sharing", "Voice/Video"]
+            },
+            {
+                id: 130,
+                name: "Microsoft Teams",
+                category: "collaboration",
+                rating: 4.6,
+                description: "Team platform with chat, file sharing, and video meetings for collaboration. Includes meetings, channels, file collaboration, and integration with Office 365 apps.",
+                link: "https://microsoft.com/en-us/microsoft-teams/group-chat-software",
+                platform: "Windows/Mac/Linux",
+                features: ["Team Platform", "Video Conferencing", "Chat", "Free", "Meetings", "File Collaboration", "Office Integration"]
+            },
+            {
+                id: 131,
+                name: "Tutanota",
+                category: "email-clients",
+                rating: 4.5,
+                description: "Encrypted email focused on privacy with automatic end-to-end encryption. Includes encrypted calendar, contacts, and search with open-source code for transparency.",
+                link: "https://tutanota.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Encrypted Email", "Privacy", "Secure", "Free", "End-to-end", "Encrypted Calendar", "Open Source"]
+            },
+            {
+                id: 132,
+                name: "The Unarchiver",
+                category: "compression",
+                rating: 4.6,
+                description: "Tool for extracting ZIP, RAR, ISO, and many other archive formats on macOS. Simple drag-and-drop interface with support for less common archive formats.",
+                link: "https://theunarchiver.com",
+                platform: "Mac",
+                features: ["Archive Extractor", "Multiple Formats", "Simple", "Free", "Drag-and-drop", "RAR Support", "ISO Support"]
+            },
+            {
+                id: 133,
+                name: "Winaero",
+                category: "customization",
+                rating: 4.4,
+                description: "All-in-one app for tuning Windows settings and appearance with advanced options. Includes tweaks for taskbar, start menu, file explorer, and system performance.",
+                link: "https://winaerotweaker.com",
+                platform: "Windows",
+                features: ["Windows Tweaker", "Settings", "Customization", "Free", "Taskbar Tweaks", "Start Menu", "Performance"]
+            },
+            {
+                id: 134,
+                name: "bfxr",
+                category: "web-apps",
+                rating: 4.4,
+                description: "Make sound effects for games in your browser with simple controls and presets. Generates 8-bit style sound effects for games with export to WAV format.",
+                link: "http://www.bfxr.net/",
+                platform: "Web",
+                features: ["Sound Effects", "Game Audio", "Browser-based", "Free", "8-bit", "Presets", "WAV Export"]
+            },
+            {
+                id: 135,
+                name: "MP3 Cut",
+                category: "web-apps",
+                rating: 4.3,
+                description: "Online audio cutter for trimming MP3 files directly in browser without installation. Simple interface for cutting, fading, and adjusting volume of audio files.",
+                link: "http://mp3cut.net/",
+                platform: "Web",
+                features: ["Audio Cutter", "MP3 Editor", "Browser-based", "Free", "Trimming", "Fading", "Volume Adjust"]
+            },
+            {
+                id: 136,
+                name: "AI Vocal Remover",
+                category: "web-apps",
+                rating: 4.5,
+                description: "Separate voice from music using AI technology for karaoke or remixing. Uses machine learning to isolate vocals and instrumental tracks from songs.",
+                link: "https://vocalremover.org",
+                platform: "Web",
+                features: ["Vocal Remover", "AI Technology", "Music Separation", "Free", "Karaoke", "Remixing", "Machine Learning"]
+            },
+            {
+                id: 137,
+                name: "VideoToolbox",
+                category: "web-apps",
+                rating: 4.3,
+                description: "Video editor supporting files up to 600MB with basic editing features online. Includes trimming, merging, adding subtitles, and format conversion in browser.",
+                link: "http://videotoolbox.com",
+                platform: "Web",
+                features: ["Video Editor", "Online", "600MB Limit", "Free", "Trimming", "Merging", "Subtitles"]
+            },
+            {
+                id: 138,
+                name: "ShapeShift.io",
+                category: "cryptocurrency",
+                rating: 4.3,
+                description: "Instant cryptocurrency conversion platform for trading between different coins. Non-custodial platform that doesn't hold user funds with support for many cryptocurrencies.",
+                link: "https://shapeshift.io",
+                platform: "Web",
+                features: ["Cryptocurrency", "Conversion", "Trading", "Free", "Non-custodial", "Instant", "Multiple Coins"]
+            },
+            {
+                id: 139,
+                name: "TradingView",
+                category: "finance",
+                rating: 4.7,
+                description: "Real-time market insights from exchanges worldwide with advanced charting tools. Includes technical indicators, drawing tools, screeners, and social features for traders.",
+                link: "https://www.tradingview.com/",
+                platform: "Web",
+                features: ["Stock Charts", "Market Analysis", "Real-time", "Free Tier", "Technical Indicators", "Drawing Tools", "Social"]
+            },
+            {
+                id: 140,
+                name: "InvoiceToMe",
+                category: "finance",
+                rating: 4.4,
+                description: "Generate professional invoices from templates with automatic calculations. Includes tax calculations, client management, and invoice tracking for small businesses.",
+                link: "https://invoiceto.me/",
+                platform: "Web",
+                features: ["Invoice Generator", "Templates", "Professional", "Free", "Tax Calculations", "Client Management", "Tracking"]
+            },
+            {
+                id: 141,
+                name: "Tlk.io",
+                category: "web-apps",
+                rating: 4.2,
+                description: "Create chat rooms with custom URLs for quick conversations without registration. Simple anonymous chat rooms with customizable URLs and basic moderation options.",
+                link: "https://tlk.io/",
+                platform: "Web",
+                features: ["Chat Rooms", "Custom URLs", "Simple", "Free", "Anonymous", "No Registration", "Quick Setup"]
+            },
+            {
+                id: 142,
+                name: "Whereby",
+                category: "video-conferencing",
+                rating: 4.5,
+                description: "Video conferencing with custom room URLs and no app installation required. Simple video meetings in browser with screen sharing and recording options.",
+                link: "https://whereby.com/",
+                platform: "Web",
+                features: ["Video Conferencing", "Custom Rooms", "No App Needed", "Free", "Screen Sharing", "Recording", "Browser-based"]
+            },
+            {
+                id: 143,
+                name: "FaxZero",
+                category: "web-apps",
+                rating: 4.3,
+                description: "Send online faxes for free with cover page and basic features. Allows sending faxes to US and Canada with limitations on number of pages and daily sends.",
+                link: "https://faxzero.com/",
+                platform: "Web",
+                features: ["Online Fax", "Free", "Document Sending", "Web-based", "Cover Page", "US/Canada", "Limited Pages"]
+            },
+            {
+                id: 144,
+                name: "Overleaf",
+                category: "document-editors",
+                rating: 4.8,
+                description: "LaTeX editor with unlimited projects and real-time collaboration features. Includes templates, bibliography management, and GitHub integration for academic writing.",
+                link: "https://www.overleaf.com/",
+                platform: "Web",
+                features: ["LaTeX Editor", "Collaboration", "Real-time", "Free", "Templates", "Bibliography", "GitHub Integration"]
+            },
+            {
+                id: 145,
+                name: "Dillinger",
+                category: "document-editors",
+                rating: 4.5,
+                description: "Markdown WYSIWYG editor with HTML/PDF export and cloud storage integration. Live preview, export to multiple formats, and integration with Dropbox/Google Drive.",
+                link: "http://dillinger.io/",
+                platform: "Web",
+                features: ["Markdown Editor", "WYSIWYG", "Export", "Free", "Live Preview", "Cloud Integration", "Multiple Formats"]
+            },
+            {
+                id: 146,
+                name: "StackEdit",
+                category: "document-editors",
+                rating: 4.6,
+                description: "Rich in-browser Markdown editor that works offline with synchronization features. Includes math expressions, diagrams, and publishing to various platforms.",
+                link: "https://stackedit.io/",
+                platform: "Web",
+                features: ["Markdown Editor", "Offline", "Rich Features", "Free", "Math Expressions", "Diagrams", "Publishing"]
+            },
+            {
+                id: 147,
+                name: "EtherCalc",
+                category: "document-editors",
+                rating: 4.4,
+                description: "Online spreadsheet editor that exports to Excel with collaboration features. Web-based alternative to Excel with real-time collaboration and formula support.",
+                link: "https://ethercalc.net/",
+                platform: "Web",
+                features: ["Spreadsheet", "Online", "Excel Export", "Free", "Collaboration", "Real-time", "Formulas"]
+            },
+            {
+                id: 148,
+                name: "Draw.io",
+                category: "diagramming",
+                rating: 4.7,
+                description: "Flowchart and UML diagram tool that exports to PNG, PDF, and other formats. Includes extensive shape libraries, templates, and integration with cloud storage.",
+                link: "https://www.draw.io/",
+                platform: "Web",
+                features: ["Flowchart", "UML Diagrams", "Export", "Free", "Shape Libraries", "Templates", "Cloud Integration"]
+            },
+            {
+                id: 149,
+                name: "AutoDraw",
+                category: "drawing",
+                rating: 4.4,
+                description: "AI-assisted sketching tool that suggests drawings as you sketch. Turns rough sketches into polished drawings with suggestions from machine learning models.",
+                link: "https://www.autodraw.com/",
+                platform: "Web",
+                features: ["AI Drawing", "Sketching", "PNG Export", "Free", "Drawing Suggestions", "Machine Learning", "Simple"]
+            },
+            {
+                id: 150,
+                name: "JSPaint",
+                category: "drawing",
+                rating: 4.3,
+                description: "Replica of 1990s MS Paint in your browser with nostalgia and classic tools. Faithful recreation of Windows 95 Paint with all original tools and color palette.",
+                link: "https://jspaint.app",
+                platform: "Web",
+                features: ["MS Paint", "Nostalgic", "Simple Drawing", "Free", "Classic Tools", "Browser-based", "Windows 95 Style"]
+            },
+            {
+                id: 151,
+                name: "Piskel",
+                category: "animation",
+                rating: 4.6,
+                description: "Editor for animated sprites and pixel art with frame-by-frame animation. Includes onion skinning, palette editing, and export to GIF/PNG sprite sheets.",
+                link: "https://www.piskelapp.com/",
+                platform: "Web",
+                features: ["Pixel Art", "Animation", "Sprite Editor", "Free", "Onion Skinning", "Palette Editing", "GIF Export"]
+            },
+            {
+                id: 152,
+                name: "Cloud Convert",
+                category: "file-converters",
+                rating: 4.7,
+                description: "Convert audio, video, documents, etc. with integration to cloud storage services. Supports over 200 formats, API access, and batch conversion with free tier.",
+                link: "https://cloudconvert.com/",
+                platform: "Web",
+                features: ["File Converter", "Multiple Formats", "Cloud Integration", "Free Tier", "200+ Formats", "API", "Batch Conversion"]
+            },
+            {
+                id: 153,
+                name: "Online Convert",
+                category: "file-converters",
+                rating: 4.5,
+                description: "Converters for audio, video, image, etc. with no file size limits on free tier. Comprehensive conversion tools for various file types with direct download links.",
+                link: "http://www.online-convert.com/",
+                platform: "Web",
+                features: ["File Converter", "No Size Limits", "Multiple Formats", "Free", "Audio/Video", "Image", "Direct Download"]
+            },
+            {
+                id: 154,
+                name: "Print Friendly",
+                category: "file-converters",
+                rating: 4.4,
+                description: "Convert webpages to simple format for PDF/print with removal of ads and clutter. Browser extension and web tool for creating printer-friendly versions of web pages.",
+                link: "https://www.printfriendly.com/",
+                platform: "Web",
+                features: ["Webpage to PDF", "Print Optimizer", "Clean Formatting", "Free", "Ad Removal", "Browser Extension", "Clutter-free"]
+            },
+            {
+                id: 155,
+                name: "OnlineOCR",
+                category: "ocr",
+                rating: 4.3,
+                description: "Convert scanned PDFs to DOC/XLS/TXT with OCR technology for text extraction. Supports multiple languages, batch processing, and retains original formatting.",
+                link: "https://www.onlineocr.net/",
+                platform: "Web",
+                features: ["OCR", "PDF Conversion", "Text Extraction", "Free", "Multiple Languages", "Batch Processing", "Format Retention"]
+            },
+            {
+                id: 156,
+                name: "Archive.org",
+                category: "file-sharing",
+                rating: 4.8,
+                description: "Unlimited hosting of any file type with permanent storage and public access. Digital library offering free access to books, movies, software, music, and more.",
+                link: "https://archive.org/",
+                platform: "Web",
+                features: ["File Hosting", "Unlimited", "Permanent Storage", "Free", "Digital Library", "Public Access", "Various Media"]
+            },
+            {
+                id: 157,
+                name: "Firefox Send",
+                category: "file-sharing",
+                rating: 4.6,
+                description: "Mozilla's file share up to 1GB (2.5GB with account) with encrypted transfers. Creates shareable links that expire after download or time limit with password protection.",
+                link: "https://send.firefox.com",
+                platform: "Web",
+                features: ["File Sharing", "Encrypted", "Temporary Links", "Free", "Password Protection", "Expiring Links", "Mozilla"]
+            },
+            {
+                id: 158,
+                name: "Typeracer",
+                category: "games-web",
+                rating: 4.5,
+                description: "Race to evaluate typing speed against others in real-time typing competitions. Improves typing speed through competitive races with various texts and difficulty levels.",
+                link: "http://play.typeracer.com/",
+                platform: "Web",
+                features: ["Typing Game", "Multiplayer", "Speed Test", "Free", "Real-time", "Competitive", "Typing Practice"]
+            },
+            {
+                id: 159,
+                name: "Spark Chess",
+                category: "games-web",
+                rating: 4.4,
+                description: "Play chess with AI or other players online with 3D graphics and tutorials. Includes different difficulty levels, learn mode, and beautiful 3D chess boards.",
+                link: "https://www.sparkchess.com/",
+                platform: "Web",
+                features: ["Chess", "AI Opponent", "Multiplayer", "Free", "3D Graphics", "Tutorials", "Difficulty Levels"]
+            },
+            {
+                id: 160,
+                name: "agar.io",
+                category: "games-web",
+                rating: 4.6,
+                description: "Gain mass by eating smaller cells in this popular io game with simple controls. Multiplayer browser game where you control a cell trying to grow larger than others.",
+                link: "https://agar.io/",
+                platform: "Web",
+                features: ["io Game", "Multiplayer", "Strategy", "Free", "Simple Controls", "Browser Game", "Mass Eating"]
+            },
+            {
+                id: 161,
+                name: "skribbl.io",
+                category: "games-web",
+                rating: 4.7,
+                description: "Draw and guess words with others in real-time with custom word lists. Social drawing game where players take turns drawing while others guess the word.",
+                link: "https://skribbl.io/",
+                platform: "Web",
+                features: ["Drawing Game", "Multiplayer", "Real-time", "Free", "Social", "Custom Words", "Guessing"]
+            },
+            {
+                id: 162,
+                name: "surviv.io",
+                category: "games-web",
+                rating: 4.5,
+                description: "2D battle royale game in your browser with fast-paced combat and various weapons. Top-down battle royale with loot, buildings, and last-player-standing gameplay.",
+                link: "https://surviv.io/",
+                platform: "Web",
+                features: ["Battle Royale", "2D", "Multiplayer", "Free", "Fast-paced", "Weapons", "Top-down"]
+            },
+            {
+                id: 163,
+                name: "Serato DJ Lite",
+                category: "audio",
+                rating: 4.5,
+                description: "DJ software for beginners to mix music with professional features simplified. Includes beat matching, effects, and sample decks for starting DJs.",
+                link: "https://serato.com/dj/lite",
+                platform: "Windows/Mac",
+                features: ["DJ Software", "Beginner-friendly", "Mixing", "Free", "Beat Matching", "Effects", "Sample Decks"]
+            },
+            {
+                id: 164,
+                name: "VirtualDJ",
+                category: "audio",
+                rating: 4.6,
+                description: "DJ platform for mixing, beatmatching, and live performance with extensive features. Supports video mixing, streaming, and hardware controllers with free version limitations.",
+                link: "https://virtualdj.com",
+                platform: "Windows/Mac",
+                features: ["DJ Platform", "Live Performance", "Beatmatching", "Free Version", "Video Mixing", "Streaming", "Hardware Support"]
+            },
+            {
+                id: 165,
+                name: "A Web Whiteboard",
+                category: "whiteboard",
+                rating: 4.4,
+                description: "Touch-friendly collaborative whiteboard for brainstorming and presentations. Real-time collaboration, infinite canvas, and export options for team meetings.",
+                link: "https://awwapp.com/",
+                platform: "Web",
+                features: ["Whiteboard", "Collaborative", "Touch-friendly", "Free", "Real-time", "Infinite Canvas", "Brainstorming"]
+            },
+            {
+                id: 166,
+                name: "bubbl",
+                category: "mind-mapping",
+                rating: 4.3,
+                description: "Create mind-maps and brainstorm ideas with simple drag-and-drop interface. Visual brainstorming tool for organizing thoughts, planning projects, and creating diagrams.",
+                link: "https://bubbl.us/",
+                platform: "Web",
+                features: ["Mind-mapping", "Brainstorming", "Visual Planning", "Free", "Drag-and-drop", "Diagrams", "Project Planning"]
+            },
+            {
+                id: 167,
+                name: "HackMD",
+                category: "collaboration",
+                rating: 4.6,
+                description: "Collaborative real-time Markdown editor with version history and publishing. Team documentation with real-time editing, slide mode, and export to various formats.",
+                link: "https://hackmd.io",
+                platform: "Web",
+                features: ["Markdown Editor", "Collaborative", "Real-time", "Free", "Version History", "Slide Mode", "Team Documentation"]
+            },
+            {
+                id: 168,
+                name: "Cryptrader",
+                category: "cryptocurrency",
+                rating: 4.4,
+                description: "Cryptocurrency price charts and indicators for technical analysis and trading. Real-time charts, technical indicators, and portfolio tracking for crypto traders.",
+                link: "https://cryptrader.com",
+                platform: "Web",
+                features: ["Cryptocurrency", "Charts", "Trading Indicators", "Free", "Technical Analysis", "Real-time", "Portfolio Tracking"]
+            },
+            {
+                id: 169,
+                name: "YOU.DJ",
+                category: "web-apps",
+                rating: 4.3,
+                description: "Online DJ software sourcing from SoundCloud with mixing capabilities in browser. Web-based DJ mixer that connects to SoundCloud for music selection and mixing.",
+                link: "https://you.dj/",
+                platform: "Web",
+                features: ["DJ Software", "Online", "SoundCloud Integration", "Free", "Browser-based", "Mixing", "Music Selection"]
+            },
+            {
+                id: 170,
+                name: "Miniclip",
+                category: "games-web",
+                rating: 4.5,
+                description: "Collection of free games in your browser across various genres and styles. Large library of browser games including sports, puzzle, action, and multiplayer games.",
+                link: "https://www.miniclip.com",
+                platform: "Web",
+                features: ["Game Collection", "Multiple Genres", "Browser Games", "Free", "Sports", "Puzzle", "Action"]
+            },
+            {
+                id: 171,
+                name: "LilyPond",
+                category: "music-notation",
+                rating: 4.5,
+                description: "Music notation program for high-quality sheet music with automatic engraving. Text-based music engraving program that produces beautiful sheet music from text files.",
+                link: "https://lilypond.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Notation", "Sheet Music", "High Quality", "Open Source", "Automatic Engraving", "Text-based", "Beautiful Output"]
+            },
+            {
+                id: 172,
+                name: "MilkyTracker",
+                category: "tracker",
+                rating: 4.4,
+                description: "Cross-platform XM tracker for chiptune music with classic tracker interface. Music creation tool following the module tracker concept popular in the 90s demoscene.",
+                link: "https://github.com/milkytracker/MilkyTracker",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Tracker", "Chiptune", "Cross-platform", "Open Source", "Module Tracker", "Demoscene", "Classic Interface"]
+            },
+            {
+                id: 173,
+                name: "OpenMPT",
+                category: "tracker",
+                rating: 4.6,
+                description: "Modern tracker software for multiple formats with extensive editing features. Tracker for creating module files with support for many classic and modern formats.",
+                link: "https://openmpt.org",
+                platform: "Windows",
+                features: ["Music Tracker", "Multiple Formats", "Modern", "Open Source", "Module Files", "Editing Features", "Tracker"]
+            },
+            {
+                id: 174,
+                name: "Zrythm",
+                category: "daw",
+                rating: 4.5,
+                description: "DAW for music production with easy interface and advanced features. Digital audio workstation with timeline-based editing, plugin support, and mixing capabilities.",
+                link: "https://zrythm.org",
+                platform: "Windows/Mac/Linux",
+                features: ["DAW", "Music Production", "Easy Interface", "Open Source", "Timeline Editing", "Plugin Support", "Mixing"]
+            },
+            {
+                id: 175,
+                name: "Spark",
+                category: "email-clients",
+                rating: 4.6,
+                description: "Fast email client with team collaboration features and smart inbox. Email app with smart sorting, quick replies, and team features for collaborative email management.",
+                link: "https://sparkmailapp.com",
+                platform: "Mac/Linux",
+                features: ["Email Client", "Fast", "Team Collaboration", "Free", "Smart Inbox", "Quick Replies", "Email Sorting"]
+            },
+            {
+                id: 176,
+                name: "Karafun",
+                category: "karaoke",
+                rating: 4.3,
+                description: "Collection of karaoke songs; play CDG files or YouTube downloads for singing. Karaoke software with large song library, key changing, and recording features.",
+                link: "https://karafun.com",
+                platform: "Windows",
+                features: ["Karaoke", "Music", "Singing", "Free", "Song Library", "Key Changing", "Recording"]
+            },
+            {
+                id: 177,
+                name: "Audacious",
+                category: "audio",
+                rating: 4.4,
+                description: "Lightweight audio player for simple music playback with minimal interface. Music player focusing on fast playback with support for many formats and low resource usage.",
+                link: "https://github.com/audacious-media-player/audacious",
+                platform: "Windows/Linux",
+                features: ["Audio Player", "Lightweight", "Simple", "Open Source", "Fast Playback", "Multiple Formats", "Low Resource"]
+            },
+            {
+                id: 178,
+                name: "DJ ProDecks",
+                category: "audio",
+                rating: 4.3,
+                description: "DJ software for mixing music and adding effects with professional features. Includes beat matching, effects, sampling, and support for various DJ controllers.",
+                link: "https://djprodecks.com",
+                platform: "Windows",
+                features: ["DJ Software", "Mixing", "Effects", "Free", "Beat Matching", "Sampling", "Controller Support"]
+            },
+            {
+                id: 179,
+                name: "Rekordbox",
+                category: "audio",
+                rating: 4.5,
+                description: "DJ workflow software with AI, cloud, and automation for professional DJs. Industry standard DJ software with performance features, library management, and hardware integration.",
+                link: "https://rekordbox.com/en",
+                platform: "Windows/Mac",
+                features: ["DJ Software", "AI", "Cloud", "Free Version", "Performance", "Library Management", "Hardware Integration"]
+            },
+            {
+                id: 180,
+                name: "ABCjs",
+                category: "music-notation",
+                rating: 4.2,
+                description: "Tool for writing and playing ABC music notation in browser or applications. JavaScript library for rendering ABC music notation with playback and editing features.",
+                link: "https://abcjs.net",
+                platform: "Cross-platform",
+                features: ["Music Notation", "ABC Format", "Playback", "Free", "JavaScript", "Rendering", "Editing"]
+            },
+            {
+                id: 181,
+                name: "Denemo",
+                category: "music-notation",
+                rating: 4.3,
+                description: "Music notation software for fast score creation with LilyPond backend. Graphical frontend for LilyPond that allows visual editing of musical scores.",
+                link: "https://denemo.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Notation", "LilyPond", "Score Creation", "Open Source", "Graphical Editor", "Visual Editing", "Fast"]
+            },
+            {
+                id: 182,
+                name: "Frescobaldi",
+                category: "music-notation",
+                rating: 4.4,
+                description: "Editor for LilyPond to create music scores with preview and editing features. LilyPond score editor with live preview, syntax highlighting, and musicXML import.",
+                link: "https://frescobaldi.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Music Editor", "LilyPond", "Score Creation", "Open Source", "Live Preview", "Syntax Highlighting", "MusicXML"]
+            },
+            {
+                id: 183,
+                name: "Furnace",
+                category: "tracker",
+                rating: 4.4,
+                description: "Multi-system chiptune tracker for creating retro video game style music. Tracker software that emulates sound chips from classic gaming systems and computers.",
+                link: "https://github.com/tildearrow/furnace",
+                platform: "Windows/Mac/Linux",
+                features: ["Chiptune", "Tracker", "Multi-system", "Open Source", "Retro Gaming", "Sound Chip Emulation", "Video Game Music"]
+            },
+            {
+                id: 184,
+                name: "Qtractor",
+                category: "daw",
+                rating: 4.3,
+                description: "Multi-track DAW for audio and MIDI recording with Qt-based interface. Audio/MIDI multi-track sequencer and digital audio workstation application.",
+                link: "https://qtractor.org",
+                platform: "Linux",
+                features: ["DAW", "Multi-track", "Audio/MIDI", "Open Source", "Sequencer", "Qt-based", "Linux"]
+            },
+            {
+                id: 185,
+                name: "Stargate DAW",
+                category: "daw",
+                rating: 4.4,
+                description: "Innovation-first DAW with plugins and modern workflow for music production. Digital audio workstation focused on innovation with unique features and modern interface.",
+                link: "https://github.com/stargatedaw/stargate",
+                platform: "Windows/Mac/Linux",
+                features: ["DAW", "Innovation", "Plugins", "Open Source", "Modern Workflow", "Unique Features", "Music Production"]
+            },
+            {
+                id: 186,
+                name: "Tracktion T7",
+                category: "daw",
+                rating: 4.5,
+                description: "DAW for music production with advanced editing and mixing capabilities. Professional digital audio workstation with unlimited audio/MIDI tracks and plugin support.",
+                link: "https://tracktion.com/products/t7-daw",
+                platform: "Windows/Mac/Linux",
+                features: ["DAW", "Music Production", "Advanced Editing", "Free", "Unlimited Tracks", "Mixing", "Plugin Support"]
+            },
+            {
+                id: 187,
+                name: "Pale Moon",
+                category: "browsers",
+                rating: 4.3,
+                description: "Goanna-based browser focusing on customization and efficiency. Fork of Firefox maintaining legacy extension support and custom optimization.",
+                link: "https://palemoon.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Goanna-based", "Customizable", "Open Source", "Legacy Extensions", "Efficiency", "Firefox Fork"]
+            },
+            {
+                id: 188,
+                name: "Orion",
+                category: "browsers",
+                rating: 4.4,
+                description: "Lightweight WebKit browser with extension support and privacy features. Browser built on WebKit with support for both Chrome and Firefox extensions.",
+                link: "https://browser.kagi.com",
+                platform: "Mac/Linux",
+                features: ["Web Browser", "WebKit", "Lightweight", "Free", "Extension Support", "Privacy", "Chrome/Firefox Extensions"]
+            },
+            {
+                id: 189,
+                name: "qutebrowser",
+                category: "browsers",
+                rating: 4.5,
+                description: "Keyboard-driven, vim-like browser in Python and Qt with minimal interface. Browser with vim keybindings, minimal GUI, and extensive configuration options.",
+                link: "https://qutebrowser.org",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Keyboard-driven", "Vim-like", "Open Source", "Minimal Interface", "Python", "Qt"]
+            },
+            {
+                id: 190,
+                name: "Safari",
+                category: "browsers",
+                rating: 4.6,
+                description: "Native browser with Apple integration and energy efficiency features. Default browser on macOS with iCloud sync, reader mode, and privacy protections.",
+                link: "https://apple.com/safari",
+                platform: "Mac",
+                features: ["Web Browser", "Native", "Apple Integration", "Free", "iCloud Sync", "Energy Efficient", "Privacy"]
+            },
+            {
+                id: 191,
+                name: "Station",
+                category: "browsers",
+                rating: 4.3,
+                description: "Browser for centralizing web apps and services in one unified interface. Organizes web apps into workspaces with notifications and quick switching between apps.",
+                link: "https://getstation.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Browser", "Web Apps", "Centralized", "Free", "Workspaces", "Notifications", "App Organization"]
+            },
+            {
+                id: 192,
+                name: "Viber",
+                category: "communication",
+                rating: 4.5,
+                description: "Messaging app with text, voice, video, and file sharing across platforms. Includes public chats, sticker market, and disappearing messages with end-to-end encryption.",
+                link: "https://viber.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Messaging", "Voice/Video", "File Sharing", "Free", "Public Chats", "Stickers", "Disappearing Messages"]
+            },
+            {
+                id: 193,
+                name: "Skype",
+                category: "communication",
+                rating: 4.4,
+                description: "Messaging and video call service with screen sharing and call recording. Includes Skype Numbers, SMS, and integration with Microsoft services.",
+                link: "https://skype.com",
+                platform: "Windows/Mac/Linux",
+                features: ["Messaging", "Video Calls", "Voice", "Free", "Screen Sharing", "Call Recording", "Skype Numbers"]
+            },
+            {
+                id: 194,
+                name: "CanaryMail",
+                category: "email-clients",
+                rating: 4.5,
+                description: "Secure email app with PGP and AI assistance for email management. Includes read receipts, send later, and snooze features with focus on security.",
+                link: "https://canarymail.io",
+                platform: "Mac/Linux",
+                features: ["Email Client", "Secure", "PGP", "Free Version", "AI Assistance", "Read Receipts", "Send Later"]
+            },
+            {
+                id: 195,
+                name: "Edison Mail",
+                category: "email-clients",
+                rating: 4.4,
+                description: "Customizable email client with smart features and unified inbox. Includes trip tracking, package tracking, and subscription management features.",
+                link: "https://mail.edison.tech/mac",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Customizable", "Smart Features", "Free", "Unified Inbox", "Trip Tracking", "Package Tracking"]
+            },
+            {
+                id: 196,
+                name: "ElectronMail",
+                category: "email-clients",
+                rating: 4.3,
+                description: "Electron-based client for ProtonMail with desktop notifications and tray icon. Unofficial desktop client for ProtonMail with offline support and custom themes.",
+                link: "https://github.com/vladimiry/ElectronMail",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "ProtonMail", "Electron", "Open Source", "Desktop Notifications", "Tray Icon", "Offline"]
+            },
+            {
+                id: 197,
+                name: "Eppie Mail",
+                category: "email-clients",
+                rating: 4.3,
+                description: "Open-source email with AI agents and support for major email providers. Privacy-focused email client with AI assistance and support for Gmail, Outlook, etc.",
+                link: "https://github.com/Eppie-io/Eppie-App",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "AI Agents", "Open Source", "Free", "Privacy-focused", "Multiple Providers", "AI Assistance"]
+            },
+            {
+                id: 198,
+                name: "Foxmail",
+                category: "email-clients",
+                rating: 4.4,
+                description: "Fast, user-friendly email client with efficient mail management features. Popular email client in China with calendar, contacts, and efficient mail processing.",
+                link: "https://www.foxmail.com",
+                platform: "Windows/Mac",
+                features: ["Email Client", "Fast", "User-friendly", "Free", "Mail Management", "Calendar", "Contacts"]
+            },
+            {
+                id: 199,
+                name: "Nylas Mail",
+                category: "email-clients",
+                rating: 4.4,
+                description: "Extensible desktop email app with plugin architecture and modern interface. Open-source mail client built with Electron with plugin support and customization.",
+                link: "https://nylas.com/nylas-mail",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Extensible", "Desktop", "Free", "Plugin Architecture", "Electron", "Modern Interface"]
+            },
+            {
+                id: 200,
+                name: "Polymail",
+                category: "email-clients",
+                rating: 4.5,
+                description: "Simple email client with modern features for teams and professionals. Includes email tracking, scheduled sending, and templates with clean interface.",
+                link: "https://polymail.io",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Simple", "Modern", "Free", "Email Tracking", "Scheduled Sending", "Templates"]
+            },
+            {
+                id: 201,
+                name: "Obsidian",
+                category: "note-taking",
+                rating: 4.8,
+                description: "Knowledge base app that works on top of local Markdown files with powerful linking and graph views. Allows creating a personal wiki with bidirectional links, plugins, and themes for note-taking and knowledge management.",
+                link: "https://obsidian.md/",
+                platform: "Windows/Mac/Linux",
+                features: ["Note Taking", "Markdown", "Knowledge Graph", "Free", "Plugins", "Themes", "Local Files"]
+            },
+            {
+                id: 202,
+                name: "Thunderbird",
+                category: "email-clients",
+                rating: 4.6,
+                description: "Open-source email client with calendar integration, chat, and extensive add-on support. Manages multiple accounts, features advanced search, and supports encryption standards like PGP.",
+                link: "https://www.thunderbird.net/",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Calendar", "Open Source", "Free", "Add-ons", "Encryption", "Multiple Accounts"]
+            },
+            {
+                id: 203,
+                name: "Paint.NET",
+                category: "photo-editing",
+                rating: 4.7,
+                description: "Free image and photo editing software with layers, effects, and plugins. Supports unlimited undo, special effects, and a wide variety of useful and powerful tools similar to professional editors.",
+                link: "https://www.getpaint.net/",
+                platform: "Windows",
+                features: ["Image Editing", "Layers", "Effects", "Free", "Plugins", "Unlimited Undo", "Professional Tools"]
+            },
+            {
+                id: 204,
+                name: "IrfanView",
+                category: "photo-management",
+                rating: 4.5,
+                description: "Fast and compact image viewer/converter with batch processing and slideshow capabilities. Supports a huge number of file formats, basic editing, and plugin extensions for additional features.",
+                link: "https://www.irfanview.com/",
+                platform: "Windows",
+                features: ["Image Viewer", "Converter", "Batch Processing", "Free", "Slideshow", "Plugins", "Multi-format"]
+            },
+            {
+                id: 205,
+                name: "Sumatra PDF",
+                category: "ebook-readers",
+                rating: 4.6,
+                description: "Lightweight PDF reader that also supports ePub, MOBI, XPS, and comic books. Minimalist design with fast loading times, portable version available, and keyboard shortcuts for efficiency.",
+                link: "https://www.sumatrapdfreader.org/",
+                platform: "Windows",
+                features: ["PDF Reader", "Lightweight", "Multi-format", "Free", "Portable", "Fast Loading", "Keyboard Shortcuts"]
+            },
+            {
+                id: 206,
+                name: "Calibre",
+                category: "ebook-readers",
+                rating: 4.7,
+                description: "E-book management software for organizing, converting, and reading digital books. Supports library management, format conversion, news fetching, and device synchronization.",
+                link: "https://calibre-ebook.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["E-book Manager", "Converter", "Library", "Open Source", "Device Sync", "News Fetching", "Reading"]
+            },
+            {
+                id: 207,
+                name: "FileZilla",
+                category: "ftp-clients",
+                rating: 4.5,
+                description: "FTP/SFTP client for file transfers with site manager and transfer queue. Supports resume, drag-and-drop, and directory comparison for efficient file management over networks.",
+                link: "https://filezilla-project.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["FTP Client", "SFTP", "File Transfer", "Open Source", "Site Manager", "Transfer Queue", "Directory Comparison"]
+            },
+            {
+                id: 208,
+                name: "PuTTY",
+                category: "ssh-clients",
+                rating: 4.4,
+                description: "SSH and telnet client with serial console support and session saving. Lightweight tool for remote connections with extensive configuration options for security and usability.",
+                link: "https://www.putty.org/",
+                platform: "Windows",
+                features: ["SSH Client", "Telnet", "Serial Console", "Free", "Session Saving", "Remote Connections", "Configuration"]
+            },
+            {
+                id: 209,
+                name: "GitHub Desktop",
+                category: "development",
+                rating: 4.6,
+                description: "Desktop client for GitHub with visual diff, branch management, and easy collaboration. Simplifies Git workflows with pull requests, commits, and repository cloning in a graphical interface.",
+                link: "https://desktop.github.com/",
+                platform: "Windows/Mac",
+                features: ["Git Client", "GitHub Integration", "Visual Diff", "Free", "Branch Management", "Pull Requests", "Graphical"]
+            },
+            {
+                id: 210,
+                name: "Eclipse",
+                category: "ide",
+                rating: 4.5,
+                description: "IDE for Java development with support for other languages via plugins. Features code completion, debugging, refactoring, and extensive tools for enterprise development.",
+                link: "https://www.eclipse.org/downloads/",
+                platform: "Windows/Mac/Linux",
+                features: ["Java IDE", "Multi-language", "Plugins", "Open Source", "Debugging", "Refactoring", "Code Completion"]
+            },
+            {
+                id: 211,
+                name: "Shotcut",
+                category: "video",
+                rating: 4.6,
+                description: "Open-source video editor with support for 4K, filters, and transitions. Cross-platform tool with timeline editing, audio scopes, and hardware acceleration for efficient editing.",
+                link: "https://shotcut.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Editor", "4K Support", "Filters", "Open Source", "Timeline", "Audio Scopes", "Transitions"]
+            },
+            {
+                id: 212,
+                name: "KeePass2",
+                category: "password-managers",
+                rating: 4.5,
+                description: "Secure password manager with database encryption and auto-type features. Stores passwords in an encrypted file with plugins for additional functionality like browser integration.",
+                link: "https://keepass.info/",
+                platform: "Windows/Mac/Linux",
+                features: ["Password Manager", "Encryption", "Auto-type", "Open Source", "Plugins", "Secure Database", "Browser Integration"]
+            },
+            {
+                id: 213,
+                name: "ProtonVPN",
+                category: "vpn-proxy",
+                rating: 4.7,
+                description: "Secure VPN with no-logs policy and strong encryption for privacy protection. Free tier available with unlimited data, Secure Core servers, and Tor over VPN integration.",
+                link: "https://protonvpn.com/",
+                platform: "All Platforms",
+                features: ["VPN", "No-logs", "Encryption", "Free Tier", "Secure Core", "Tor Integration", "Unlimited Data"]
+            },
+            {
+                id: 214,
+                name: "Trello",
+                category: "project-management",
+                rating: 4.6,
+                description: "Visual project management tool using boards, lists, and cards for task organization. Supports team collaboration, attachments, labels, and power-ups for extended functionality.",
+                link: "https://trello.com/",
+                platform: "Web/All Platforms",
+                features: ["Project Management", "Boards", "Collaboration", "Free", "Attachments", "Labels", "Power-ups"]
+            },
+            {
+                id: 215,
+                name: "Dia",
+                category: "diagramming",
+                rating: 4.3,
+                description: "Diagram creation tool for flowcharts, network diagrams, and UML. Supports custom shapes, layers, and export to various formats including SVG and PNG.",
+                link: "https://dia-installer.de/",
+                platform: "Windows/Mac/Linux",
+                features: ["Diagram Tool", "Flowcharts", "UML", "Open Source", "Custom Shapes", "Layers", "Export Options"]
+            },
+            {
+                id: 216,
+                name: "Transmission",
+                category: "torrent-clients",
+                rating: 4.5,
+                description: "Lightweight BitTorrent client with encryption and bandwidth management. Simple interface with features like watch directories, speed limits, and peer exchange.",
+                link: "https://transmissionbt.com/",
+                platform: "Mac/Linux",
+                features: ["Torrent Client", "Lightweight", "Encryption", "Open Source", "Bandwidth Management", "Watch Directories", "Speed Limits"]
+            },
+            {
+                id: 217,
+                name: "Atom",
+                category: "text-editors",
+                rating: 4.6,
+                description: "Hackable text editor with Git integration and extensive package ecosystem. Built with web technologies, supports themes, snippets, and multiple panes for development.",
+                link: "https://atom.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Editor", "Hackable", "Git Integration", "Open Source", "Packages", "Themes", "Snippets"]
+            },
+            {
+                id: 218,
+                name: "Fritzing",
+                category: "electronics",
+                rating: 4.4,
+                description: "Tool for designing electronics with breadboard, schematic, and PCB views. Helps in creating prototypes, documenting projects, and producing professional PCBs.",
+                link: "https://fritzing.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Electronics Design", "Breadboard", "Schematic", "Open Source", "PCB", "Prototyping", "Documentation"]
+            },
+            {
+                id: 219,
+                name: "GParted",
+                category: "partition-tools",
+                rating: 4.5,
+                description: "Partition editor for creating, resizing, and moving disk partitions. Live CD/USB tool that supports various file systems and data rescue operations.",
+                link: "https://gparted.org/",
+                platform: "Linux",
+                features: ["Partition Editor", "Resizing", "Live Tool", "Open Source", "File Systems", "Data Rescue", "Disk Management"]
+            },
+            {
+                id: 220,
+                name: "Nextcloud",
+                category: "cloud",
+                rating: 4.7,
+                description: "Self-hosted cloud storage with file sync, sharing, and collaboration apps. Open-source alternative to Dropbox with calendar, contacts, and end-to-end encryption options.",
+                link: "https://nextcloud.com/",
+                platform: "Self-hosted/All Platforms",
+                features: ["Cloud Storage", "Self-hosted", "File Sync", "Open Source", "Collaboration", "Encryption", "Calendar/Contacts"]
+            },
+            {
+                id: 221,
+                name: "Zotero",
+                category: "reference-management",
+                rating: 4.7,
+                description: "Reference management software for collecting, organizing, and citing research sources. Supports browser integration for saving articles, PDF annotation, and group libraries for collaboration.",
+                link: "https://www.zotero.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Reference Manager", "Citation", "PDF Annotation", "Free", "Browser Integration", "Group Libraries", "Research Tools"]
+            },
+            {
+                id: 222,
+                name: "Mailspring",
+                category: "email-clients",
+                rating: 4.5,
+                description: "Modern email client with unified inbox, snooze, templates, and translation features. Supports multiple accounts, quick replies, and themes for a customizable experience.",
+                link: "https://getmailspring.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Email Client", "Unified Inbox", "Snooze", "Open Source", "Templates", "Translation", "Themes"]
+            },
+            {
+                id: 223,
+                name: "Darktable",
+                category: "photo-editing",
+                rating: 4.6,
+                description: "Open-source photography workflow application and raw developer. Non-destructive editing with professional color management, tethered shooting, and GPU acceleration.",
+                link: "https://www.darktable.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Photo Editor", "Raw Processing", "Non-destructive", "Open Source", "Color Management", "Tethered Shooting", "GPU Acceleration"]
+            },
+            {
+                id: 224,
+                name: "XnView",
+                category: "photo-management",
+                rating: 4.4,
+                description: "Image viewer and organizer with batch conversion and basic editing tools. Supports over 500 formats, slideshow creation, and metadata editing for photo management.",
+                link: "https://www.xnview.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Image Viewer", "Organizer", "Batch Conversion", "Free", "Multi-format", "Slideshow", "Metadata Editing"]
+            },
+            {
+                id: 225,
+                name: "Okular",
+                category: "ebook-readers",
+                rating: 4.5,
+                description: "Universal document viewer for PDF, PostScript, and various other formats. Supports annotations, forms, and text extraction with a clean KDE interface.",
+                link: "https://okular.kde.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Document Viewer", "PDF", "Annotations", "Open Source", "Forms", "Text Extraction", "Multi-format"]
+            },
+            {
+                id: 226,
+                name: "FreeCAD",
+                category: "cad",
+                rating: 4.5,
+                description: "Parametric 3D CAD modeler for product design and mechanical engineering. Supports BIM, FEM, and CAM with Python scripting for automation.",
+                link: "https://www.freecad.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["3D Modeling", "Parametric", "CAD", "Open Source", "BIM/FEM/CAM", "Python Scripting", "Product Design"]
+            },
+            {
+                id: 227,
+                name: "WinSCP",
+                category: "ftp-clients",
+                rating: 4.6,
+                description: "SFTP, FTP, and SCP client with file synchronization and scripting support. Features directory caching, integrated text editor, and master password protection.",
+                link: "https://winscp.net/",
+                platform: "Windows",
+                features: ["SFTP Client", "File Sync", "Scripting", "Open Source", "Directory Caching", "Text Editor", "Password Protection"]
+            },
+            {
+                id: 228,
+                name: "Terminus",
+                category: "terminal",
+                rating: 4.4,
+                description: "Modern terminal emulator with themes, plugins, and multi-platform support. Built with Electron, features quake mode, hotkeys, and clickable links.",
+                link: "https://eugeny.github.io/terminus/",
+                platform: "Windows/Mac/Linux",
+                features: ["Terminal Emulator", "Modern", "Themes", "Open Source", "Plugins", "Quake Mode", "Hotkeys"]
+            },
+            {
+                id: 229,
+                name: "SourceTree",
+                category: "development",
+                rating: 4.5,
+                description: "Git and Mercurial client with visual branching and interactive rebase. Supports Bitbucket, GitHub, and GitLab integration for team workflows.",
+                link: "https://www.sourcetreeapp.com/",
+                platform: "Windows/Mac",
+                features: ["Git Client", "Visual Branching", "Rebase", "Free", "Mercurial", "Repository Integration", "Team Workflows"]
+            },
+            {
+                id: 230,
+                name: "NetBeans",
+                category: "ide",
+                rating: 4.4,
+                description: "IDE for Java, PHP, C/C++, and HTML5 development with profiling tools. Features smart code completion, refactoring, and version control integration.",
+                link: "https://netbeans.apache.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Multi-language IDE", "Java/PHP/C++", "Profiling", "Open Source", "Code Completion", "Refactoring", "Version Control"]
+            },
+            {
+                id: 231,
+                name: "Kdenlive",
+                category: "video",
+                rating: 4.5,
+                description: "Non-linear video editor with multi-track timeline and effects. Supports proxy editing, titling, and keyframe animation for professional results.",
+                link: "https://kdenlive.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Video Editor", "Multi-track", "Effects", "Open Source", "Proxy Editing", "Titling", "Keyframe Animation"]
+            },
+            {
+                id: 232,
+                name: "NordPass",
+                category: "password-managers",
+                rating: 4.6,
+                description: "Password manager with autosave, autofill, and secure notes. Features XChaCha20 encryption, zero-knowledge architecture, and free tier with unlimited passwords.",
+                link: "https://nordpass.com/",
+                platform: "All Platforms",
+                features: ["Password Manager", "Autofill", "Secure Notes", "Free Tier", "XChaCha20", "Zero-knowledge", "Unlimited Passwords"]
+            },
+            {
+                id: 233,
+                name: "Windscribe",
+                category: "vpn-proxy",
+                rating: 4.5,
+                description: "VPN with 10GB free monthly data, ad blocker, and firewall. Supports unlimited devices, split tunneling, and secure hotspot on free plan.",
+                link: "https://windscribe.com/",
+                platform: "All Platforms",
+                features: ["VPN", "Ad Blocker", "Firewall", "Free 10GB", "Unlimited Devices", "Split Tunneling", "Secure Hotspot"]
+            },
+            {
+                id: 234,
+                name: "Todoist",
+                category: "productivity",
+                rating: 4.7,
+                description: "Task manager with natural language input and project organization. Features recurring tasks, labels, priorities, and integrations with calendar apps.",
+                link: "https://todoist.com/",
+                platform: "All Platforms",
+                features: ["Task Manager", "Natural Language", "Projects", "Free Tier", "Recurring Tasks", "Labels", "Integrations"]
+            },
+            {
+                id: 235,
+                name: "yEd Graph Editor",
+                category: "diagramming",
+                rating: 4.5,
+                description: "Diagram editor for flowcharts, UML, and network diagrams. Features automatic layout algorithms, import/export options, and hierarchical grouping.",
+                link: "https://www.yworks.com/products/yed",
+                platform: "Windows/Mac/Linux",
+                features: ["Diagram Editor", "Flowcharts", "UML", "Free", "Auto Layout", "Import/Export", "Hierarchical Grouping"]
+            },
+            {
+                id: 236,
+                name: "Deluge",
+                category: "torrent-clients",
+                rating: 4.4,
+                description: "Lightweight BitTorrent client with plugin system and remote control. Features encryption, bandwidth scheduling, and daemon mode for headless operation.",
+                link: "https://deluge-torrent.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Torrent Client", "Lightweight", "Plugins", "Open Source", "Encryption", "Bandwidth Scheduling", "Daemon Mode"]
+            },
+            {
+                id: 237,
+                name: "Brackets",
+                category: "text-editors",
+                rating: 4.4,
+                description: "Web development editor with live preview and preprocessor support. Features inline editors, quick edit, and extension manager for HTML/CSS/JS work.",
+                link: "http://brackets.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Web Editor", "Live Preview", "Preprocessors", "Open Source", "Inline Editors", "Quick Edit", "Extensions"]
+            },
+            {
+                id: 238,
+                name: "Arduino IDE",
+                category: "iot",
+                rating: 4.5,
+                description: "IDE for writing and uploading code to Arduino boards. Features library manager, serial monitor, and board manager for hardware programming.",
+                link: "https://www.arduino.cc/en/software",
+                platform: "Windows/Mac/Linux",
+                features: ["Arduino IDE", "Hardware Programming", "Library Manager", "Open Source", "Serial Monitor", "Board Manager", "Code Upload"]
+            },
+            {
+                id: 239,
+                name: "Clonezilla",
+                category: "boot-tools",
+                rating: 4.4,
+                description: "Disk cloning and imaging tool for backup and deployment. Supports multicast cloning, encryption, and various file systems for system migration.",
+                link: "https://clonezilla.org/",
+                platform: "Live USB",
+                features: ["Disk Cloning", "Imaging", "Backup", "Open Source", "Multicast", "Encryption", "File Systems"]
+            },
+            {
+                id: 240,
+                name: "ownCloud",
+                category: "cloud",
+                rating: 4.5,
+                description: "Self-hosted file sync and share platform with client apps. Features version control, external storage, and collaboration tools for private cloud setup.",
+                link: "https://owncloud.com/",
+                platform: "Self-hosted/All Platforms",
+                features: ["File Sync", "Self-hosted", "Share", "Open Source", "Version Control", "External Storage", "Collaboration"]
+            },
+            {
+                id: 241,
+                name: "Evernote",
+                category: "note-taking",
+                rating: 4.5,
+                description: "Note-taking app with web clipping, search, and organization features. Supports notebooks, tags, and attachments for capturing and organizing information across devices.",
+                link: "https://evernote.com/",
+                platform: "All Platforms",
+                features: ["Note Taking", "Web Clipping", "Search", "Free Tier", "Notebooks", "Tags", "Attachments"]
+            },
+            {
+                id: 242,
+                name: "Discord",
+                category: "collaboration",
+                rating: 4.7,
+                description: "Voice, video, and text chat app for communities and gaming. Features servers, channels, bots, and screen sharing for real-time collaboration.",
+                link: "https://discord.com/",
+                platform: "All Platforms",
+                features: ["Chat App", "Voice/Video", "Servers", "Free", "Bots", "Screen Sharing", "Communities"]
+            },
+            {
+                id: 243,
+                name: "RawTherapee",
+                category: "photo-editing",
+                rating: 4.4,
+                description: "Raw image processor with non-destructive editing and batch processing. Advanced tools for exposure, color correction, and noise reduction in photography workflows.",
+                link: "https://rawtherapee.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Raw Processor", "Non-destructive", "Batch", "Open Source", "Color Correction", "Noise Reduction", "Exposure Tools"]
+            },
+            {
+                id: 244,
+                name: "nomacs",
+                category: "photo-management",
+                rating: 4.3,
+                description: "Image viewer with basic editing and synchronization features. Supports raw images, histograms, and frameless mode for efficient browsing.",
+                link: "https://nomacs.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Image Viewer", "Basic Editing", "Sync", "Open Source", "Raw Support", "Histograms", "Frameless Mode"]
+            },
+            {
+                id: 245,
+                name: "Evince",
+                category: "ebook-readers",
+                rating: 4.4,
+                description: "Document viewer for PDF, PostScript, and comics with annotation support. Simple interface with search, thumbnails, and presentation mode.",
+                link: "https://wiki.gnome.org/Apps/Evince",
+                platform: "Linux",
+                features: ["Document Viewer", "PDF", "Annotations", "Open Source", "Search", "Thumbnails", "Presentation Mode"]
+            },
+            {
+                id: 246,
+                name: "LibreCAD",
+                category: "cad",
+                rating: 4.3,
+                description: "2D CAD application for technical drawings and schematics. Supports layers, blocks, and export to various formats including DXF and SVG.",
+                link: "https://librecad.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["2D CAD", "Technical Drawings", "Layers", "Open Source", "Blocks", "DXF/SVG Export", "Schematics"]
+            },
+            {
+                id: 247,
+                name: "Cyberduck",
+                category: "ftp-clients",
+                rating: 4.5,
+                description: "FTP/SFTP client with cloud storage support and bookmark management. Features quick look previews, edit with any editor, and distribution to CDN.",
+                link: "https://cyberduck.io/",
+                platform: "Windows/Mac",
+                features: ["FTP Client", "Cloud Support", "Bookmarks", "Open Source", "Quick Look", "Edit Integration", "CDN Distribution"]
+            },
+            {
+                id: 248,
+                name: "Kitty",
+                category: "terminal",
+                rating: 4.6,
+                description: "GPU-accelerated terminal emulator with tabbed interface and kitten plugins. Features ligatures, hyperlinks, and session management for developers.",
+                link: "https://sw.kovidgoyal.net/kitty/",
+                platform: "Mac/Linux",
+                features: ["Terminal Emulator", "GPU Accelerated", "Tabs", "Open Source", "Ligatures", "Hyperlinks", "Plugins"]
+            },
+            {
+                id: 249,
+                name: "GitKraken",
+                category: "development",
+                rating: 4.6,
+                description: "Git client with timeline view and integration with GitHub, GitLab, Bitbucket. Features in-app merge conflict resolution and Jira/Trello boards.",
+                link: "https://www.gitkraken.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Git Client", "Timeline View", "Integrations", "Free Tier", "Merge Resolution", "Issue Boards", "Collaboration"]
+            },
+            {
+                id: 250,
+                name: "IntelliJ IDEA Community",
+                category: "ide",
+                rating: 4.7,
+                description: "Java IDE with smart code completion and framework support. Features indexing, debugging, and version control integration for professional development.",
+                link: "https://www.jetbrains.com/idea/",
+                platform: "Windows/Mac/Linux",
+                features: ["Java IDE", "Smart Completion", "Frameworks", "Open Source", "Debugging", "Version Control", "Indexing"]
+            },
+            {
+                id: 251,
+                name: "Natron",
+                category: "video",
+                rating: 4.4,
+                description: "Node-based compositing software for visual effects and motion graphics. Supports OpenFX plugins, rotoscoping, and multi-plane compositing.",
+                link: "https://natrongithub.github.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Compositing", "Node-based", "VFX", "Open Source", "OpenFX Plugins", "Rotoscoping", "Multi-plane"]
+            },
+            {
+                id: 252,
+                name: "Padloc",
+                category: "password-managers",
+                rating: 4.4,
+                description: "Simple password manager with end-to-end encryption and team sharing. Features autofill, secure notes, and open-source code for transparency.",
+                link: "https://padloc.app/",
+                platform: "All Platforms",
+                features: ["Password Manager", "Encryption", "Team Sharing", "Open Source", "Autofill", "Secure Notes", "Transparency"]
+            },
+            {
+                id: 253,
+                name: "HideMyAss Free Proxy",
+                category: "vpn-proxy",
+                rating: 4.3,
+                description: "Web proxy for anonymous browsing with URL encryption. Simple tool for accessing blocked sites without installing software.",
+                link: "https://www.hidemyass.com/en-us/proxy",
+                platform: "Web",
+                features: ["Web Proxy", "Anonymous", "URL Encryption", "Free", "No Install", "Blocked Sites", "Simple"]
+            },
+            {
+                id: 254,
+                name: "Any.do",
+                category: "productivity",
+                rating: 4.5,
+                description: "Task list app with calendar integration and voice entry. Features reminders, subtasks, and collaboration for personal and team use.",
+                link: "https://www.any.do/",
+                platform: "All Platforms",
+                features: ["Task List", "Calendar", "Voice Entry", "Free Tier", "Reminders", "Subtasks", "Collaboration"]
+            },
+            {
+                id: 255,
+                name: "Pencil2D",
+                category: "animation",
+                rating: 4.3,
+                description: "2D animation software for hand-drawn animations. Features onion skinning, layers, and export to video formats for traditional animation.",
+                link: "https://www.pencil2d.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["2D Animation", "Hand-drawn", "Onion Skinning", "Open Source", "Layers", "Video Export", "Traditional"]
+            },
+            {
+                id: 256,
+                name: "BiglyBT",
+                category: "torrent-clients",
+                rating: 4.4,
+                description: "Feature-rich BitTorrent client with plugin support and media playback. Fork of Vuze with tag discovery, swarm merging, and VPN helper.",
+                link: "https://www.biglybt.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Torrent Client", "Plugins", "Media Playback", "Open Source", "Tag Discovery", "Swarm Merging", "VPN Helper"]
+            },
+            {
+                id: 257,
+                name: "Geany",
+                category: "text-editors",
+                rating: 4.4,
+                description: "Lightweight IDE with syntax highlighting and project management. Supports many languages, plugins, and build system integration.",
+                link: "https://www.geany.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Text Editor", "IDE", "Syntax Highlighting", "Open Source", "Plugins", "Project Management", "Build System"]
+            },
+            {
+                id: 258,
+                name: "PlatformIO",
+                category: "iot",
+                rating: 4.5,
+                description: "Open-source ecosystem for IoT development with board support. Features library manager, unit testing, and cloud compilation.",
+                link: "https://platformio.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["IoT IDE", "Board Support", "Library Manager", "Open Source", "Unit Testing", "Cloud Compilation", "Embedded"]
+            },
+            {
+                id: 259,
+                name: "Etcher",
+                category: "boot-tools",
+                rating: 4.6,
+                description: "USB/SD card image writer with validation and multi-drive support. Simple tool for creating bootable drives from ISO/IMG files.",
+                link: "https://etcher.balena.io/",
+                platform: "Windows/Mac/Linux",
+                features: ["Image Writer", "USB/SD", "Validation", "Open Source", "Multi-drive", "Bootable", "ISO/IMG"]
+            },
+            {
+                id: 260,
+                name: "Syncthing",
+                category: "cloud",
+                rating: 4.7,
+                description: "Decentralized file synchronization tool for private sharing. Features version control, selective sync, and end-to-end encryption without central servers.",
+                link: "https://syncthing.net/",
+                platform: "All Platforms",
+                features: ["File Sync", "Decentralized", "Private", "Open Source", "Version Control", "Selective Sync", "Encryption"]
+            },
+            {
+                id: 261,
+                name: "Microsoft To Do",
+                category: "productivity",
+                rating: 4.5,
+                description: "Task management app with lists, reminders, and Microsoft integration. Features daily planner, shared lists, and file attachments for personal productivity.",
+                link: "https://todo.microsoft.com/",
+                platform: "All Platforms",
+                features: ["Task Management", "Reminders", "Lists", "Free", "Shared Lists", "File Attachments", "Microsoft Integration"]
+            },
+            {
+                id: 262,
+                name: "Zoom",
+                category: "video-conferencing",
+                rating: 4.6,
+                description: "Video conferencing app with screen sharing and recording. Basic plan free for 40-minute meetings with up to 100 participants.",
+                link: "https://zoom.us/",
+                platform: "All Platforms",
+                features: ["Video Conferencing", "Screen Sharing", "Recording", "Free Tier", "Meetings", "Chat", "Webinars"]
+            },
+            {
+                id: 263,
+                name: "digiKam",
+                category: "photo-management",
+                rating: 4.4,
+                description: "Photo management application with face recognition and geotagging. Organizes photos with tags, ratings, and advanced search capabilities.",
+                link: "https://www.digikam.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Photo Manager", "Face Recognition", "Geotagging", "Open Source", "Tags", "Ratings", "Advanced Search"]
+            },
+            {
+                id: 264,
+                name: "FastStone Image Viewer",
+                category: "photo-management",
+                rating: 4.5,
+                description: "Image browser with editing tools and slideshow creator. Supports batch rename, color adjustment, and musical slideshows.",
+                link: "https://www.faststone.org/FSViewerDetail.htm",
+                platform: "Windows",
+                features: ["Image Viewer", "Editing", "Slideshow", "Free", "Batch Rename", "Color Adjustment", "Musical Slideshow"]
+            },
+            {
+                id: 265,
+                name: "Zathura",
+                category: "ebook-readers",
+                rating: 4.4,
+                description: "Minimalist document viewer with vim-like keybindings. Supports PDF, PS, and CBZ with customizable interface.",
+                link: "https://pwmt.org/projects/zathura/",
+                platform: "Linux",
+                features: ["Document Viewer", "Minimalist", "Vim Keybindings", "Open Source", "PDF/PS/CBZ", "Customizable", "Lightweight"]
+            },
+            {
+                id: 266,
+                name: "Sweet Home 3D",
+                category: "cad",
+                rating: 4.3,
+                description: "Interior design application for drawing house plans in 3D. Features furniture catalog, 3D view, and export to various formats.",
+                link: "https://www.sweethome3d.com/",
+                platform: "Windows/Mac/Linux",
+                features: ["Interior Design", "3D Modeling", "House Plans", "Open Source", "Furniture Catalog", "3D View", "Export"]
+            },
+            {
+                id: 267,
+                name: "File Browser",
+                category: "file-management",
+                rating: 4.4,
+                description: "Web-based file manager for self-hosted servers. Features sharing, media preview, and command execution.",
+                link: "https://filebrowser.org/",
+                platform: "Self-hosted",
+                features: ["File Manager", "Web-based", "Sharing", "Open Source", "Media Preview", "Command Execution", "Self-hosted"]
+            },
+            {
+                id: 268,
+                name: "WezTerm",
+                category: "terminal",
+                rating: 4.5,
+                description: "GPU-accelerated cross-platform terminal with multiplexing. Features Lua configuration, ligatures, and image protocol support.",
+                link: "https://wezfurlong.org/wezterm/",
+                platform: "Windows/Mac/Linux",
+                features: ["Terminal", "GPU Accelerated", "Multiplexing", "Open Source", "Lua Config", "Ligatures", "Image Support"]
+            },
+            {
+                id: 269,
+                name: "TortoiseGit",
+                category: "development",
+                rating: 4.4,
+                description: "Windows shell extension for Git with overlay icons. Features commit dialog, log viewer, and merge tools.",
+                link: "https://tortoisegit.org/",
+                platform: "Windows",
+                features: ["Git Client", "Shell Extension", "Overlay Icons", "Open Source", "Commit Dialog", "Log Viewer", "Merge Tools"]
+            },
+            {
+                id: 270,
+                name: "PyCharm Community",
+                category: "ide",
+                rating: 4.7,
+                description: "Python IDE with code completion and project navigation. Features debugger, test runner, and VCS integration.",
+                link: "https://www.jetbrains.com/pycharm/",
+                platform: "Windows/Mac/Linux",
+                features: ["Python IDE", "Code Completion", "Debugger", "Open Source", "Test Runner", "VCS", "Project Navigation"]
+            },
+            {
+                id: 271,
+                name: "Flowblade",
+                category: "video",
+                rating: 4.3,
+                description: "Non-linear video editor with proxy editing and filters. Features multi-track timeline, color wheels, and keyframe tools.",
+                link: "https://jliljebl.github.io/flowblade/",
+                platform: "Linux",
+                features: ["Video Editor", "Non-linear", "Proxy Editing", "Open Source", "Multi-track", "Color Wheels", "Keyframes"]
+            },
+            {
+                id: 272,
+                name: "LessPass",
+                category: "password-managers",
+                rating: 4.3,
+                description: "Stateless password manager generating passwords on-the-fly. Features browser extensions and mobile apps without database storage.",
+                link: "https://lesspass.com/",
+                platform: "All Platforms",
+                features: ["Password Manager", "Stateless", "Generate On-fly", "Open Source", "Browser Extensions", "Mobile Apps", "No Database"]
+            },
+            {
+                id: 273,
+                name: "Psiphon",
+                category: "vpn-proxy",
+                rating: 4.4,
+                description: "Censorship circumvention tool with VPN and proxy modes. Features split tunnel and protocol selection for accessibility.",
+                link: "https://psiphon.ca/",
+                platform: "All Platforms",
+                features: ["VPN/Proxy", "Censorship Bypass", "Split Tunnel", "Free", "Protocol Selection", "Accessibility", "Secure"]
+            },
+            {
+                id: 274,
+                name: "Habitica",
+                category: "habit-tracking",
+                rating: 4.4,
+                description: "Habit-building app that gamifies tasks with RPG elements. Features quests, rewards, and social guilds for motivation.",
+                link: "https://habitica.com/",
+                platform: "All Platforms",
+                features: ["Habit Tracker", "Gamification", "RPG", "Free", "Quests", "Rewards", "Social Guilds"]
+            },
+            {
+                id: 275,
+                name: "Synfig Studio",
+                category: "animation",
+                rating: 4.3,
+                description: "2D animation software with bone system and vector tweening. Features layers, gradients, and export to video.",
+                link: "https://www.synfig.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["2D Animation", "Bone System", "Vector Tweening", "Open Source", "Layers", "Gradients", "Video Export"]
+            },
+            {
+                id: 276,
+                name: "PicoTorrent",
+                category: "torrent-clients",
+                rating: 4.4,
+                description: "Minimalist BitTorrent client with low memory usage. Features sequential downloading and magnet link support.",
+                link: "https://picotorrent.org/",
+                platform: "Windows",
+                features: ["Torrent Client", "Minimalist", "Low Memory", "Open Source", "Sequential Download", "Magnet Links", "Lightweight"]
+            },
+            {
+                id: 277,
+                name: "Bluefish",
+                category: "text-editors",
+                rating: 4.3,
+                description: "Editor for programmers with syntax highlighting for many languages. Features project support, auto-recovery, and external programs integration.",
+                link: "http://bluefish.openoffice.nl/",
+                platform: "Windows/Mac/Linux",
+                features: ["Code Editor", "Syntax Highlighting", "Projects", "Open Source", "Auto-recovery", "Multi-language", "Integration"]
+            },
+            {
+                id: 278,
+                name: "Thonny",
+                category: "ide",
+                rating: 4.4,
+                description: "Python IDE for beginners with debugger and variable explorer. Features syntax error highlighting and pip GUI.",
+                link: "https://thonny.org/",
+                platform: "Windows/Mac/Linux",
+                features: ["Python IDE", "Beginner-friendly", "Debugger", "Open Source", "Variable Explorer", "Syntax Highlighting", "Pip GUI"]
+            },
+            {
+                id: 279,
+                name: "Ventoy",
+                category: "boot-tools",
+                rating: 4.6,
+                description: "Tool for creating multiboot USB drives without extraction. Supports ISO files directly and automatic menu generation.",
+                link: "https://www.ventoy.net/",
+                platform: "Windows/Linux",
+                features: ["Multiboot USB", "ISO Support", "No Extraction", "Open Source", "Auto Menu", "Bootable", "Easy Setup"]
+            },
+            {
+                id: 280,
+                name: "pCloud",
+                category: "cloud",
+                rating: 4.5,
+                description: "Cloud storage with 10GB free space and client-side encryption. Features file versioning, media player, and remote upload.",
+                link: "https://www.pcloud.com/",
+                platform: "All Platforms",
+                features: ["Cloud Storage", "10GB Free", "Encryption", "Free Tier", "File Versioning", "Media Player", "Remote Upload"]
+            }
+        ];
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const appsList = document.getElementById('apps-list');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+
+            let currentFilter = 'all';
+            let currentSearch = '';
+
+            // Render apps
+            function renderApps() {
+                appsList.innerHTML = '';
+
+                let filteredApps = apps;
+
+                // Apply category filter
+                if (currentFilter !== 'all') {
+                    filteredApps = filteredApps.filter(app => app.category === currentFilter);
+                }
+
+                // Apply search filter
+                if (currentSearch.trim() !== '') {
+                    const searchTerm = currentSearch.toLowerCase();
+                    filteredApps = filteredApps.filter(app =>
+                        app.name.toLowerCase().includes(searchTerm) ||
+                        app.description.toLowerCase().includes(searchTerm) ||
+                        app.features.some(feature => feature.toLowerCase().includes(searchTerm))
+                    );
+                }
+
+                // Update search results counter
+                searchResults.textContent = `Found ${filteredApps.length} application${filteredApps.length !== 1 ? 's' : ''}`;
+
+                // Render items
+                filteredApps.forEach(app => {
+                    const appItem = document.createElement('div');
+                    appItem.className = 'app-item fade-in';
+                    appItem.innerHTML = `
+                        <div class="item-header">
+                            <div class="item-title-container">
+                                <h3 class="item-title">${app.name}</h3>
+                                <span class="item-platform">${app.platform}</span>
+                            </div>
+                            <div class="rating">${app.rating}/5.0</div>
+                        </div>
+                        <p class="item-description">${app.description}</p>
+                        <div class="item-features">
+                            ${app.features.map(feature =>
+                                `<span class="feature-tag">${feature}</span>`
+                            ).join('')}
+                        </div>
+                        <div class="item-footer">
+                            <a href="${app.link}" target="_blank" class="download-btn">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    `;
+                    appsList.appendChild(appItem);
+                });
+
+                // If no items found
+                if (filteredApps.length === 0) {
+                    appsList.innerHTML = `
+                        <div class="no-items">
+                            <h3>No applications found</h3>
+                            <p>Try a different search or select another category</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Initial render
+            renderApps();
+
+            // Filter button click events
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get category from data attribute
+                    currentFilter = this.getAttribute('data-category');
+
+                    // Render filtered items
+                    renderApps();
+                });
+            });
+
+            // Search input event
+            searchInput.addEventListener('input', function() {
+                currentSearch = this.value;
+                renderApps();
+            });
+
+            // Add glow effect on hover
+            document.addEventListener('mouseover', function(e) {
+                if (e.target.closest('.app-item')) {
+                    const item = e.target.closest('.app-item');
+                    item.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.3)';
+                }
+            });
+
+            document.addEventListener('mouseout', function(e) {
+                if (e.target.closest('.app-item')) {
+                    const item = e.target.closest('.app-item');
+                    item.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 102, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff6600;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .telegram-btn, .donate-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .telegram-btn {
+            background: linear-gradient(135deg, #0088cc, #0055cc);
+            color: white;
+            border: 1px solid rgba(0, 136, 204, 0.3);
+        }
+
+        .telegram-btn:hover {
+            background: linear-gradient(135deg, #0055cc, #0088cc);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        .donate-btn {
+            background: linear-gradient(135deg, #ff3366, #ff0066);
+            color: white;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+        }
+
+        .donate-btn:hover {
+            background: linear-gradient(135deg, #ff0066, #ff3366);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0 60px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #ff6600;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+            font-weight: 800;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: #a0a0c0;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Search Section */
+        .search-section {
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 16px;
+            background: rgba(30, 30, 46, 0.9);
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            border-radius: 12px;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.3);
+        }
+
+        .search-results {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff9966;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 40px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .filter-section::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .filter-section::-webkit-scrollbar-track {
+            background: rgba(30, 30, 46, 0.5);
+            border-radius: 3px;
+        }
+
+        .filter-section::-webkit-scrollbar-thumb {
+            background: #ff6600;
+            border-radius: 3px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 5px;
+            min-width: max-content;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(40, 40, 60, 0.7);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            color: #c0c0e0;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            backdrop-filter: blur(5px);
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 102, 0, 0.2);
+            color: white;
+            transform: translateY(-2px);
+            border-color: #ff6600;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #ff6600, #ff9933);
+            color: white;
+            border-color: #ff6600;
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        /* Apps List */
+        .items-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .app-item {
+            background: linear-gradient(145deg, rgba(30, 30, 46, 0.9), rgba(20, 20, 35, 0.9));
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .app-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6600, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .app-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 102, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        }
+
+        .app-item:hover::before {
+            opacity: 1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .item-title-container {
+            flex: 1;
+        }
+
+        .item-title {
+            font-size: 20px;
+            color: #ff9966;
+            margin-bottom: 5px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .item-platform {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 102, 0, 0.1);
+            color: #ff9966;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .rating {
+            background: linear-gradient(135deg, #ff9900, #ff6600);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .item-description {
+            color: #b0b0d0;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            height: 72px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .item-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 102, 0, 0.1);
+            color: #ff9966;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff6600, #ff9933);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #ff5500, #ff8822);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        .no-items {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: #a0a0c0;
+        }
+
+        .no-items h3 {
+            font-size: 28px;
+            color: #ff9966;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(255, 102, 0, 0.3);
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .copyright {
+            color: #a0a0c0;
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .items-list {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .telegram-btn, .donate-btn {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .page-description {
+                font-size: 16px;
+            }
+
+            .items-list {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                justify-content: flex-start;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .search-input {
+                padding: 15px 20px;
+                font-size: 14px;
+            }
+
+            .item-title {
+                font-size: 18px;
+            }
+
+            .item-description {
+                font-size: 14px;
+            }
+
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
