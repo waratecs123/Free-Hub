@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="other_files/website.png" alt="Free-Hub Website Screenshot" width="1000">
+</div>
+
 # Free-Hub - Free Applications Catalog
 
 ### [>> Website <<](https://free-hub.pages.dev/)
