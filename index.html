@@ -141,6 +141,17 @@
         </div>
     </main>
 
+<!-- Pagination Controls -->
+<div id="pagination-controls" class="pagination-controls">
+    <button id="prev-btn" class="pagination-btn">
+        <i class="fas fa-chevron-left"></i> Previous
+    </button>
+    <div id="page-numbers" class="page-numbers"></div>
+    <button id="next-btn" class="pagination-btn">
+        Next <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -10158,121 +10169,237 @@
         ];
 
         // DOM Content Loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            const appsList = document.getElementById('apps-list');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const searchInput = document.getElementById('search-input');
-            const searchResults = document.getElementById('search-results');
+document.addEventListener('DOMContentLoaded', function() {
+    const appsList = document.getElementById('apps-list');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const paginationControls = document.getElementById('pagination-controls');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageNumbers = document.getElementById('page-numbers');
 
-            let currentFilter = 'all';
-            let currentSearch = '';
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let currentPage = 1;
+    const itemsPerPage = 20;
+    let currentFilteredApps = [];
 
-            // Render apps
-            function renderApps() {
-                appsList.innerHTML = '';
+    // Render apps with pagination
+    function renderApps(page = 1) {
+        appsList.innerHTML = '';
+        
+        let filteredApps = apps;
 
-                let filteredApps = apps;
+        // Apply category filter
+        if (currentFilter !== 'all') {
+            filteredApps = filteredApps.filter(app => app.category === currentFilter);
+        }
 
-                // Apply category filter
-                if (currentFilter !== 'all') {
-                    filteredApps = filteredApps.filter(app => app.category === currentFilter);
-                }
+        // Apply search filter
+        if (currentSearch.trim() !== '') {
+            const searchTerm = currentSearch.toLowerCase();
+            filteredApps = filteredApps.filter(app =>
+                app.name.toLowerCase().includes(searchTerm) ||
+                app.description.toLowerCase().includes(searchTerm) ||
+                app.features.some(feature => feature.toLowerCase().includes(searchTerm))
+            );
+        }
 
-                // Apply search filter
-                if (currentSearch.trim() !== '') {
-                    const searchTerm = currentSearch.toLowerCase();
-                    filteredApps = filteredApps.filter(app =>
-                        app.name.toLowerCase().includes(searchTerm) ||
-                        app.description.toLowerCase().includes(searchTerm) ||
-                        app.features.some(feature => feature.toLowerCase().includes(searchTerm))
-                    );
-                }
+        // Store filtered apps for pagination
+        currentFilteredApps = filteredApps;
 
-                // Update search results counter
-                searchResults.textContent = `Found ${filteredApps.length} application${filteredApps.length !== 1 ? 's' : ''}`;
+        // Update search results counter
+        searchResults.textContent = `Found ${filteredApps.length} application${filteredApps.length !== 1 ? 's' : ''}`;
 
-                // Render items
-                filteredApps.forEach(app => {
-                    const appItem = document.createElement('div');
-                    appItem.className = 'app-item fade-in';
-                    appItem.innerHTML = `
-                        <div class="item-header">
-                            <div class="item-title-container">
-                                <h3 class="item-title">${app.name}</h3>
-                                <span class="item-platform">${app.platform}</span>
-                            </div>
-                            <div class="rating">${app.rating}/5.0</div>
-                        </div>
-                        <p class="item-description">${app.description}</p>
-                        <div class="item-features">
-                            ${app.features.map(feature =>
-                                `<span class="feature-tag">${feature}</span>`
-                            ).join('')}
-                        </div>
-                        <div class="item-footer">
-                            <a href="${app.link}" target="_blank" class="download-btn">
-                                <i class="fas fa-download"></i> Download
-                            </a>
-                        </div>
-                    `;
-                    appsList.appendChild(appItem);
-                });
+        // Calculate pagination
+        const totalPages = Math.ceil(filteredApps.length / itemsPerPage);
+        currentPage = Math.min(Math.max(page, 1), totalPages);
 
-                // If no items found
-                if (filteredApps.length === 0) {
-                    appsList.innerHTML = `
-                        <div class="no-items">
-                            <h3>No applications found</h3>
-                            <p>Try a different search or select another category</p>
-                        </div>
-                    `;
-                }
-            }
+        // Get apps for current page
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedApps = filteredApps.slice(startIndex, endIndex);
 
-            // Initial render
-            renderApps();
-
-            // Filter button click events
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    // Get category from data attribute
-                    currentFilter = this.getAttribute('data-category');
-
-                    // Render filtered items
-                    renderApps();
-                });
-            });
-
-            // Search input event
-            searchInput.addEventListener('input', function() {
-                currentSearch = this.value;
-                renderApps();
-            });
-
-            // Add glow effect on hover
-            document.addEventListener('mouseover', function(e) {
-                if (e.target.closest('.app-item')) {
-                    const item = e.target.closest('.app-item');
-                    item.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.3)';
-                }
-            });
-
-            document.addEventListener('mouseout', function(e) {
-                if (e.target.closest('.app-item')) {
-                    const item = e.target.closest('.app-item');
-                    item.style.boxShadow = 'none';
-                }
-            });
+        // Render paginated items
+        paginatedApps.forEach(app => {
+            const appItem = document.createElement('div');
+            appItem.className = 'app-item fade-in';
+            appItem.innerHTML = `
+                <div class="item-header">
+                    <div class="item-title-container">
+                        <h3 class="item-title">${app.name}</h3>
+                        <span class="item-platform">${app.platform}</span>
+                    </div>
+                    <div class="rating">${app.rating}/5.0</div>
+                </div>
+                <p class="item-description">${app.description}</p>
+                <div class="item-features">
+                    ${app.features.map(feature =>
+                        `<span class="feature-tag">${feature}</span>`
+                    ).join('')}
+                </div>
+                <div class="item-footer">
+                    <a href="${app.link}" target="_blank" class="download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            `;
+            appsList.appendChild(appItem);
         });
+
+        // Update pagination controls
+        updatePaginationControls(totalPages);
+
+        // Show/hide pagination
+        if (filteredApps.length <= itemsPerPage) {
+            paginationControls.style.display = 'none';
+        } else {
+            paginationControls.style.display = 'flex';
+        }
+
+        // If no items found
+        if (filteredApps.length === 0) {
+            appsList.innerHTML = `
+                <div class="no-items">
+                    <h3>No applications found</h3>
+                    <p>Try a different search or select another category</p>
+                </div>
+            `;
+            paginationControls.style.display = 'none';
+        }
+
+        // Scroll to top of apps list
+        appsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Update pagination controls
+    function updatePaginationControls(totalPages) {
+        pageNumbers.innerHTML = '';
+        
+        // Previous button
+        prevBtn.disabled = currentPage === 1;
+
+        // Next button
+        nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+        // Calculate which page numbers to show
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, currentPage + 2);
+
+        // Adjust if near start
+        if (currentPage <= 3) {
+            endPage = Math.min(5, totalPages);
+        }
+
+        // Adjust if near end
+        if (currentPage >= totalPages - 2) {
+            startPage = Math.max(totalPages - 4, 1);
+        }
+
+        // Always show first page
+        if (startPage > 1) {
+            addPageNumber(1);
+            if (startPage > 2) {
+                addDots();
+            }
+        }
+
+        // Show calculated pages
+        for (let i = startPage; i <= endPage; i++) {
+            addPageNumber(i);
+        }
+
+        // Always show last page
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                addDots();
+            }
+            addPageNumber(totalPages);
+        }
+
+        function addPageNumber(page) {
+            const pageElement = document.createElement('div');
+            pageElement.className = `page-number ${page === currentPage ? 'active' : ''}`;
+            pageElement.textContent = page;
+            pageElement.addEventListener('click', () => {
+                currentPage = page;
+                renderApps(page);
+            });
+            pageNumbers.appendChild(pageElement);
+        }
+
+        function addDots() {
+            const dots = document.createElement('div');
+            dots.className = 'page-number dots';
+            dots.textContent = '...';
+            pageNumbers.appendChild(dots);
+        }
+    }
+
+    // Initial render
+    renderApps();
+
+    // Filter button click events
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Get category from data attribute
+            currentFilter = this.getAttribute('data-category');
+            currentPage = 1;
+
+            // Render filtered items
+            renderApps();
+        });
+    });
+
+    // Search input event
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value;
+        currentPage = 1;
+        renderApps();
+    });
+
+    // Pagination button events
+    prevBtn.addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            renderApps(currentPage);
+        }
+    });
+
+    nextBtn.addEventListener('click', function() {
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderApps(currentPage);
+        }
+    });
+
+    // Add glow effect on hover
+    document.addEventListener('mouseover', function(e) {
+        if (e.target.closest('.app-item')) {
+            const item = e.target.closest('.app-item');
+            item.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.3)';
+        }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.closest('.app-item')) {
+            const item = e.target.closest('.app-item');
+            item.style.boxShadow = 'none';
+        }
+    });
+});
     </script>
 </body>
 </html>
+
 
 
 
