@@ -1012,3 +1012,143 @@ html {
     border-radius: 2px;
     box-shadow: 0 0 10px var(--primary-color);
 }
+
+/* GitHub Button Styles */
+.github-btn {
+    background: linear-gradient(145deg, #333, #24292e);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.github-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.github-btn:hover::before {
+    opacity: 1;
+}
+
+.github-btn:hover {
+    background: linear-gradient(145deg, #24292e, #333);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4),
+                0 0 30px rgba(36, 41, 46, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.github-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Update header buttons layout for GitHub button */
+.header-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .header-buttons {
+        gap: 10px;
+    }
+    
+    .github-btn,
+    .telegram-btn,
+    .donate-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-buttons {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .github-btn,
+    .telegram-btn,
+    .donate-btn {
+        flex: 1;
+        min-width: 120px;
+        max-width: 200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .github-btn,
+    .telegram-btn,
+    .donate-btn {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        padding: 10px 15px;
+    }
+}
+
+/* Dark mode adjustments for GitHub button */
+@media (prefers-color-scheme: dark) {
+    .github-btn {
+        background: linear-gradient(145deg, #24292e, #1a1e23);
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .github-btn:hover {
+        background: linear-gradient(145deg, #1a1e23, #24292e);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Animation for GitHub button */
+@keyframes githubPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(36, 41, 46, 0.4);
+    }
+}
+
+.github-btn {
+    animation: githubPulse 3s infinite;
+}
