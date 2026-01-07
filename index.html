@@ -141,15 +141,45 @@
         </div>
     </main>
 
-<!-- Pagination Controls -->
-<div id="pagination-controls" class="pagination-controls">
-    <button id="prev-btn" class="pagination-btn">
-        <i class="fas fa-chevron-left"></i> Previous
-    </button>
-    <div id="page-numbers" class="page-numbers"></div>
-    <button id="next-btn" class="pagination-btn">
-        Next <i class="fas fa-chevron-right"></i>
-    </button>
+<!-- Pagination -->
+<div class="pagination-container">
+    <div id="pagination-stats" class="pagination-stats">
+        Showing <span id="start-item">0</span>-<span id="end-item">0</span> of <span id="total-items">0</span> apps
+    </div>
+    
+    <div class="pagination-wrapper">
+        <div class="pagination-controls">
+            <button id="first-btn" class="pagination-btn pagination-btn-arrow" aria-label="First page">
+                <i class="fas fa-angle-double-left"></i>
+            </button>
+            
+            <button id="prev-btn" class="pagination-btn pagination-btn-arrow" aria-label="Previous page">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div id="page-numbers" class="page-numbers">
+                <!-- Page numbers will be inserted here -->
+            </div>
+            
+            <button id="next-btn" class="pagination-btn pagination-btn-arrow" aria-label="Next page">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <button id="last-btn" class="pagination-btn pagination-btn-arrow" aria-label="Last page">
+                <i class="fas fa-angle-double-right"></i>
+            </button>
+        </div>
+        
+        <div class="items-per-page">
+            <label for="items-per-page-select">Show:</label>
+            <select id="items-per-page-select" class="items-per-page-select">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+    </div>
 </div>
 
     <!-- Footer -->
@@ -10167,22 +10197,30 @@
     features: ["Performance Monitoring", "Real-time", "Free", "Open Source", "Metrics", "Health", "Cloud"]
 }
         ];
-
         // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     const appsList = document.getElementById('apps-list');
     const filterButtons = document.querySelectorAll('.filter-btn');
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
-    const paginationControls = document.getElementById('pagination-controls');
+    
+    // Pagination elements
+    const paginationContainer = document.querySelector('.pagination-container');
+    const paginationStats = document.getElementById('pagination-stats');
+    const startItem = document.getElementById('start-item');
+    const endItem = document.getElementById('end-item');
+    const totalItems = document.getElementById('total-items');
+    const pageNumbers = document.getElementById('page-numbers');
+    const firstBtn = document.getElementById('first-btn');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const pageNumbers = document.getElementById('page-numbers');
-
+    const lastBtn = document.getElementById('last-btn');
+    const itemsPerPageSelect = document.getElementById('items-per-page-select');
+    
     let currentFilter = 'all';
     let currentSearch = '';
     let currentPage = 1;
-    const itemsPerPage = 20;
+    let itemsPerPage = parseInt(itemsPerPageSelect.value);
     let currentFilteredApps = [];
 
     // Render apps with pagination
@@ -10221,6 +10259,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const endIndex = startIndex + itemsPerPage;
         const paginatedApps = filteredApps.slice(startIndex, endIndex);
 
+        // Update pagination stats
+        startItem.textContent = filteredApps.length > 0 ? startIndex + 1 : 0;
+        endItem.textContent = Math.min(endIndex, filteredApps.length);
+        totalItems.textContent = filteredApps.length;
+
         // Render paginated items
         paginatedApps.forEach(app => {
             const appItem = document.createElement('div');
@@ -10253,9 +10296,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show/hide pagination
         if (filteredApps.length <= itemsPerPage) {
-            paginationControls.style.display = 'none';
+            paginationContainer.style.display = 'none';
         } else {
-            paginationControls.style.display = 'flex';
+            paginationContainer.style.display = 'block';
         }
 
         // If no items found
@@ -10266,38 +10309,38 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Try a different search or select another category</p>
                 </div>
             `;
-            paginationControls.style.display = 'none';
+            paginationContainer.style.display = 'none';
         }
 
-        // Scroll to top of apps list
-        appsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Scroll to top of apps list smoothly
+        setTimeout(() => {
+            appsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 
     // Update pagination controls
     function updatePaginationControls(totalPages) {
         pageNumbers.innerHTML = '';
         
-        // Previous button
-        prevBtn.disabled = currentPage === 1;
-
-        // Next button
+        // Button states
+        firstBtn.disabled = currentPage === 1 || totalPages === 0;
+        prevBtn.disabled = currentPage === 1 || totalPages === 0;
         nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+        lastBtn.disabled = currentPage === totalPages || totalPages === 0;
 
-        // Calculate which page numbers to show
-        let startPage = Math.max(1, currentPage - 2);
-        let endPage = Math.min(totalPages, currentPage + 2);
-
-        // Adjust if near start
-        if (currentPage <= 3) {
-            endPage = Math.min(5, totalPages);
+        // Calculate which page numbers to show (responsive)
+        const maxVisiblePages = window.innerWidth < 480 ? 3 : 
+                               window.innerWidth < 768 ? 5 : 7;
+        
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        // Adjust if we're near the end
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
         }
 
-        // Adjust if near end
-        if (currentPage >= totalPages - 2) {
-            startPage = Math.max(totalPages - 4, 1);
-        }
-
-        // Always show first page
+        // Always show first page if not already shown
         if (startPage > 1) {
             addPageNumber(1);
             if (startPage > 2) {
@@ -10310,7 +10353,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addPageNumber(i);
         }
 
-        // Always show last page
+        // Always show last page if not already shown
         if (endPage < totalPages) {
             if (endPage < totalPages - 1) {
                 addDots();
@@ -10322,10 +10365,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const pageElement = document.createElement('div');
             pageElement.className = `page-number ${page === currentPage ? 'active' : ''}`;
             pageElement.textContent = page;
+            pageElement.setAttribute('aria-label', `Page ${page}`);
             pageElement.addEventListener('click', () => {
-                currentPage = page;
-                renderApps(page);
+                if (page !== currentPage) {
+                    currentPage = page;
+                    renderApps(page);
+                }
             });
+            pageElement.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (page !== currentPage) {
+                        currentPage = page;
+                        renderApps(page);
+                    }
+                }
+            });
+            pageElement.tabIndex = 0;
             pageNumbers.appendChild(pageElement);
         }
 
@@ -10333,6 +10389,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const dots = document.createElement('div');
             dots.className = 'page-number dots';
             dots.textContent = '...';
+            dots.setAttribute('aria-hidden', 'true');
             pageNumbers.appendChild(dots);
         }
     }
@@ -10366,6 +10423,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Pagination button events
+    firstBtn.addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage = 1;
+            renderApps(currentPage);
+        }
+    });
+
     prevBtn.addEventListener('click', function() {
         if (currentPage > 1) {
             currentPage--;
@@ -10379,6 +10443,71 @@ document.addEventListener('DOMContentLoaded', function() {
             currentPage++;
             renderApps(currentPage);
         }
+    });
+
+    lastBtn.addEventListener('click', function() {
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage = totalPages;
+            renderApps(currentPage);
+        }
+    });
+
+    // Items per page change event
+    itemsPerPageSelect.addEventListener('change', function() {
+        itemsPerPage = parseInt(this.value);
+        currentPage = 1;
+        renderApps();
+    });
+
+    // Keyboard navigation for pagination
+    document.addEventListener('keydown', function(e) {
+        if (document.activeElement.closest('.pagination-controls')) {
+            return;
+        }
+        
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+        
+        switch(e.key) {
+            case 'ArrowLeft':
+                if (currentPage > 1) {
+                    e.preventDefault();
+                    currentPage--;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'ArrowRight':
+                if (currentPage < totalPages) {
+                    e.preventDefault();
+                    currentPage++;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'Home':
+                if (currentPage > 1) {
+                    e.preventDefault();
+                    currentPage = 1;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'End':
+                if (currentPage < totalPages) {
+                    e.preventDefault();
+                    currentPage = totalPages;
+                    renderApps(currentPage);
+                }
+                break;
+        }
+    });
+
+    // Recalculate pagination on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+            updatePaginationControls(totalPages);
+        }, 150);
     });
 
     // Add glow effect on hover
@@ -10399,6 +10528,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 </body>
 </html>
+
 
 
 
