@@ -906,10 +906,22 @@ footer::before {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Tablets */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 var(--size-4);
+/* Для экранов меньше 1200px - 2 карточки в ряд */
+@media (max-width: 1200px) {
+    .items-list {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+/* Для экранов меньше 900px - 2 карточки в ряд с меньшими отступами */
+@media (max-width: 900px) {
+    .items-list {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: var(--size-4);
+    }
+
+    .app-item {
+        padding: var(--size-4);
     }
 
     h1 {
@@ -920,44 +932,31 @@ footer::before {
     .page-description {
         font-size: 16px;
     }
+}
 
-    /* Еще более компактный хедер на планшетах */
-    header {
-        padding: 6px 0 !important;
-        min-height: 45px !important;
-    }
-
-    .header-inner {
-        gap: 10px !important;
-        padding: 3px 0 !important;
-    }
-
-    .logo {
-        font-size: 16px !important;
-        padding: 5px 8px !important;
-        gap: 6px !important;
-    }
-
-    .logo-icon {
-        font-size: 18px !important;
-    }
-
-    .header-buttons {
-        gap: 6px !important;
-    }
-
-    .github-btn, .telegram-btn, .donate-btn {
-        padding: 5px 10px !important;
-        font-size: 11px !important;
-    }
-
+/* Для экранов меньше 768px - 2 карточки в ряд (компактные) */
+@media (max-width: 768px) {
     .items-list {
-        grid-template-columns: 1fr;
-        gap: var(--size-4);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-3);
     }
 
     .app-item {
-        padding: var(--size-4);
+        padding: var(--size-3);
+    }
+
+    .item-title {
+        font-size: 18px;
+    }
+
+    .item-description {
+        font-size: 13px;
+        -webkit-line-clamp: 2;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 13px;
     }
 
     .filter-buttons {
@@ -971,139 +970,94 @@ footer::before {
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 28px;
+/* Для экранов меньше 640px - адаптивные 2 карточки */
+@media (max-width: 640px) {
+    .items-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-2);
     }
 
-    .page-description {
-        font-size: 14px;
-    }
-
-    /* Суперкомпактный хедер на мобильных */
-    header {
-        padding: 4px 0 !important; /* Еще меньше */
-        min-height: 40px !important; /* Минимальная высота */
-    }
-
-    .header-inner {
-        padding: 2px 0 !important; /* Минимум отступов */
-        gap: 8px !important; /* Минимум отступов */
-    }
-
-    .logo {
-        font-size: 14px !important; /* Очень маленький текст */
-        padding: 4px 6px !important; /* Минимальные отступы */
-        gap: 4px !important; /* Минимальный отступ между иконкой и текстом */
-    }
-
-    .logo-icon {
-        font-size: 16px !important; /* Компактная иконка */
-    }
-
-    .header-buttons {
-        gap: 4px !important; /* Минимальный отступ между кнопками */
-    }
-
-    .github-btn, .telegram-btn, .donate-btn {
-        padding: 4px 8px !important; /* Суперкомпактные кнопки */
-        font-size: 10px !important; /* Очень маленький текст */
-        min-width: auto; /* Убираем минимальную ширину */
-        white-space: nowrap; /* Текст в одну строку */
-    }
-
-    /* Скрываем текст на очень маленьких кнопках, оставляем только иконки */
-    .github-btn span,
-    .telegram-btn span,
-    .donate-btn span {
-        display: none; /* Скрываем текст на очень маленьких экранах */
-    }
-
-    .github-btn i,
-    .telegram-btn i,
-    .donate-btn i {
-        margin: 0; /* Убираем отступы у иконок */
-        font-size: 12px; /* Чуть увеличиваем иконки */
-    }
-
-    .search-input {
-        font-size: 14px;
-        padding: 10px 20px 10px 48px;
-        height: 44px;
-        line-height: 1.3;
-    }
-
-    .filter-btn {
-        padding: var(--size-2) var(--size-3);
-        font-size: 12px;
+    .app-item {
+        padding: var(--size-2);
     }
 
     .item-header {
         flex-direction: column;
-        gap: var(--size-2);
+        gap: var(--size-1);
+        margin-bottom: var(--size-2);
+    }
+
+    .item-title {
+        font-size: 16px;
     }
 
     .rating {
         align-self: flex-start;
+        padding: 4px 8px;
+        font-size: 12px;
     }
 
-    .item-footer {
-        flex-direction: column;
-        gap: var(--size-2);
-        align-items: stretch;
+    .item-description {
+        font-size: 12px;
+        margin-bottom: var(--size-2);
+    }
+
+    .feature-tag {
+        padding: 4px 8px;
+        font-size: 11px;
     }
 
     .download-btn {
-        width: 100%;
-        justify-content: center;
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }
 
-/* Еще более маленькие экраны */
+/* Для экранов меньше 480px - всегда 2 карточки в ряд */
+@media (max-width: 480px) {
+    .items-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-2);
+    }
+
+    .app-item {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-description {
+        -webkit-line-clamp: 2;
+        flex-grow: 1;
+    }
+
+    .item-footer {
+        margin-top: auto;
+    }
+}
+
+/* Для экранов меньше 360px - уменьшаем еще больше для 2 карточек */
 @media (max-width: 360px) {
-    /* Экстремально компактный хедер */
-    header {
-        padding: 3px 0 !important; /* Абсолютный минимум */
-        min-height: 35px !important; /* Минимум */
+    .items-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-1);
     }
 
-    .header-inner {
-        padding: 1px 0 !important; /* Практически нет отступов */
-        gap: 6px !important; /* Минимум */
+    .app-item {
+        padding: var(--size-1);
     }
 
-    .logo {
-        font-size: 12px !important; /* Экстремально маленький */
-        padding: 3px 5px !important; /* Минимум */
-        gap: 3px !important; /* Минимум */
+    .item-title {
+        font-size: 14px;
     }
 
-    .logo-icon {
-        font-size: 14px !important; /* Компактная иконка */
+    .item-description {
+        font-size: 11px;
+        -webkit-line-clamp: 2;
     }
 
-    .header-buttons {
-        gap: 3px !important; /* Абсолютный минимум */
-    }
-
-    .github-btn, .telegram-btn, .donate-btn {
-        padding: 3px 6px !important; /* Абсолютный минимум */
-        font-size: 9px !important; /* Экстремально маленький */
-        border-radius: 6px !important; /* Чуть меньше скругление */
-    }
-
-    /* Скрываем текст, оставляем только иконки */
-    .github-btn span,
-    .telegram-btn span,
-    .donate-btn span {
-        display: none !important;
-    }
-
-    .github-btn i,
-    .telegram-btn i,
-    .donate-btn i {
-        font-size: 11px !important;
-        margin: 0 !important;
+    .download-btn {
+        padding: 6px 12px;
+        font-size: 11px;
     }
 }
