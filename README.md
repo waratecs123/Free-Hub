@@ -4,6 +4,13 @@
 
 # Free-Hub - Free Applications Catalog
 
+
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Developer](https://img.shields.io/badge/Dev-waratecs123-blue.svg)
+![Status](https://img.shields.io/badge/Maintained-When%20time%20permits-blue.svg)
+
+</div>
+
 ### [>> Website <<](https://free-hub.pages.dev/)
 ### [>> Website (Alternative Link) <<](https://waratecs123.github.io/Free-Hub/)
 
