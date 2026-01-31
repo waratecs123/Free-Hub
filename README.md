@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="other_files/web_site.png" alt="Free-Hub Website Screenshot" width="1000">
+  <img src="other_files/Logo_1.png" alt="Free-Hub Website Screenshot" width="1000">
 </div>
 
 # Free-Hub - Free Applications Catalog
@@ -26,6 +26,12 @@ Free-Hub is a comprehensive web application that serves as a curated catalog of 
   - System & Network Tools
   - Cloud Storage & Backup Solutions
   - And many more specialized categories
+
+### Screenshot
+
+<div align="center">
+  <img src="other_files/web_site.png" alt="Free-Hub Website Screenshot" width="1000">
+</div>
 
 ### Application Details
 Each application includes:
