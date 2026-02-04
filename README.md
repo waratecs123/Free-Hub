@@ -48,10 +48,6 @@ Each application includes:
 
 ## Technical Architecture
 
-<div align="center">
-  <img src="other_files/ai.jpg" alt="Free-Hub Website Screenshot" width="500">
-</div>
-
 ### Frontend
 - **HTML5**: Semantic markup structure
 - **CSS3**: Modern styling with gradients, flexbox, and grid layouts
@@ -203,3 +199,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Free-Hub** – Your gateway to the world of free, powerful digital tools. Discover, explore, and enhance your computing experience without cost barriers.
+
+<div align="center">
+  <img src="other_files/ai.jpg" alt="Free-Hub Website Screenshot" width="500">
+</div>
