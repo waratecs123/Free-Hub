@@ -4,7 +4,6 @@
 
 # Free-Hub - Free Applications Catalog
 
-
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Developer](https://img.shields.io/badge/Dev-waratecs123-blue.svg)
 ![Status](https://img.shields.io/badge/Maintained-When%20time%20permits-blue.svg)
@@ -48,6 +47,10 @@ Each application includes:
 - **Visual Feedback**: Glow effects and transitions for better user experience
 
 ## Technical Architecture
+
+<div align="center">
+  <img src="other_files/ai.jpg" alt="Free-Hub Website Screenshot" width="500">
+</div>
 
 ### Frontend
 - **HTML5**: Semantic markup structure
