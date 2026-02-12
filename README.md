@@ -25,7 +25,7 @@ Free-Hub is a comprehensive web application that serves as a curated catalog of 
 ### Screenshot
 
 <div align="center">
-  <img src="other_files/web_site.png" alt="Free-Hub Website Screenshot" width="1000">
+  <img src="other_files/screenshot.png" alt="Free-Hub Website Screenshot" width="1000">
 </div>
 
 ### Application Details
