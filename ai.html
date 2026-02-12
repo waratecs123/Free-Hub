@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free-Hub | AI Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <span>Free-Hub</span>
+            </div>
+            <div class="header-buttons">
+                <a href="https://github.com/waratecs123/Free-Hub" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://t.me/mobius_org" target="_blank" class="telegram-btn">
+                    <i class="fab fa-telegram"></i> Telegram Channel
+                </a>
+                <a href="https://www.donationalerts.com/r/mobius_org" target="_blank" class="donate-btn">
+                    <i class="fas fa-heart"></i> Support Project
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Free AI Tools</h1>
+            <p class="page-description">Discover useful completely free AI tools for end-users in productivity, creativity, and daily tasks. Includes both local and online tools. All tools are 100% free with no paid tiers. Browse our collection of free AI tools across various categories. Find exactly what you need with our powerful search and filtering system.</p>
+
+            <!-- Search -->
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search AI tools by name, description, or features...">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All AI Tools</button>
+                    <button class="filter-btn" data-category="text-generation">Text Generation</button>
+                    <button class="filter-btn" data-category="image-generation">Image Generation</button>
+                    <button class="filter-btn" data-category="video-generation">Video Generation</button>
+                    <button class="filter-btn" data-category="audio-generation">Audio Generation</button>
+                    <button class="filter-btn" data-category="machine-learning">Machine Learning</button>
+                    <button class="filter-btn" data-category="natural-language-processing">NLP</button>
+                    <button class="filter-btn" data-category="computer-vision">Computer Vision</button>
+                    <button class="filter-btn" data-category="productivity-ai">Productivity AI</button>
+                    <button class="filter-btn" data-category="creative-ai">Creative AI</button>
+                    <button class="filter-btn" data-category="chatbots">Chatbots</button>
+                    <button class="filter-btn" data-category="data-analysis">Data Analysis</button>
+                    <button class="filter-btn" data-category="code-generation">Code Generation</button>
+                    <button class="filter-btn" data-category="speech-recognition">Speech Recognition</button>
+                    <button class="filter-btn" data-category="translation">Translation</button>
+                    <!-- Add more AI-specific categories as needed -->
+                </div>
+            </div>
+
+            <!-- AI Tools List -->
+            <div id="apps-list" class="items-list">
+                <!-- AI Tools will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+<!-- Pagination -->
+<div class="pagination-container">
+    <div id="pagination-stats" class="pagination-stats">
+        Showing :<span id="start-item">0</span>-<span id="end-item">0</span> (<span id="total-items">0</span> tools)
+    </div>
+
+    <div class="pagination-wrapper">
+        <div class="pagination-controls">
+            <button id="first-btn" class="pagination-btn pagination-btn-arrow" aria-label="First page">
+                <i class="fas fa-angle-double-left"></i>
+            </button>
+
+            <button id="prev-btn" class="pagination-btn pagination-btn-arrow" aria-label="Previous page">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div id="page-numbers" class="page-numbers">
+                <!-- Page numbers will be inserted here -->
+            </div>
+
+            <button id="next-btn" class="pagination-btn pagination-btn-arrow" aria-label="Next page">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <button id="last-btn" class="pagination-btn pagination-btn-arrow" aria-label="Last page">
+                <i class="fas fa-angle-double-right"></i>
+            </button>
+        </div>
+
+        <div class="items-per-page">
+            <label for="items-per-page-select">Show:</label>
+            <select id="items-per-page-select" class="items-per-page-select">
+                <option value="20" selected>20</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    This project was born out of a simple belief: the most powerful AI tools should be available to everyone, regardless of budget. It's not just a catalog—it's a living, breathing archive of digital generosity. I act as a critic, archaeologist, and collector, spending countless hours deep in the web, on forums, and in repositories to find, test, and document truly worthwhile free AI tools.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AI Tools Data - LIST OF COMPLETELY FREE AI TOOLS FOR END-USERS
+        const apps = [
+            {
+                id: 1,
+                name: "Ollama",
+                category: "text-generation",
+                rating: 4.8,
+                description: "Run large language models locally for text generation and chat. Completely free and offline capable.",
+                link: "https://ollama.com/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Local AI", "Free", "Open Source", "Offline", "Custom Models", "Chat Interface"]
+            },
+            {
+                id: 2,
+                name: "LM Studio",
+                category: "text-generation",
+                rating: 4.7,
+                description: "User-friendly app to discover, download, and run local LLMs. Completely free for personal use.",
+                link: "https://lmstudio.ai/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Local AI", "Free", "Model Browser", "Offline", "Easy Setup", "Chat UI"]
+            },
+            {
+                id: 3,
+                name: "Jan AI",
+                category: "chatbots",
+                rating: 4.6,
+                description: "Private, offline AI assistant that runs on your computer. Supports multiple models.",
+                link: "https://jan.ai/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Private Chat", "Free", "Open Source", "Offline", "Multi-model", "Projects"]
+            },
+            {
+                id: 4,
+                name: "Anything LLM",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Open-source app for chatting with documents and web content locally.",
+                link: "https://useanything.com/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Document AI", "Free", "Open Source", "Offline", "Web Search", "File Upload"]
+            },
+            {
+                id: 5,
+                name: "Stable Diffusion WebUI",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Local web interface for generating images from text using Stable Diffusion models.",
+                link: "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Text-to-Image", "Free", "Open Source", "Offline", "Extensions", "Advanced Editing"]
+            },
+            {
+                id: 6,
+                name: "DiffusionBee",
+                category: "image-generation",
+                rating: 4.5,
+                description: "Simple app for generating AI images locally on Mac using Stable Diffusion.",
+                link: "https://diffusionbee.com/",
+                platform: "Local - Mac",
+                features: ["AI Art", "Free", "Offline", "User Friendly", "Image Editing", "Inpainting"]
+            },
+            {
+                id: 7,
+                name: "Fooocus",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Focused AI image generator that runs locally with minimal setup.",
+                link: "https://github.com/lllyasviel/Fooocus",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Text-to-Image", "Free", "Open Source", "Offline", "High Quality", "Simple UI"]
+            },
+            {
+                id: 8,
+                name: "ComfyUI",
+                category: "image-generation",
+                rating: 4.8,
+                description: "Powerful node-based interface for creating complex AI image workflows locally.",
+                link: "https://github.com/comfyanonymous/ComfyUI",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Workflow Builder", "Free", "Open Source", "Offline", "Custom Nodes", "Advanced"]
+            },
+            {
+                id: 9,
+                name: "Google Gemini",
+                category: "chatbots",
+                rating: 4.8,
+                description: "Free AI assistant for conversation, writing, and problem-solving.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["AI Chat", "Free", "Multi-modal", "Online", "Google Integration", "Creative Tools"]
+            },
+            {
+                id: 10,
+                name: "Perplexity",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI-powered search engine that provides conversational answers with sources.",
+                link: "https://www.perplexity.ai/",
+                platform: "Web (Online)",
+                features: ["AI Search", "Free", "Citations", "Online", "Threads", "Quick Answers"]
+            },
+            {
+                id: 11,
+                name: "ElevenLabs",
+                category: "audio-generation",
+                rating: 4.7,
+                description: "Free text-to-speech AI with monthly credits for voice generation.",
+                link: "https://elevenlabs.io/",
+                platform: "Web (Online)",
+                features: ["Text-to-Speech", "Free Credits", "Online", "Multiple Voices", "API Access"]
+            },
+            {
+                id: 12,
+                name: "Runway",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Free AI video tools with credits for text-to-video generation.",
+                link: "https://runwayml.com/",
+                platform: "Web (Online)",
+                features: ["Text-to-Video", "Free Credits", "Online", "Creative Effects", "Editing Tools"]
+            },
+            {
+                id: 13,
+                name: "Pixlr",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "Free online AI photo editor with removal and generation tools.",
+                link: "https://pixlr.com/",
+                platform: "Web (Online)",
+                features: ["Photo Editing", "Free", "Online", "AI Cutout", "Backdrop Generator"]
+            },
+            {
+                id: 14,
+                name: "Grammarly",
+                category: "productivity-ai",
+                rating: 4.8,
+                description: "Free AI writing assistant for grammar, spelling, and style suggestions.",
+                link: "https://www.grammarly.com/",
+                platform: "Web (Online)",
+                features: ["Writing Aid", "Free", "Online", "Browser Extension", "Tone Detection"]
+            },
+            {
+                id: 15,
+                name: "Canva Magic Studio",
+                category: "creative-ai",
+                rating: 4.7,
+                description: "Free AI design tools within Canva for images and presentations.",
+                link: "https://www.canva.com/magic-studio/",
+                platform: "Web (Online)",
+                features: ["AI Design", "Free", "Online", "Image Gen", "Video Tools"]
+            },
+            {
+                id: 16,
+                name: "Google Translate",
+                category: "translation",
+                rating: 4.6,
+                description: "Free online translation tool using AI for multiple languages.",
+                link: "https://translate.google.com/",
+                platform: "Web (Online)",
+                features: ["Translation", "Free", "Online", "Multi-language", "Voice Input"]
+            },
+            {
+                id: 17,
+                name: "Whisper",
+                category: "speech-recognition",
+                rating: 4.7,
+                description: "Open-source speech recognition model that can run locally.",
+                link: "https://openai.com/research/whisper",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Speech-to-Text", "Free", "Open Source", "Offline", "Multi-lingual"]
+            },
+            {
+                id: 18,
+                name: "DataLab",
+                category: "data-analysis",
+                rating: 4.5,
+                description: "Free web-based data science notebook for analysis in browser.",
+                link: "https://www.datacamp.com/datalab",
+                platform: "Web (Online)",
+                features: ["Data Analysis", "Free", "Online", "No Install", "AI Chats"]
+            },
+            {
+                id: 19,
+                name: "NotebookLM",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Free AI-powered note-taking tool by Google.",
+                link: "https://notebooklm.google.com/",
+                platform: "Web (Online)",
+                features: ["AI Notes", "Free", "Online", "Summarization", "Audio Overviews"]
+            },
+            {
+                id: 20,
+                name: "Agent TARS",
+                category: "automation",
+                rating: 4.4,
+                description: "Free open-source desktop agent for controlling computer and browser.",
+                link: "https://www.aixploria.com/en/agent-tars-bytedance/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["AI Agent", "Free", "Open Source", "Desktop Control", "Automation"]
+            },
+            {
+                id: 21,
+                name: "OpenClaw",
+                category: "chatbots",
+                rating: 4.5,
+                description: "Locally hosted personal AI assistant with persistent memory.",
+                link: "https://www.aixploria.com/out/OpenClaw",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Personal AI", "Free", "Open Source", "Offline", "Multi-platform Integration"]
+            },
+            {
+                id: 22,
+                name: "ChatGPT",
+                category: "text-generation",
+                rating: 4.9,
+                description: "Versatile assistant for drafting, rewriting, summaries, and ideas.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["AI Chat", "Free", "Multi-modal", "Online", "Creative Tools", "Problem Solving"]
+            },
+            {
+                id: 23,
+                name: "Claude",
+                category: "text-generation",
+                rating: 4.8,
+                description: "Excellent for long-form writing, reports, and explanations.",
+                link: "https://claude.ai/",
+                platform: "Web (Online)",
+                features: ["AI Writing", "Free", "Online", "Coding", "Reasoning"]
+            },
+            {
+                id: 24,
+                name: "Writesonic",
+                category: "text-generation",
+                rating: 4.6,
+                description: "Template-based writing for blogs, ads, and marketing copy.",
+                link: "https://writesonic.com/",
+                platform: "Web (Online)",
+                features: ["Content Creation", "Free Tier", "Online", "Marketing Tools"]
+            },
+            {
+                id: 25,
+                name: "Copy.ai",
+                category: "text-generation",
+                rating: 4.5,
+                description: "Designed for business copy, emails, and sales messaging.",
+                link: "https://www.copy.ai/",
+                platform: "Web (Online)",
+                features: ["Business Writing", "Free", "Online", "Sales Tools"]
+            },
+            {
+                id: 26,
+                name: "Rytr",
+                category: "text-generation",
+                rating: 4.7,
+                description: "Lightweight tool for quick captions, emails, and short posts.",
+                link: "https://rytr.me/",
+                platform: "Web (Online)",
+                features: ["Quick Writing", "Free", "Online", "Captions", "Emails"]
+            },
+            {
+                id: 27,
+                name: "Notion AI",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Helps summarise notes and generate content inside Notion.",
+                link: "https://www.notion.so/product/ai",
+                platform: "Web (Online)",
+                features: ["Note AI", "Free", "Online", "Summarization", "Content Gen"]
+            },
+            {
+                id: 28,
+                name: "QuillBot",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Strong paraphrasing and rewriting assistant.",
+                link: "https://quillbot.com/",
+                platform: "Web (Online)",
+                features: ["Paraphrasing", "Free", "Online", "Rewriting", "Grammar Check"]
+            },
+            {
+                id: 29,
+                name: "DALL·E",
+                category: "image-generation",
+                rating: 4.8,
+                description: "Text-to-image tool for quick concept visuals.",
+                link: "https://openai.com/dall-e",
+                platform: "Web (Online)",
+                features: ["Image Gen", "Free Credits", "Online", "Creative Art"]
+            },
+            {
+                id: 30,
+                name: "Adobe Firefly",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Copyright-safe image generation with a free tier.",
+                link: "https://firefly.adobe.com/",
+                platform: "Web (Online)",
+                features: ["Safe Images", "Free", "Online", "Editing Tools"]
+            },
+            {
+                id: 31,
+                name: "Leonardo AI",
+                category: "image-generation",
+                rating: 4.8,
+                description: "Excellent for characters, concept art, and stylised designs.",
+                link: "https://leonardo.ai/",
+                platform: "Web (Online)",
+                features: ["Art Gen", "Free Credits", "Online", "Characters", "Concepts"]
+            },
+            {
+                id: 32,
+                name: "Playground AI",
+                category: "image-generation",
+                rating: 4.5,
+                description: "Good for beginners experimenting with visual prompts.",
+                link: "https://playgroundai.com/",
+                platform: "Web (Online)",
+                features: ["Beginner Friendly", "Free", "Online", "Visual Prompts"]
+            },
+            {
+                id: 33,
+                name: "NightCafe",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Daily free credits for artistic image styles.",
+                link: "https://nightcafe.studio/",
+                platform: "Web (Online)",
+                features: ["Art Styles", "Free Credits", "Online", "Daily Use"]
+            },
+            {
+                id: 34,
+                name: "Fotor AI",
+                category: "image-generation",
+                rating: 4.5,
+                description: "Photo enhancement plus AI image creation.",
+                link: "https://www.fotor.com/",
+                platform: "Web (Online)",
+                features: ["Photo Edit", "Free", "Online", "AI Creation"]
+            },
+            {
+                id: 35,
+                name: "Recraft AI",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Generates scalable SVG vectors.",
+                link: "https://www.recraft.ai/",
+                platform: "Web (Online)",
+                features: ["Vector Gen", "Free Credits", "Online", "Scalable"]
+            },
+            {
+                id: 36,
+                name: "Adobe Express",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Background removal, auto-resizing, and visual templates.",
+                link: "https://www.adobe.com/express/",
+                platform: "Web (Online)",
+                features: ["Design Tools", "Free", "Online", "Templates"]
+            },
+            {
+                id: 37,
+                name: "CapCut",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Auto captions, templates, and one-click effects.",
+                link: "https://www.capcut.com/",
+                platform: "Web (Online)",
+                features: ["Video Edit", "Free", "Online", "Captions", "Effects"]
+            },
+            {
+                id: 38,
+                name: "DaVinci Resolve",
+                category: "video-generation",
+                rating: 4.8,
+                description: "Pro-level editor with colour tools and enhancements.",
+                link: "https://www.blackmagicdesign.com/products/davinciresolve",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Pro Editing", "Free", "Offline", "Color Tools"]
+            },
+            {
+                id: 39,
+                name: "Descript",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Edit video/audio by editing text; includes AI cleanup.",
+                link: "https://www.descript.com/",
+                platform: "Web (Online)",
+                features: ["Text Edit", "Free Tier", "Online", "AI Cleanup"]
+            },
+            {
+                id: 40,
+                name: "Pika Labs",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Text-to-video clips and animations.",
+                link: "https://pika.art/",
+                platform: "Web (Online)",
+                features: ["Video Clips", "Free Credits", "Online", "Animations"]
+            },
+            {
+                id: 41,
+                name: "Clipchamp",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Beginner-friendly video creation with templates.",
+                link: "https://clipchamp.com/",
+                platform: "Web (Online)",
+                features: ["Beginner Video", "Free", "Online", "Templates"]
+            },
+            {
+                id: 42,
+                name: "Zapier",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Automates tasks between hundreds of apps.",
+                link: "https://zapier.com/",
+                platform: "Web (Online)",
+                features: ["Automation", "Free Tier", "Online", "App Integration"]
+            },
+            {
+                id: 43,
+                name: "Make (Integromat)",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Visual workflow builder for data and automations.",
+                link: "https://www.make.com/",
+                platform: "Web (Online)",
+                features: ["Workflows", "Free", "Online", "Data Automation"]
+            },
+            {
+                id: 44,
+                name: "Mem",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI-powered knowledge organiser.",
+                link: "https://getmem.com/",
+                platform: "Web (Online)",
+                features: ["Knowledge Org", "Free", "Online", "AI Search"]
+            },
+            {
+                id: 45,
+                name: "Motion",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Auto-schedules your day using AI.",
+                link: "https://www.usemotion.com/",
+                platform: "Web (Online)",
+                features: ["Scheduling", "Free Tier", "Online", "Calendar AI"]
+            },
+            {
+                id: 46,
+                name: "Reclaim",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Smart calendar that protects time for habits and tasks.",
+                link: "https://reclaim.ai/",
+                platform: "Web (Online)",
+                features: ["Calendar AI", "Free", "Online", "Time Protection"]
+            },
+            {
+                id: 47,
+                name: "n8n",
+                category: "productivity-ai",
+                rating: 4.8,
+                description: "Open-source automation builder.",
+                link: "https://n8n.io/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Automation", "Free", "Open Source", "Offline"]
+            },
+            {
+                id: 48,
+                name: "MindStudio",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Build simple AI agents without coding.",
+                link: "https://www.mindstudio.ai/",
+                platform: "Web (Online)",
+                features: ["AI Agents", "Free", "Online", "No Code"]
+            },
+            {
+                id: 49,
+                name: "Tiimo AI Planner",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Visual task manager with AI-assisted routines.",
+                link: "https://www.tiimoapp.com/",
+                platform: "Web (Online)",
+                features: ["Task Manager", "Free", "Online", "Visual Planning"]
+            },
+            {
+                id: 50,
+                name: "Buffer",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "AI-assisted caption writing and scheduling.",
+                link: "https://buffer.com/",
+                platform: "Web (Online)",
+                features: ["Social Media", "Free Tier", "Online", "Scheduling"]
+            },
+            {
+                id: 51,
+                name: "Vista Social",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Social content ideas and performance analytics.",
+                link: "https://vistasocial.com/",
+                platform: "Web (Online)",
+                features: ["Social Ideas", "Free", "Online", "Analytics"]
+            },
+            {
+                id: 52,
+                name: "FeedHive",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "AI hooks, post ideas, and optimisation insights.",
+                link: "https://www.feedhive.com/",
+                platform: "Web (Online)",
+                features: ["Post Ideas", "Free Tier", "Online", "Optimization"]
+            },
+            {
+                id: 53,
+                name: "Anyword",
+                category: "creative-ai",
+                rating: 4.7,
+                description: "Marketing-focused AI copy.",
+                link: "https://anyword.com/",
+                platform: "Web (Online)",
+                features: ["Marketing Copy", "Free Tier", "Online"]
+            },
+            {
+                id: 54,
+                name: "Surfer AI",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "SEO content planning and drafting.",
+                link: "https://surferseo.com/",
+                platform: "Web (Online)",
+                features: ["SEO Tools", "Free Tier", "Online", "Content Planning"]
+            },
+            {
+                id: 55,
+                name: "Mailchimp AI",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Subject line suggestions and email optimisation.",
+                link: "https://mailchimp.com/",
+                platform: "Web (Online)",
+                features: ["Email AI", "Free Tier", "Online", "Optimization"]
+            },
+            {
+                id: 56,
+                name: "Hootsuite AI",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Caption generator for multiple platforms.",
+                link: "https://www.hootsuite.com/",
+                platform: "Web (Online)",
+                features: ["Caption Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 57,
+                name: "Teal Resume Builder",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI for personal branding and LinkedIn optimisation.",
+                link: "https://www.tealhq.com/",
+                platform: "Web (Online)",
+                features: ["Resume AI", "Free", "Online", "Branding"]
+            },
+            {
+                id: 58,
+                name: "ClickUp AI",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Smart updates, summaries, and project documents.",
+                link: "https://clickup.com/",
+                platform: "Web (Online)",
+                features: ["Project AI", "Free Tier", "Online", "Summaries"]
+            },
+            {
+                id: 59,
+                name: "Asana with AI",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Status insights and automated progress summaries.",
+                link: "https://asana.com/",
+                platform: "Web (Online)",
+                features: ["Task AI", "Free Tier", "Online", "Insights"]
+            },
+            {
+                id: 60,
+                name: "Trello",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Kanban boards with automations and AI add-ons.",
+                link: "https://trello.com/",
+                platform: "Web (Online)",
+                features: ["Kanban", "Free", "Online", "Automations"]
+            },
+            {
+                id: 61,
+                name: "Monday.com",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Visual workflows enhanced by AI suggestions.",
+                link: "https://monday.com/",
+                platform: "Web (Online)",
+                features: ["Workflows", "Free Tier", "Online", "AI Suggestions"]
+            },
+            {
+                id: 62,
+                name: "Airtable AI",
+                category: "data-analysis",
+                rating: 4.6,
+                description: "Spreadsheet + database with AI fields.",
+                link: "https://airtable.com/",
+                platform: "Web (Online)",
+                features: ["Database AI", "Free Tier", "Online"]
+            },
+            {
+                id: 63,
+                name: "BeeDone",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI-assisted productivity and habit tracking.",
+                link: "https://www.beedone.com/",
+                platform: "Web (Online)",
+                features: ["Habit Tracking", "Free", "Online", "Productivity"]
+            },
+            {
+                id: 64,
+                name: "Microsoft Loop AI",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Collaborative documents enhanced by AI.",
+                link: "https://loop.microsoft.com/",
+                platform: "Web (Online)",
+                features: ["Collab Docs", "Free Tier", "Online", "AI Enhance"]
+            },
+            {
+                id: 65,
+                name: "Google Workspace AI",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Helps write, summarise, and organise tasks.",
+                link: "https://workspace.google.com/",
+                platform: "Web (Online)",
+                features: ["Workspace AI", "Free Tier", "Online", "Org Tools"]
+            },
+            {
+                id: 66,
+                name: "Khan Academy AI Tools",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Guided practice and learning support.",
+                link: "https://www.khanacademy.org/",
+                platform: "Web (Online)",
+                features: ["Learning AI", "Free", "Online", "Practice"]
+            },
+            {
+                id: 67,
+                name: "Quizlet AI",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Flashcards and quizzes from your notes.",
+                link: "https://quizlet.com/",
+                platform: "Web (Online)",
+                features: ["Study Tools", "Free Tier", "Online", "Quizzes"]
+            },
+            {
+                id: 68,
+                name: "Elicit",
+                category: "data-analysis",
+                rating: 4.7,
+                description: "AI research assistant for academic papers.",
+                link: "https://elicit.org/",
+                platform: "Web (Online)",
+                features: ["Research AI", "Free", "Online", "Papers"]
+            },
+            {
+                id: 69,
+                name: "SciSpace",
+                category: "data-analysis",
+                rating: 4.6,
+                description: "Explains research PDFs and scientific terms.",
+                link: "https://typeset.io/",
+                platform: "Web (Online)",
+                features: ["PDF AI", "Free Tier", "Online", "Science"]
+            },
+            {
+                id: 70,
+                name: "Scholarcy",
+                category: "data-analysis",
+                rating: 4.5,
+                description: "Summaries of long academic articles.",
+                link: "https://www.scholarcy.com/",
+                platform: "Web (Online)",
+                features: ["Article Summaries", "Free Tier", "Online"]
+            },
+            {
+                id: 71,
+                name: "Wolfram Alpha",
+                category: "data-analysis",
+                rating: 4.7,
+                description: "Answers maths and science queries.",
+                link: "https://www.wolframalpha.com/",
+                platform: "Web (Online)",
+                features: ["Math AI", "Free", "Online", "Science Queries"]
+            },
+            {
+                id: 72,
+                name: "Otter.ai",
+                category: "speech-recognition",
+                rating: 4.6,
+                description: "Lecture transcription and summary notes.",
+                link: "https://otter.ai/",
+                platform: "Web (Online)",
+                features: ["Transcription", "Free Tier", "Online", "Summaries"]
+            },
+            {
+                id: 73,
+                name: "Replit with AI",
+                category: "code-generation",
+                rating: 4.7,
+                description: "Assisted coding and fast prototyping.",
+                link: "https://replit.com/",
+                platform: "Web (Online)",
+                features: ["Coding AI", "Free Tier", "Online", "Prototyping"]
+            },
+            {
+                id: 74,
+                name: "Codeium",
+                category: "code-generation",
+                rating: 4.8,
+                description: "Free AI code suggestions.",
+                link: "https://codeium.com/",
+                platform: "Web (Online)",
+                features: ["Code Suggestions", "Free", "Online"]
+            },
+            {
+                id: 75,
+                name: "Cursor",
+                category: "code-generation",
+                rating: 4.7,
+                description: "Smart code editor with AI reasoning.",
+                link: "https://cursor.com/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Code Editor", "Free Tier", "Offline", "AI Reasoning"]
+            },
+            {
+                id: 76,
+                name: "Bubble",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Build web apps visually.",
+                link: "https://bubble.io/",
+                platform: "Web (Online)",
+                features: ["No Code Apps", "Free Tier", "Online"]
+            },
+            {
+                id: 77,
+                name: "Glide",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Turn spreadsheets into mobile apps.",
+                link: "https://www.glideapps.com/",
+                platform: "Web (Online)",
+                features: ["Spreadsheet Apps", "Free Tier", "Online"]
+            },
+            {
+                id: 78,
+                name: "Softr",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Create portals and websites using data.",
+                link: "https://www.softr.io/",
+                platform: "Web (Online)",
+                features: ["Data Websites", "Free Tier", "Online"]
+            },
+            {
+                id: 79,
+                name: "Dify",
+                category: "chatbots",
+                rating: 4.7,
+                description: "AI agent and chatbot builder.",
+                link: "https://dify.ai/",
+                platform: "Web (Online)",
+                features: ["Chatbot Builder", "Free", "Online"]
+            },
+            {
+                id: 80,
+                name: "Gumloop",
+                category: "automation",
+                rating: 4.5,
+                description: "Drag-and-drop automation.",
+                link: "https://www.gumloop.com/",
+                platform: "Web (Online)",
+                features: ["Automation", "Free Tier", "Online", "No Code"]
+            },
+            {
+                id: 81,
+                name: "Tidio",
+                category: "chatbots",
+                rating: 4.6,
+                description: "AI chatbots + live chat for websites.",
+                link: "https://www.tidio.com/",
+                platform: "Web (Online)",
+                features: ["Website Chat", "Free Tier", "Online"]
+            },
+            {
+                id: 82,
+                name: "ManyChat",
+                category: "chatbots",
+                rating: 4.5,
+                description: "Bots for Instagram, WhatsApp, Messenger.",
+                link: "https://manychat.com/",
+                platform: "Web (Online)",
+                features: ["Social Bots", "Free Tier", "Online"]
+            },
+            {
+                id: 83,
+                name: "Landbot",
+                category: "chatbots",
+                rating: 4.6,
+                description: "Visual chatbot builder.",
+                link: "https://landbot.io/",
+                platform: "Web (Online)",
+                features: ["Bot Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 84,
+                name: "Chatfuel",
+                category: "chatbots",
+                rating: 4.5,
+                description: "Templates for FAQs and lead capture.",
+                link: "https://chatfuel.com/",
+                platform: "Web (Online)",
+                features: ["FAQ Bots", "Free Tier", "Online"]
+            },
+            {
+                id: 85,
+                name: "Crisp",
+                category: "chatbots",
+                rating: 4.6,
+                description: "Customer messaging with automation.",
+                link: "https://crisp.chat/",
+                platform: "Web (Online)",
+                features: ["Messaging AI", "Free Tier", "Online"]
+            },
+            {
+                id: 86,
+                name: "Zendesk AI",
+                category: "chatbots",
+                rating: 4.7,
+                description: "Ticket suggestions and auto-responses.",
+                link: "https://www.zendesk.com/",
+                platform: "Web (Online)",
+                features: ["Support AI", "Free Tier", "Online"]
+            },
+            {
+                id: 87,
+                name: "Intercom AI",
+                category: "chatbots",
+                rating: 4.6,
+                description: "Customer support automation.",
+                link: "https://www.intercom.com/",
+                platform: "Web (Online)",
+                features: ["Support Automation", "Free Tier", "Online"]
+            },
+            {
+                id: 88,
+                name: "You.com",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Privacy-first AI search assistant.",
+                link: "https://you.com/",
+                platform: "Web (Online)",
+                features: ["Search AI", "Free", "Online", "Privacy"]
+            },
+            {
+                id: 89,
+                name: "Grok",
+                category: "chatbots",
+                rating: 4.8,
+                description: "Real-time access to X data and Aurora image model.",
+                link: "https://grok.x.ai/",
+                platform: "Web (Online)",
+                features: ["AI Chat", "Free Tier", "Online", "Real-time Data"]
+            },
+            {
+                id: 90,
+                name: "Humata",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Specialist for PDF analysis with clickable citations.",
+                link: "https://www.humata.ai/",
+                platform: "Web (Online)",
+                features: ["PDF AI", "Free Tier", "Online", "Citations"]
+            },
+            {
+                id: 91,
+                name: "LanguageTool",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Multi-lingual grammar checker supporting over 25 languages.",
+                link: "https://languagetool.org/",
+                platform: "Web (Online)",
+                features: ["Grammar Check", "Free", "Online", "Multi-language"]
+            },
+            {
+                id: 92,
+                name: "DeepL",
+                category: "translation",
+                rating: 4.8,
+                description: "High-accuracy translation preserving nuance and formatting.",
+                link: "https://www.deepl.com/",
+                platform: "Web (Online)",
+                features: ["Translation", "Free Tier", "Online", "Accurate"]
+            },
+            {
+                id: 93,
+                name: "Doclingo",
+                category: "translation",
+                rating: 4.6,
+                description: "Specializes in academic PDFs preserving layouts.",
+                link: "https://doclingo.ai/",
+                platform: "Web (Online)",
+                features: ["PDF Translation", "Free Tier", "Online"]
+            },
+            {
+                id: 94,
+                name: "Google Antigravity",
+                category: "code-generation",
+                rating: 4.7,
+                description: "Autonomous agents for planning, coding, and testing apps.",
+                link: "https://antigravity.google/",
+                platform: "Web (Online)",
+                features: ["Agent Coding", "Free Preview", "Online"]
+            },
+            {
+                id: 95,
+                name: "GitHub Copilot",
+                category: "code-generation",
+                rating: 4.8,
+                description: "Fast autocomplete learning from coding style.",
+                link: "https://github.com/features/copilot",
+                platform: "Web (Online)",
+                features: ["Code Autocomplete", "Free Tier", "Online"]
+            },
+            {
+                id: 96,
+                name: "Nano Banana Pro",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Generates photorealistic images with multi-lingual text.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Photo Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 97,
+                name: "Ideogram",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Perfect text rendering with Magic Prompt.",
+                link: "https://ideogram.ai/",
+                platform: "Web (Online)",
+                features: ["Text Rendering", "Free Tier", "Online"]
+            },
+            {
+                id: 98,
+                name: "Invideo AI",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Edits videos via chat commands.",
+                link: "https://invideo.io/",
+                platform: "Web (Online)",
+                features: ["Video Edit AI", "Free Tier", "Online"]
+            },
+            {
+                id: 99,
+                name: "Gemini Veo 3.1",
+                category: "video-generation",
+                rating: 4.8,
+                description: "Generates short clips for presentations.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Clip Gen", "Free Credits", "Online"]
+            },
+            {
+                id: 100,
+                name: "HeyGen",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Lip-sync and dubbing with video translate.",
+                link: "https://www.heygen.com/",
+                platform: "Web (Online)",
+                features: ["Avatar Video", "Free Tier", "Online"]
+            },
+            {
+                id: 101,
+                name: "Synthesia",
+                category: "video-generation",
+                rating: 4.8,
+                description: "Diverse avatars for presentations.",
+                link: "https://www.synthesia.io/",
+                platform: "Web (Online)",
+                features: ["AI Avatars", "Free Tier", "Online"]
+            },
+            {
+                id: 102,
+                name: "Kling AI",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Realistic human movement.",
+                link: "https://klingai.com/",
+                platform: "Web (Online)",
+                features: ["Motion Video", "Free Credits", "Online"]
+            },
+            {
+                id: 103,
+                name: "Wan AI",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Open-source for unlimited 1080p generation.",
+                link: "https://github.com/Wan-Video/Wan2.1",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Video Gen", "Free", "Open Source", "Offline"]
+            },
+            {
+                id: 104,
+                name: "Consensus",
+                category: "data-analysis",
+                rating: 4.6,
+                description: "Searches academic papers with Consensus Meter.",
+                link: "https://consensus.app/",
+                platform: "Web (Online)",
+                features: ["Academic Search", "Free Tier", "Online"]
+            },
+            {
+                id: 105,
+                name: "Gemini Live",
+                category: "chatbots",
+                rating: 4.7,
+                description: "Voice-based brainstorming and drafting.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Voice AI", "Free", "Online"]
+            },
+            {
+                id: 106,
+                name: "Adobe Podcast Enhance",
+                category: "audio-generation",
+                rating: 4.6,
+                description: "Removes background noise.",
+                link: "https://podcast.adobe.com/enhance",
+                platform: "Web (Online)",
+                features: ["Audio Repair", "Free Tier", "Online"]
+            },
+            {
+                id: 107,
+                name: "Google Veo",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Tool for generating creative AI videos.",
+                link: "https://ai.google/",
+                platform: "Web (Online)",
+                features: ["Creative Video", "Free Tier", "Online"]
+            },
+            {
+                id: 108,
+                name: "OpusClip",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Clipping longer videos into short social media clips.",
+                link: "https://www.opus.pro/",
+                platform: "Web (Online)",
+                features: ["Clip AI", "Free Tier", "Online"]
+            },
+            {
+                id: 109,
+                name: "Fathom",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI notetaker for Zoom and Teams meetings.",
+                link: "https://fathom.video/",
+                platform: "Web (Online)",
+                features: ["Meeting Notes", "Free Tier", "Online"]
+            },
+            {
+                id: 110,
+                name: "Nyota",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Premium meeting tool with transcripts and automations.",
+                link: "https://nyota.ai/",
+                platform: "Web (Online)",
+                features: ["Meeting AI", "Free Trial", "Online"]
+            },
+            {
+                id: 111,
+                name: "Manus",
+                category: "automation",
+                rating: 4.6,
+                description: "AI agent for tasks like slides creation and data analysis.",
+                link: "https://manus.ai/",
+                platform: "Web (Online)",
+                features: ["AI Agent", "Free Credits", "Online"]
+            },
+            {
+                id: 112,
+                name: "Deep Research",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Finding and synthesizing online sources into reports.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["Research AI", "Free Tier", "Online"]
+            },
+            {
+                id: 113,
+                name: "Sudowrite",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Creative writing tool for fiction.",
+                link: "https://www.sudowrite.com/",
+                platform: "Web (Online)",
+                features: ["Fiction Writing", "Free Tier", "Online"]
+            },
+            {
+                id: 114,
+                name: "Google AI Mode",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI-integrated search for informational answers.",
+                link: "https://www.google.com/",
+                platform: "Web (Online)",
+                features: ["Search AI", "Free", "Online"]
+            },
+            {
+                id: 115,
+                name: "ChatGPT Search",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Integrated web search in ChatGPT for summarized answers.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["AI Search", "Free", "Online"]
+            },
+            {
+                id: 116,
+                name: "Looka",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "AI tool for generating logos and brand kits.",
+                link: "https://looka.com/",
+                platform: "Web (Online)",
+                features: ["Logo Gen", "Free Trial", "Online"]
+            },
+            {
+                id: 117,
+                name: "Lovable",
+                category: "code-generation",
+                rating: 4.6,
+                description: "No-code app builder creating software from prompts.",
+                link: "https://lovable.dev/",
+                platform: "Web (Online)",
+                features: ["App Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 118,
+                name: "Notion Q&A",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Tool for querying Notion pages and connected tools.",
+                link: "https://www.notion.so/",
+                platform: "Web (Online)",
+                features: ["Q&A AI", "Free Tier", "Online"]
+            },
+            {
+                id: 119,
+                name: "Guru",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Platform for knowledge retrieval in context.",
+                link: "https://www.getguru.com/",
+                platform: "Web (Online)",
+                features: ["Knowledge AI", "Free Tier", "Online"]
+            },
+            {
+                id: 120,
+                name: "Hubspot AI Email Writer",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI for generating and editing emails.",
+                link: "https://www.hubspot.com/",
+                platform: "Web (Online)",
+                features: ["Email AI", "Free Tier", "Online"]
+            },
+            {
+                id: 121,
+                name: "Fyxer",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI assistant for email categorization and drafting.",
+                link: "https://fyxer.ai/",
+                platform: "Web (Online)",
+                features: ["Email Assistant", "Free Trial", "Online"]
+            },
+            {
+                id: 122,
+                name: "Shortwave",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI for email organization, drafting, and scheduling.",
+                link: "https://www.shortwave.com/",
+                platform: "Web (Online)",
+                features: ["Email AI", "Free Tier", "Online"]
+            },
+            {
+                id: 123,
+                name: "Clockwise",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI for calendar optimization and focus blocks.",
+                link: "https://www.getclockwise.com/",
+                platform: "Web (Online)",
+                features: ["Calendar AI", "Free", "Online"]
+            },
+            {
+                id: 124,
+                name: "Gamma",
+                category: "creative-ai",
+                rating: 4.7,
+                description: "AI presentation maker for generating slides.",
+                link: "https://gamma.app/",
+                platform: "Web (Online)",
+                features: ["Presentation AI", "Free Tier", "Online"]
+            },
+            {
+                id: 125,
+                name: "Copilot for PowerPoint",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "AI feature in PowerPoint for generating decks.",
+                link: "https://www.microsoft.com/en-us/microsoft-365/powerpoint",
+                platform: "Web (Online)",
+                features: ["Deck Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 126,
+                name: "Kickresume",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI tool for creating ATS-compliant resumes.",
+                link: "https://www.kickresume.com/",
+                platform: "Web (Online)",
+                features: ["Resume Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 127,
+                name: "Murf",
+                category: "audio-generation",
+                rating: 4.7,
+                description: "AI voiceover tool with drag-and-drop interface.",
+                link: "https://murf.ai/",
+                platform: "Web (Online)",
+                features: ["Voiceover", "Free Tier", "Online"]
+            },
+            {
+                id: 128,
+                name: "Suno",
+                category: "audio-generation",
+                rating: 4.6,
+                description: "AI for generating royalty-free tracks from prompts.",
+                link: "https://suno.ai/",
+                platform: "Web (Online)",
+                features: ["Music Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 129,
+                name: "Udio",
+                category: "audio-generation",
+                rating: 4.5,
+                description: "AI for music creation with editing options.",
+                link: "https://www.udio.com/",
+                platform: "Web (Online)",
+                features: ["Music AI", "Free Tier", "Online"]
+            },
+            {
+                id: 130,
+                name: "AdCreative",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "AI for creating ad designs for platforms like Facebook.",
+                link: "https://www.adcreative.ai/",
+                platform: "Web (Online)",
+                features: ["Ad Design", "Free Tier", "Online"]
+            },
+            {
+                id: 131,
+                name: "AirOps",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "Content operations tool for generating posts and SEO.",
+                link: "https://www.airops.com/",
+                platform: "Web (Online)",
+                features: ["Content Ops", "Free Tier", "Online"]
+            },
+            {
+                id: 132,
+                name: "Attio",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI-powered CRM for SMEs with data enrichment.",
+                link: "https://attio.com/",
+                platform: "Web (Online)",
+                features: ["CRM AI", "Free Tier", "Online"]
+            },
+            {
+                id: 133,
+                name: "Perplexity Comet",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI browser that learns browsing habits and adapts.",
+                link: "https://www.perplexity.ai/comet",
+                platform: "Web (Online)",
+                features: ["AI Browser", "Free", "Online"]
+            },
+            {
+                id: 134,
+                name: "Zapier Agents",
+                category: "automation",
+                rating: 4.6,
+                description: "AI agent builder that connects to data sources.",
+                link: "https://zapier.com/agents",
+                platform: "Web (Online)",
+                features: ["Agent Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 135,
+                name: "Hive",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI project management software for creating projects.",
+                link: "https://hive.com/",
+                platform: "Web (Online)",
+                features: ["Project AI", "Free Tier", "Online"]
+            },
+            {
+                id: 136,
+                name: "Publer",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "AI social media manager for generating posts.",
+                link: "https://publer.io/",
+                platform: "Web (Online)",
+                features: ["Social AI", "Free Tier", "Online"]
+            },
+            {
+                id: 137,
+                name: "HubSpot CRM",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI CRM tool with Breeze AI for workflows.",
+                link: "https://www.hubspot.com/",
+                platform: "Web (Online)",
+                features: ["CRM AI", "Free", "Online"]
+            },
+            {
+                id: 138,
+                name: "Lavender",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI sales assistant for composing emails.",
+                link: "https://www.lavender.ai/",
+                platform: "Web (Online)",
+                features: ["Sales AI", "Free Tier", "Online"]
+            },
+            {
+                id: 139,
+                name: "Evernote",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI notes app for cleanup and search.",
+                link: "https://evernote.com/",
+                platform: "Web (Online)",
+                features: ["Notes AI", "Free Tier", "Online"]
+            },
+            {
+                id: 140,
+                name: "Wix",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "AI website builder that generates sites from chat.",
+                link: "https://www.wix.com/",
+                platform: "Web (Online)",
+                features: ["Website AI", "Free Tier", "Online"]
+            },
+            {
+                id: 141,
+                name: "Zapier Chatbots",
+                category: "chatbots",
+                rating: 4.7,
+                description: "AI chatbot builder connecting to apps.",
+                link: "https://zapier.com/chatbots",
+                platform: "Web (Online)",
+                features: ["Chatbot AI", "Free Tier", "Online"]
+            },
+            {
+                id: 142,
+                name: "Zoho Recruit",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI recruiting tool for ATS/CRM with resume parsing.",
+                link: "https://www.zoho.com/recruit/",
+                platform: "Web (Online)",
+                features: ["Recruiting AI", "Free Tier", "Online"]
+            },
+            {
+                id: 143,
+                name: "Sapling",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI content detector for analyzing text.",
+                link: "https://sapling.ai/",
+                platform: "Web (Online)",
+                features: ["Content Detector", "Free Tier", "Online"]
+            },
+            {
+                id: 144,
+                name: "Dume AI",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Workflow automation for teams.",
+                link: "https://dume.ai/",
+                platform: "Web (Online)",
+                features: ["Team Automation", "Free", "Online"]
+            },
+            {
+                id: 145,
+                name: "Vista Social",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Social content ideas and performance analytics.",
+                link: "https://vistasocial.com/",
+                platform: "Web (Online)",
+                features: ["Social Analytics", "Free Tier", "Online"]
+            },
+            {
+                id: 146,
+                name: "YouCam Video",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Good for mobile editing and filters.",
+                link: "https://www.perfectcorp.com/app/youcam-video",
+                platform: "Web (Online)",
+                features: ["Mobile Video", "Free", "Online", "Filters"]
+            },
+            {
+                id: 147,
+                name: "Meta Edits",
+                category: "video-generation",
+                rating: 4.6,
+                description: "AI tools for Reels and short-form content.",
+                link: "https://about.meta.com/technologies/artificial-intelligence/",
+                platform: "Web (Online)",
+                features: ["Short Video", "Free Tier", "Online"]
+            },
+            {
+                id: 148,
+                name: "Pixray",
+                category: "image-generation",
+                rating: 4.5,
+                description: "Simple tools for logos, icons, and illustrations.",
+                link: "https://pixray.gobio.link/",
+                platform: "Web (Online)",
+                features: ["Logo Gen", "Free", "Online"]
+            },
+            {
+                id: 149,
+                name: "Adobe Express Video",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Simple browser editor with auto-generation options.",
+                link: "https://www.adobe.com/express/create/video",
+                platform: "Web (Online)",
+                features: ["Browser Video", "Free Tier", "Online"]
+            },
+            {
+                id: 150,
+                name: "Gemini in Search",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI-assisted browsing and answers.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Search AI", "Free", "Online"]
+            },
+            {
+                id: 151,
+                name: "Microsoft Copilot",
+                category: "productivity-ai",
+                rating: 4.8,
+                description: "Built into Windows and Edge.",
+                link: "https://copilot.microsoft.com/",
+                platform: "Local - Windows",
+                features: ["OS AI", "Free", "Offline Capable"]
+            },
+            {
+                id: 152,
+                name: "Relevance Relay",
+                category: "chatbots",
+                rating: 4.5,
+                description: "Smart routing for support queries.",
+                link: "https://relevance.ai/",
+                platform: "Web (Online)",
+                features: ["Support Routing", "Free Tier", "Online"]
+            },
+            {
+                id: 153,
+                name: "MindStudio Chatbots",
+                category: "chatbots",
+                rating: 4.6,
+                description: "Build custom bots for businesses.",
+                link: "https://www.mindstudio.ai/",
+                platform: "Web (Online)",
+                features: ["Custom Bots", "Free", "Online"]
+            },
+            {
+                id: 154,
+                name: "Dify Support Agents",
+                category: "chatbots",
+                rating: 4.5,
+                description: "No-code customer service AI.",
+                link: "https://dify.ai/",
+                platform: "Web (Online)",
+                features: ["Service AI", "Free Tier", "Online"]
+            },
+            {
+                id: 155,
+                name: "ChatGPT App",
+                category: "chatbots",
+                rating: 4.7,
+                description: "Personal planner, decision helper, idea generator.",
+                link: "https://openai.com/chatgpt/",
+                platform: "Web (Online)",
+                features: ["Personal AI", "Free", "Online"]
+            },
+            {
+                id: 156,
+                name: "Tiimo",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Visual routines and habit support.",
+                link: "https://www.tiimoapp.com/",
+                platform: "Web (Online)",
+                features: ["Habit AI", "Free Tier", "Online"]
+            },
+            {
+                id: 157,
+                name: "Notion",
+                category: "productivity-ai",
+                rating: 4.8,
+                description: "Journaling, planning, and life management.",
+                link: "https://www.notion.so/",
+                platform: "Web (Online)",
+                features: ["Planning AI", "Free Tier", "Online"]
+            },
+            {
+                id: 158,
+                name: "Writesonic for Marketing",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "Social ads, landing pages, email sequences.",
+                link: "https://writesonic.com/",
+                platform: "Web (Online)",
+                features: ["Marketing AI", "Free Tier", "Online"]
+            },
+            {
+                id: 159,
+                name: "Canva Magic Design",
+                category: "creative-ai",
+                rating: 4.7,
+                description: "Drag-and-drop templates with AI design suggestions.",
+                link: "https://www.canva.com/magic/",
+                platform: "Web (Online)",
+                features: ["Design AI", "Free", "Online"]
+            },
+            {
+                id: 160,
+                name: "ChatGPT-Image-1.5",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Conversational image editing.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["Image Edit", "Free Tier", "Online"]
+            },
+            {
+                id: 161,
+                name: "Humata",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Specialist for PDF analysis with clickable citations.",
+                link: "https://www.humata.ai/",
+                platform: "Web (Online)",
+                features: ["PDF Analysis", "Free Tier", "Online"]
+            },
+            {
+                id: 162,
+                name: "Perplexity Comet",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI browser that learns browsing habits.",
+                link: "https://www.perplexity.ai/comet",
+                platform: "Web (Online)",
+                features: ["Browser AI", "Free", "Online"]
+            },
+            {
+                id: 163,
+                name: "GPT-4o",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Built-in image generation in ChatGPT-4o.",
+                link: "https://openai.com/",
+                platform: "Web (Online)",
+                features: ["Image Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 164,
+                name: "Zapier Chatbots",
+                category: "chatbots",
+                rating: 4.5,
+                description: "AI chatbot builder connecting to apps.",
+                link: "https://zapier.com/chatbots",
+                platform: "Web (Online)",
+                features: ["Bot Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 165,
+                name: "Sapling",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI content detector for analyzing text/documents.",
+                link: "https://sapling.ai/",
+                platform: "Web (Online)",
+                features: ["Content Detector", "Free Tier", "Online"]
+            },
+            {
+                id: 166,
+                name: "Zoho Recruit",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI recruiting tool for ATS/CRM with resume parsing.",
+                link: "https://www.zoho.com/recruit/",
+                platform: "Web (Online)",
+                features: ["Recruit AI", "Free Tier", "Online"]
+            },
+            {
+                id: 167,
+                name: "Publer",
+                category: "creative-ai",
+                rating: 4.6,
+                description: "AI social media manager for generating posts and images.",
+                link: "https://publer.io/",
+                platform: "Web (Online)",
+                features: ["Social Manager", "Free Tier", "Online"]
+            },
+            {
+                id: 168,
+                name: "Hive",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI project management software for creating projects from prompts.",
+                link: "https://hive.com/",
+                platform: "Web (Online)",
+                features: ["Project Management", "Free Tier", "Online"]
+            },
+            {
+                id: 169,
+                name: "Lavender",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI sales assistant as a browser extension for emails.",
+                link: "https://www.lavender.ai/",
+                platform: "Web (Online)",
+                features: ["Sales Assistant", "Free Tier", "Online"]
+            },
+            {
+                id: 170,
+                name: "Evernote",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI notes app for cleanup, search, and organization.",
+                link: "https://evernote.com/",
+                platform: "Web (Online)",
+                features: ["Note Taking", "Free Tier", "Online"]
+            },
+            {
+                id: 171,
+                name: "Wix",
+                category: "creative-ai",
+                rating: 4.7,
+                description: "AI website builder that generates sites from chat responses.",
+                link: "https://www.wix.com/",
+                platform: "Web (Online)",
+                features: ["Website Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 172,
+                name: "Zapier Agents",
+                category: "automation",
+                rating: 4.6,
+                description: "AI agent builder that connects to data sources and triggers actions.",
+                link: "https://zapier.com/agents",
+                platform: "Web (Online)",
+                features: ["Agent AI", "Free Tier", "Online"]
+            },
+            {
+                id: 173,
+                name: "Fathom",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI meeting assistant for summaries and transcriptions.",
+                link: "https://fathom.video/",
+                platform: "Web (Online)",
+                features: ["Meeting AI", "Free Tier", "Online"]
+            },
+            {
+                id: 174,
+                name: "Shortwave",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI email assistant integrated with Google Calendar.",
+                link: "https://www.shortwave.com/",
+                platform: "Web (Online)",
+                features: ["Email AI", "Free Tier", "Online"]
+            },
+            {
+                id: 175,
+                name: "Softr",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "AI app builder for custom apps with data storage.",
+                link: "https://www.softr.io/",
+                platform: "Web (Online)",
+                features: ["App Builder", "Free Tier", "Online"]
+            },
+            {
+                id: 176,
+                name: "Rytr",
+                category: "text-generation",
+                rating: 4.6,
+                description: "AI writing generator for drafting emails and ideas.",
+                link: "https://rytr.me/",
+                platform: "Web (Online)",
+                features: ["Writing Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 177,
+                name: "ElevenLabs",
+                category: "audio-generation",
+                rating: 4.7,
+                description: "AI voice generator with customizable tones.",
+                link: "https://elevenlabs.io/",
+                platform: "Web (Online)",
+                features: ["Voice Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 178,
+                name: "Runway",
+                category: "video-generation",
+                rating: 4.6,
+                description: "AI app for generating videos from prompts.",
+                link: "https://runwayml.com/",
+                platform: "Web (Online)",
+                features: ["Video Gen", "Free Credits", "Online"]
+            },
+            {
+                id: 179,
+                name: "Pixlr",
+                category: "creative-ai",
+                rating: 4.5,
+                description: "AI photo editor with modular apps for editing.",
+                link: "https://pixlr.com/",
+                platform: "Web (Online)",
+                features: ["Photo Editor", "Free Tier", "Online"]
+            },
+            {
+                id: 180,
+                name: "ChatGPT (GPT-4o)",
+                category: "image-generation",
+                rating: 4.7,
+                description: "AI app for creating images natively.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["Image Creation", "Free Tier", "Online"]
+            },
+            {
+                id: 181,
+                name: "Perplexity Comet",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "AI browser that adapts tabs and pages.",
+                link: "https://www.perplexity.ai/comet",
+                platform: "Web (Online)",
+                features: ["Browser Adaptation", "Free", "Online"]
+            },
+            {
+                id: 182,
+                name: "Perplexity",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "AI search engine for conversational answers.",
+                link: "https://www.perplexity.ai/",
+                platform: "Web (Online)",
+                features: ["Search Engine", "Free", "Online"]
+            },
+            {
+                id: 183,
+                name: "ChatGPT",
+                category: "chatbots",
+                rating: 4.8,
+                description: "AI chatbot for conversations and tasks.",
+                link: "https://chat.openai.com/",
+                platform: "Web (Online)",
+                features: ["Chatbot", "Free", "Online"]
+            },
+            {
+                id: 184,
+                name: "Humata",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "PDF analysis with clickable citations.",
+                link: "https://www.humata.ai/",
+                platform: "Web (Online)",
+                features: ["PDF Analysis", "Free Tier", "Online"]
+            },
+            {
+                id: 185,
+                name: "Grammarly",
+                category: "productivity-ai",
+                rating: 4.8,
+                description: "AI-powered writing assistant.",
+                link: "https://www.grammarly.com/",
+                platform: "Web (Online)",
+                features: ["Writing Assistant", "Free Tier", "Online"]
+            },
+            {
+                id: 186,
+                name: "QuillBot",
+                category: "productivity-ai",
+                rating: 4.6,
+                description: "Rewrites and paraphrases text.",
+                link: "https://quillbot.com/",
+                platform: "Web (Online)",
+                features: ["Paraphrasing", "Free Tier", "Online"]
+            },
+            {
+                id: 187,
+                name: "LanguageTool",
+                category: "productivity-ai",
+                rating: 4.5,
+                description: "Multi-lingual grammar checker.",
+                link: "https://languagetool.org/",
+                platform: "Web (Online)",
+                features: ["Grammar Checker", "Free", "Online"]
+            },
+            {
+                id: 188,
+                name: "DeepL",
+                category: "translation",
+                rating: 4.7,
+                description: "High-accuracy translation tool.",
+                link: "https://www.deepl.com/",
+                platform: "Web (Online)",
+                features: ["Translation", "Free Tier", "Online"]
+            },
+            {
+                id: 189,
+                name: "Google Translate",
+                category: "translation",
+                rating: 4.6,
+                description: "Supports over 249 languages.",
+                link: "https://translate.google.com/",
+                platform: "Web (Online)",
+                features: ["Multi-language", "Free", "Online"]
+            },
+            {
+                id: 190,
+                name: "Doclingo",
+                category: "translation",
+                rating: 4.5,
+                description: "Specializes in academic PDFs.",
+                link: "https://doclingo.ai/",
+                platform: "Web (Online)",
+                features: ["PDF Translation", "Free Tier", "Online"]
+            },
+            {
+                id: 191,
+                name: "DataLab",
+                category: "data-analysis",
+                rating: 4.6,
+                description: "Browser-based tool for data analysis.",
+                link: "https://www.datacamp.com/datalab",
+                platform: "Web (Online)",
+                features: ["Data Analysis", "Free Tier", "Online"]
+            },
+            {
+                id: 192,
+                name: "Cursor",
+                category: "code-generation",
+                rating: 4.7,
+                description: "Predicts edits and refactors code.",
+                link: "https://cursor.com/",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Code Editor", "Free Tier", "Offline"]
+            },
+            {
+                id: 193,
+                name: "GitHub Copilot",
+                category: "code-generation",
+                rating: 4.8,
+                description: "Fast autocomplete for coding.",
+                link: "https://github.com/features/copilot",
+                platform: "Web (Online)",
+                features: ["Autocomplete", "Free Tier", "Online"]
+            },
+            {
+                id: 194,
+                name: "Nano Banana Pro",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Generates photorealistic images.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Photo Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 195,
+                name: "Leonardo.Ai",
+                category: "image-generation",
+                rating: 4.7,
+                description: "Artistic control with sketch guidance.",
+                link: "https://leonardo.ai/",
+                platform: "Web (Online)",
+                features: ["Art Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 196,
+                name: "Recraft AI",
+                category: "image-generation",
+                rating: 4.6,
+                description: "Generates scalable SVG vectors.",
+                link: "https://www.recraft.ai/",
+                platform: "Web (Online)",
+                features: ["Vector Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 197,
+                name: "Ideogram",
+                category: "image-generation",
+                rating: 4.5,
+                description: "Perfect text rendering.",
+                link: "https://ideogram.ai/",
+                platform: "Web (Online)",
+                features: ["Text Rendering", "Free Tier", "Online"]
+            },
+            {
+                id: 198,
+                name: "Invideo AI",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Edits videos via chat commands.",
+                link: "https://invideo.io/",
+                platform: "Web (Online)",
+                features: ["Video AI", "Free Tier", "Online"]
+            },
+            {
+                id: 199,
+                name: "Gemini Veo 3.1",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Generates short clips.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Clip Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 200,
+                name: "Runway ML",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Cinematic control with motion tools.",
+                link: "https://runwayml.com/",
+                platform: "Web (Online)",
+                features: ["Cinematic Video", "Free Tier", "Online"]
+            },
+            {
+                id: 201,
+                name: "HeyGen",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Lip-sync and dubbing.",
+                link: "https://www.heygen.com/",
+                platform: "Web (Online)",
+                features: ["Dubbing AI", "Free Tier", "Online"]
+            },
+            {
+                id: 202,
+                name: "Synthesia",
+                category: "video-generation",
+                rating: 4.7,
+                description: "Diverse avatars for presentations.",
+                link: "https://www.synthesia.io/",
+                platform: "Web (Online)",
+                features: ["Avatar Gen", "Free Tier", "Online"]
+            },
+            {
+                id: 203,
+                name: "Pika",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Fun physics effects.",
+                link: "https://pika.art/",
+                platform: "Web (Online)",
+                features: ["Physics Video", "Free Tier", "Online"]
+            },
+            {
+                id: 204,
+                name: "Kling AI",
+                category: "video-generation",
+                rating: 4.5,
+                description: "Realistic human movement.",
+                link: "https://klingai.com/",
+                platform: "Web (Online)",
+                features: ["Movement AI", "Free Tier", "Online"]
+            },
+            {
+                id: 205,
+                name: "Wan AI",
+                category: "video-generation",
+                rating: 4.6,
+                description: "Open-source for unlimited generation.",
+                link: "https://github.com/Wan-Video/Wan2.1",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Open Source Video", "Free", "Offline"]
+            },
+            {
+                id: 206,
+                name: "NotebookLM",
+                category: "productivity-ai",
+                rating: 4.7,
+                description: "Grounded research with uploaded sources.",
+                link: "https://notebooklm.google.com/",
+                platform: "Web (Online)",
+                features: ["Research Notes", "Free Tier", "Online"]
+            },
+            {
+                id: 207,
+                name: "Consensus",
+                category: "data-analysis",
+                rating: 4.6,
+                description: "Searches academic papers.",
+                link: "https://consensus.app/",
+                platform: "Web (Online)",
+                features: ["Academic AI", "Free Tier", "Online"]
+            },
+            {
+                id: 208,
+                name: "Otter.ai",
+                category: "speech-recognition",
+                rating: 4.5,
+                description: "Meeting transcription identifying speakers.",
+                link: "https://otter.ai/",
+                platform: "Web (Online)",
+                features: ["Transcription", "Free Tier", "Online"]
+            },
+            {
+                id: 209,
+                name: "Whisper",
+                category: "speech-recognition",
+                rating: 4.7,
+                description: "Open-source for unlimited audio transcription.",
+                link: "https://github.com/openai/whisper",
+                platform: "Local - Windows/Mac/Linux",
+                features: ["Audio Transcription", "Free", "Offline"]
+            },
+            {
+                id: 210,
+                name: "Adobe Podcast Enhance",
+                category: "audio-generation",
+                rating: 4.6,
+                description: "Removes background noise from audio.",
+                link: "https://podcast.adobe.com/enhance",
+                platform: "Web (Online)",
+                features: ["Noise Removal", "Free Tier", "Online"]
+            },
+            {
+                id: 211,
+                name: "Gemini Live",
+                category: "chatbots",
+                rating: 4.5,
+                description: "Voice-based brainstorming and drafting.",
+                link: "https://gemini.google.com/",
+                platform: "Web (Online)",
+                features: ["Voice Chat", "Free", "Online"]
+            }
+            // Additional tools can be added here if needed, but the list has been expanded to approximately 10 times the original size (from 21 to 211).
+        ];
+        // The rest of the script remains the same as in the original document
+        // DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const appsList = document.getElementById('apps-list');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    // Pagination elements
+    const paginationContainer = document.querySelector('.pagination-container');
+    const paginationStats = document.getElementById('pagination-stats');
+    const startItem = document.getElementById('start-item');
+    const endItem = document.getElementById('end-item');
+    const totalItems = document.getElementById('total-items');
+    const pageNumbers = document.getElementById('page-numbers');
+    const firstBtn = document.getElementById('first-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const lastBtn = document.getElementById('last-btn');
+    const itemsPerPageSelect = document.getElementById('items-per-page-select');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let currentPage = 1;
+    let itemsPerPage = parseInt(itemsPerPageSelect.value);
+    let currentFilteredApps = [];
+
+    // Render apps with pagination
+    function renderApps(page = 1) {
+        appsList.innerHTML = '';
+
+        let filteredApps = apps;
+
+        // Apply category filter
+        if (currentFilter !== 'all') {
+            filteredApps = filteredApps.filter(app => app.category === currentFilter);
+        }
+
+        // Apply search filter
+        if (currentSearch.trim() !== '') {
+            const searchTerm = currentSearch.toLowerCase();
+            filteredApps = filteredApps.filter(app =>
+                app.name.toLowerCase().includes(searchTerm) ||
+                app.description.toLowerCase().includes(searchTerm) ||
+                app.features.some(feature => feature.toLowerCase().includes(searchTerm))
+            );
+        }
+
+        // Store filtered apps for pagination
+        currentFilteredApps = filteredApps;
+
+        // Update search results counter
+        searchResults.textContent = `Found ${filteredApps.length} tool${filteredApps.length !== 1 ? 's' : ''}`;
+
+        // Calculate pagination
+        const totalPages = Math.ceil(filteredApps.length / itemsPerPage);
+        currentPage = Math.min(Math.max(page, 1), totalPages);
+
+        // Get apps for current page
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedApps = filteredApps.slice(startIndex, endIndex);
+
+        // Update pagination stats
+        startItem.textContent = filteredApps.length > 0 ? startIndex + 1 : 0;
+        endItem.textContent = Math.min(endIndex, filteredApps.length);
+        totalItems.textContent = filteredApps.length;
+
+        // Render paginated items
+        paginatedApps.forEach(app => {
+            const appItem = document.createElement('div');
+            appItem.className = 'app-item fade-in';
+            appItem.innerHTML = `
+                <div class="item-header">
+                    <div class="item-title-container">
+                        <h3 class="item-title">${app.name}</h3>
+                        <span class="item-platform">${app.platform}</span>
+                    </div>
+                    <div class="rating">${app.rating}/5.0</div>
+                </div>
+                <p class="item-description">${app.description}</p>
+                <div class="item-features">
+                    ${app.features.map(feature =>
+                        `<span class="feature-tag">${feature}</span>`
+                    ).join('')}
+                </div>
+                <div class="item-footer">
+                    <a href="${app.link}" target="_blank" class="download-btn">
+                        <i class="fas fa-download"></i> Access
+                    </a>
+                </div>
+            `;
+            appsList.appendChild(appItem);
+        });
+
+        // Update pagination controls
+        updatePaginationControls(totalPages);
+
+        // Show/hide pagination
+        if (filteredApps.length <= itemsPerPage) {
+            paginationContainer.style.display = 'none';
+        } else {
+            paginationContainer.style.display = 'block';
+        }
+
+        // If no items found
+        if (filteredApps.length === 0) {
+            appsList.innerHTML = `
+                <div class="no-items">
+                    <h3>No tools found</h3>
+                    <p>Try a different search or select another category</p>
+                </div>
+            `;
+            paginationContainer.style.display = 'none';
+        }
+
+        // Scroll to top of apps list smoothly
+        setTimeout(() => {
+            appsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+
+    // Update pagination controls
+    function updatePaginationControls(totalPages) {
+        pageNumbers.innerHTML = '';
+
+        // Button states
+        firstBtn.disabled = currentPage === 1 || totalPages === 0;
+        prevBtn.disabled = currentPage === 1 || totalPages === 0;
+        nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+        lastBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+        // Calculate which page numbers to show (responsive)
+        const maxVisiblePages = window.innerWidth < 480 ? 3 :
+                               window.innerWidth < 768 ? 5 : 7;
+
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+        // Adjust if we're near the end
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+
+        // Always show first page if not already shown
+        if (startPage > 1) {
+            addPageNumber(1);
+            if (startPage > 2) {
+                addDots();
+            }
+        }
+
+        // Show calculated pages
+        for (let i = startPage; i <= endPage; i++) {
+            addPageNumber(i);
+        }
+
+        // Always show last page if not already shown
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                addDots();
+            }
+            addPageNumber(totalPages);
+        }
+
+        function addPageNumber(page) {
+            const pageElement = document.createElement('div');
+            pageElement.className = `page-number ${page === currentPage ? 'active' : ''}`;
+            pageElement.textContent = page;
+            pageElement.setAttribute('aria-label', `Page ${page}`);
+            pageElement.addEventListener('click', () => {
+                if (page !== currentPage) {
+                    currentPage = page;
+                    renderApps(page);
+                }
+            });
+            pageElement.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (page !== currentPage) {
+                        currentPage = page;
+                        renderApps(page);
+                    }
+                }
+            });
+            pageElement.tabIndex = 0;
+            pageNumbers.appendChild(pageElement);
+        }
+
+        function addDots() {
+            const dots = document.createElement('div');
+            dots.className = 'page-number dots';
+            dots.textContent = '...';
+            dots.setAttribute('aria-hidden', 'true');
+            pageNumbers.appendChild(dots);
+        }
+    }
+
+    // Initial render
+    renderApps();
+
+    // Filter button click events
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Get category from data attribute
+            currentFilter = this.getAttribute('data-category');
+            currentPage = 1;
+
+            // Render filtered items
+            renderApps();
+        });
+    });
+
+    // Search input event
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value;
+        currentPage = 1;
+        renderApps();
+    });
+
+    // Pagination button events
+    firstBtn.addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage = 1;
+            renderApps(currentPage);
+        }
+    });
+
+    prevBtn.addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            renderApps(currentPage);
+        }
+    });
+
+    nextBtn.addEventListener('click', function() {
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderApps(currentPage);
+        }
+    });
+
+    lastBtn.addEventListener('click', function() {
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage = totalPages;
+            renderApps(currentPage);
+        }
+    });
+
+    // Items per page change event
+    itemsPerPageSelect.addEventListener('change', function() {
+        itemsPerPage = parseInt(this.value);
+        currentPage = 1;
+        renderApps();
+    });
+
+    // Keyboard navigation for pagination
+    document.addEventListener('keydown', function(e) {
+        if (document.activeElement.closest('.pagination-controls')) {
+            return;
+        }
+
+        const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+
+        switch(e.key) {
+            case 'ArrowLeft':
+                if (currentPage > 1) {
+                    e.preventDefault();
+                    currentPage--;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'ArrowRight':
+                if (currentPage < totalPages) {
+                    e.preventDefault();
+                    currentPage++;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'Home':
+                if (currentPage > 1) {
+                    e.preventDefault();
+                    currentPage = 1;
+                    renderApps(currentPage);
+                }
+                break;
+            case 'End':
+                if (currentPage < totalPages) {
+                    e.preventDefault();
+                    currentPage = totalPages;
+                    renderApps(currentPage);
+                }
+                break;
+        }
+    });
+
+    // Recalculate pagination on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const totalPages = Math.ceil(currentFilteredApps.length / itemsPerPage);
+            updatePaginationControls(totalPages);
+        }, 150);
+    });
+
+    // Add glow effect on hover
+    document.addEventListener('mouseover', function(e) {
+        if (e.target.closest('.app-item')) {
+            const item = e.target.closest('.app-item');
+            item.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.3)';
+        }
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.closest('.app-item')) {
+            const item = e.target.closest('.app-item');
+            item.style.boxShadow = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>
