@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="other_files/Logo_3.png" alt="Free-Hub Website Screenshot" width="1000">
+</div>
+
 # Free-Hub - Free Applications Catalog
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
